@@ -1,0 +1,40 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Shannon2004VentricularmyocyteModel7914464799Model'
+description: 'This a model from the article: A mathematical treatment of integrated
+  Ca dynamics within the ventricular myocyte. Shannon TR, Wang F, Puglisi J, Weber
+  C, Bers DM. Biophys J. 15347581 , doi: 10.1529/bi'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Thomas R Shannon
+- Fei Wang
+- "Jos\xE9 Puglisi"
+- Christopher Weber
+- Donald M Bers
+upstream:
+  id: biomodels_ebi:MODEL7914464799
+  source_db: biomodels_ebi
+  source_id: MODEL7914464799
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL7914464799
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL7914464799?filename=MODEL7914464799_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.shannon2004_ventricularmyocyte_model7914464799_model:Shannon2004VentricularmyocyteModel7914464799Model
+  init_kwargs:
+    model_path: data/MODEL7914464799.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

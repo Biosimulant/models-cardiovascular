@@ -1,0 +1,39 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Tentusscher2004CardiacarrhythmiasModel0393108880Model'
+description: 'This a model from the article: A model for human ventricular tissue.
+  ten Tusscher KH, Noble D, Noble PJ, Panfilov AV. Am J Physiol Heart Circ Physiol
+  2004 Apr;286(4):H1573-89. 14656705 , Abstract: The'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- K H W J ten Tusscher
+- D Noble
+- P J Noble
+- A V Panfilov
+upstream:
+  id: biomodels_ebi:MODEL0393108880
+  source_db: biomodels_ebi
+  source_id: MODEL0393108880
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL0393108880
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0393108880?filename=MODEL0393108880_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.tentusscher2004_cardiacarrhythmias_model0393108880_model:Tentusscher2004CardiacarrhythmiasModel0393108880Model
+  init_kwargs:
+    model_path: data/MODEL0393108880.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

@@ -1,0 +1,38 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Pasek2006VentricularcardiomyocytesModel0406553884Model'
+description: "This a model from the article: The functional role of cardiac T-tubules\
+  \ explored in a model of rat ventricular myocytes. P\xE1sek M, Simurda J, Christ\xE9\
+  \ G. Philos Transact A Math Phys Eng Sci. 2006 May 15"
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- "Michal P\xE1sek"
+- Jiri Simurda
+- "Georges Christ\xE9"
+upstream:
+  id: biomodels_ebi:MODEL0406553884
+  source_db: biomodels_ebi
+  source_id: MODEL0406553884
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL0406553884
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0406553884?filename=MODEL0406553884_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.pasek2006_ventricularcardiomyocytes_model0406553884_model:Pasek2006VentricularcardiomyocytesModel0406553884Model
+  init_kwargs:
+    model_path: data/MODEL0406553884.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

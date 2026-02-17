@@ -1,0 +1,38 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Cooling2007Ip3transientsCardiacmyocyteBiomd0000000400Model'
+description: 'This a model from the article: Modeling hypertrophic IP3 transients
+  in the cardiac myocyte. Cooling M, Hunter P, Crampin EJ. Biophys J 2007 Nov 15;93(10):3421-33
+  17693463 , Abstract: Cardiac hypertrop'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Michael Cooling
+- Peter Hunter
+- Edmund J Crampin
+upstream:
+  id: biomodels_ebi:BIOMD0000000400
+  source_db: biomodels_ebi
+  source_id: BIOMD0000000400
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000000400
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000000400?filename=BIOMD0000000400_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.cooling2007_ip3transients_cardiacmyocyte_biomd0000000400_model:Cooling2007Ip3transientsCardiacmyocyteBiomd0000000400Model
+  init_kwargs:
+    model_path: data/BIOMD0000000400.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

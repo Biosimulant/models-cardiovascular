@@ -1,0 +1,40 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Noble1991CardiacactionpotentialSodiumcalciumexModel1006230073Model'
+description: 'This a model from the article: The role of sodium-calcium exchange during
+  the cardiac action potential. Noble D, Noble SJ, Bett GC, Earm YE, Ho WK, So IK.
+  Ann N Y Acad Sci 1991;639:334-53 1785860 , Ab'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- D Noble
+- S J Noble
+- G C Bett
+- Y E Earm
+- W K Ho
+upstream:
+  id: biomodels_ebi:MODEL1006230073
+  source_db: biomodels_ebi
+  source_id: MODEL1006230073
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL1006230073
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1006230073?filename=MODEL1006230073_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.noble1991_cardiacactionpotential_sodiumcalciumex_model1006230073_model:Noble1991CardiacactionpotentialSodiumcalciumexModel1006230073Model
+  init_kwargs:
+    model_path: data/MODEL1006230073.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

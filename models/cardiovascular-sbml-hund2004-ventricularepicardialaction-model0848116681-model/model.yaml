@@ -1,0 +1,37 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Hund2004VentricularepicardialactionModel0848116681Model'
+description: 'This a model from the article: Rate dependence and regulation of action
+  potential and calcium transient in acanine cardiac ventricular cell model. Hund
+  TJ, Rudy Y. Circulation 2004 Nov 16;110(20):3168'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Thomas J Hund
+- Yoram Rudy
+upstream:
+  id: biomodels_ebi:MODEL0848116681
+  source_db: biomodels_ebi
+  source_id: MODEL0848116681
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL0848116681
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0848116681?filename=MODEL0848116681_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.hund2004_ventricularepicardialaction_model0848116681_model:Hund2004VentricularepicardialactionModel0848116681Model
+  init_kwargs:
+    model_path: data/MODEL0848116681.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

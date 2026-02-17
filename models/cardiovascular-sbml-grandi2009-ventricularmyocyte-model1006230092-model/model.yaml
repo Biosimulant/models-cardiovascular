@@ -1,0 +1,38 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Grandi2009VentricularmyocyteModel1006230092Model'
+description: 'This a model from the article: A novel computational model of the human
+  ventricular action potential and Catransient. Grandi E, Pasqualini FS, Bers DM.
+  J Mol Cell Cardiol 2010 Jan;48(1):112-21 1983588'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Eleonora Grandi
+- Francesco S Pasqualini
+- Donald M Bers
+upstream:
+  id: biomodels_ebi:MODEL1006230092
+  source_db: biomodels_ebi
+  source_id: MODEL1006230092
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL1006230092
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1006230092?filename=MODEL1006230092_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.grandi2009_ventricularmyocyte_model1006230092_model:Grandi2009VentricularmyocyteModel1006230092Model
+  init_kwargs:
+    model_path: data/MODEL1006230092.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

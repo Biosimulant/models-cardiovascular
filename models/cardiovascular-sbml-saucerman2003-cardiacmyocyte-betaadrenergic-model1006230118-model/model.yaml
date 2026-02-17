@@ -1,0 +1,39 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Saucerman2003CardiacmyocyteBetaadrenergicModel1006230118Model'
+description: 'This a model from the article: Modeling beta-adrenergic control of cardiac
+  myocyte contractility in silico. Saucerman JJ, Brunton LL, Michailova AP, McCulloch
+  AD. J Biol Chem 2003 Nov 28;278(48):47997'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Jeffrey J Saucerman
+- Laurence L Brunton
+- Anushka P Michailova
+- Andrew D McCulloch
+upstream:
+  id: biomodels_ebi:MODEL1006230118
+  source_db: biomodels_ebi
+  source_id: MODEL1006230118
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL1006230118
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1006230118?filename=MODEL1006230118_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.saucerman2003_cardiacmyocyte_betaadrenergic_model1006230118_model:Saucerman2003CardiacmyocyteBetaadrenergicModel1006230118Model
+  init_kwargs:
+    model_path: data/MODEL1006230118.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

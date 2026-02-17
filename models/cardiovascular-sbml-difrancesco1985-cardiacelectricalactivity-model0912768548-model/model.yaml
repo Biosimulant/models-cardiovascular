@@ -1,0 +1,37 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Difrancesco1985CardiacelectricalactivityModel0912768548Model'
+description: 'This a model from the article: A model of cardiac electrical activity
+  incorporating ionic pumps andconcentration changes. DiFrancesco D, Noble D. Philos
+  Trans R Soc Lond B Biol Sci 1985 Jan 10;307(113'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- D DiFrancesco
+- D Noble
+upstream:
+  id: biomodels_ebi:MODEL0912768548
+  source_db: biomodels_ebi
+  source_id: MODEL0912768548
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL0912768548
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0912768548?filename=MODEL0912768548_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.difrancesco1985_cardiacelectricalactivity_model0912768548_model:Difrancesco1985CardiacelectricalactivityModel0912768548Model
+  init_kwargs:
+    model_path: data/MODEL0912768548.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

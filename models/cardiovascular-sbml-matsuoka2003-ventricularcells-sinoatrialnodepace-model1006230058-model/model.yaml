@@ -1,0 +1,40 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Matsuoka2003VentricularcellsSinoatrialnodepaceModel1006230058Model'
+description: 'This a model from the article: Role of individual ionic current systems
+  in ventricular cells hypothesized by amodel study. Matsuoka S, Sarai N, Kuratomi
+  S, Ono K, Noma A. Jpn J Physiol 2003 Apr;53(2):'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Satoshi Matsuoka
+- Nobuaki Sarai
+- Shinobu Kuratomi
+- Kyoichi Ono
+- Akinori Noma
+upstream:
+  id: biomodels_ebi:MODEL1006230058
+  source_db: biomodels_ebi
+  source_id: MODEL1006230058
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL1006230058
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1006230058?filename=MODEL1006230058_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.matsuoka2003_ventricularcells_sinoatrialnodepace_model1006230058_model:Matsuoka2003VentricularcellsSinoatrialnodepaceModel1006230058Model
+  init_kwargs:
+    model_path: data/MODEL1006230058.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

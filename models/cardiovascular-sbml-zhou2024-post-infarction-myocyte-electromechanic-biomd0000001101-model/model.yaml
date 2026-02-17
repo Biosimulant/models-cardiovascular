@@ -1,0 +1,40 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Zhou2024PostInfarctionMyocyteElectromechanicBiomd0000001101Model'
+description: A human ventricular electromechanical modelling and simulation framework
+  is constructed and validated with rich experimental and clinical datasets. Abnormalities
+  caused by scar and border zone ionic r
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Xin Zhou
+- Zhinuo Jenny Wang
+- Julia Camps
+- Jakub Tomek
+- Alfonso Santiago
+upstream:
+  id: biomodels_ebi:BIOMD0000001101
+  source_db: biomodels_ebi
+  source_id: BIOMD0000001101
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000001101
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000001101?filename=Zhou2024_Updated-model.m
+  license: CC0
+bsim:
+  entrypoint: src.zhou2024_post_infarction_myocyte_electromechanic_biomd0000001101_model:Zhou2024PostInfarctionMyocyteElectromechanicBiomd0000001101Model
+  init_kwargs:
+    model_path: data/BIOMD0000001101.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

@@ -1,0 +1,37 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Livshitz2007CardiacmyocytesModel0406270966Model'
+description: 'This a model from the article: Regulation of Ca2+ and electrical alternans
+  in cardiac myocytes: role of CAMKII and repolarizing currents. Livshitz LM, Rudy
+  Y. Am J Physiol Heart Circ Physiol. 2007 Jun'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Leonid M Livshitz
+- Yoram Rudy
+upstream:
+  id: biomodels_ebi:MODEL0406270966
+  source_db: biomodels_ebi
+  source_id: MODEL0406270966
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL0406270966
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0406270966?filename=MODEL0406270966_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.livshitz2007_cardiacmyocytes_model0406270966_model:Livshitz2007CardiacmyocytesModel0406270966Model
+  init_kwargs:
+    model_path: data/MODEL0406270966.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

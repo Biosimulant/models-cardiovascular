@@ -1,0 +1,39 @@
+schema_version: '2.0'
+title: 'Cardiovascular: SchLzel2021ModularModelOfTheHumanCardiacModel2103050002Model'
+description: SHM-conduction is a discrete unidirectional model of the human cardiac
+  conduction system. It takes a Boolean input signal from the sinoatrial node (SAN)
+  and includes the refractory behavior of the SAN
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- "Christopher Sch\xF6lzel"
+- Valeria Blesius
+- Gernot Ernst
+- Andreas Dominik
+upstream:
+  id: biomodels_ebi:MODEL2103050002
+  source_db: biomodels_ebi
+  source_id: MODEL2103050002
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL2103050002
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL2103050002?filename=shm-conduction-v1.1.1.zip
+  license: CC0
+bsim:
+  entrypoint: src.sch_lzel2021_modular_model_of_the_human_cardiac_model2103050002_model:SchLzel2021ModularModelOfTheHumanCardiacModel2103050002Model
+  init_kwargs:
+    model_path: data/MODEL2103050002.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

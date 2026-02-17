@@ -1,0 +1,37 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Chen2006NitricOxideReleaseFromEndothelialCBiomd0000000676Model'
+description: 'Chen2006 - Nitric Oxide Release fromEndothelial Cells This model is
+  described in the article: Theoretical analysis of biochemical pathways of nitric
+  oxide release from vascular endothelial cells. Chen'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Kejing Chen
+- Aleksander S Popel
+upstream:
+  id: biomodels_ebi:BIOMD0000000676
+  source_db: biomodels_ebi
+  source_id: BIOMD0000000676
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000000676
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000000676?filename=BIOMD0000000676_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.chen2006_nitric_oxide_release_from_endothelial_c_biomd0000000676_model:Chen2006NitricOxideReleaseFromEndothelialCBiomd0000000676Model
+  init_kwargs:
+    model_path: data/BIOMD0000000676.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

@@ -1,0 +1,40 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Muraro2014VascularPatterningInArabidopsisRoBiomd0000000522Model'
+description: Muraro2014 - Vascular patterning in Arabidopsis roots Using a multicellular
+  model, maintanence of vascular patterning in Arabidopsis roots has been studied.
+  The model that is provided here is the sing
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Daniele Muraro
+- Nathan Mellor
+- Michael P Pound
+- Hanna Help
+- "Mika\xEBl Lucas"
+upstream:
+  id: biomodels_ebi:BIOMD0000000522
+  source_db: biomodels_ebi
+  source_id: BIOMD0000000522
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000000522
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000000522?filename=BIOMD0000000522_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.muraro2014_vascular_patterning_in_arabidopsis_ro_biomd0000000522_model:Muraro2014VascularPatterningInArabidopsisRoBiomd0000000522Model
+  init_kwargs:
+    model_path: data/BIOMD0000000522.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

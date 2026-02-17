@@ -1,0 +1,40 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Smith2004CvsHumanModel1006230000Model'
+description: 'This a model from the article: Minimal haemodynamic system model including
+  ventricular interaction and valvedynamics. Smith BW, Chase JG, Nokes RI, Shaw GM,
+  Wake G. Med Eng Phys 2004 Mar;26(2):131-9 1'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Bram W Smith
+- J Geoffrey Chase
+- Roger I Nokes
+- Geoffrey M Shaw
+- Graeme Wake
+upstream:
+  id: biomodels_ebi:MODEL1006230000
+  source_db: biomodels_ebi
+  source_id: MODEL1006230000
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL1006230000
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1006230000?filename=MODEL1006230000_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.smith2004_cvs_human_model1006230000_model:Smith2004CvsHumanModel1006230000Model
+  init_kwargs:
+    model_path: data/MODEL1006230000.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

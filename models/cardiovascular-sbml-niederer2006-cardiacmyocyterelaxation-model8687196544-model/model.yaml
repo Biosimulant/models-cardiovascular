@@ -1,0 +1,38 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Niederer2006CardiacmyocyterelaxationModel8687196544Model'
+description: 'This a model from the article: A quantitative analysis of cardiac myocyte
+  relaxation: a simulation study. Niederer SA, Hunter PJ, Smith NP. Biophys J. 2006:90(5):1697-722.
+  16339881 , Abstract: The det'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- S A Niederer
+- P J Hunter
+- N P Smith
+upstream:
+  id: biomodels_ebi:MODEL8687196544
+  source_db: biomodels_ebi
+  source_id: MODEL8687196544
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL8687196544
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL8687196544?filename=MODEL8687196544_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.niederer2006_cardiacmyocyterelaxation_model8687196544_model:Niederer2006CardiacmyocyterelaxationModel8687196544Model
+  init_kwargs:
+    model_path: data/MODEL8687196544.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

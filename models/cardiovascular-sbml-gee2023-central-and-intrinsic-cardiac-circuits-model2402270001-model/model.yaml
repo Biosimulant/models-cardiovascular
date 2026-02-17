@@ -1,0 +1,40 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Gee2023CentralAndIntrinsicCardiacCircuitsModel2402270001Model'
+description: 'Model Context: Model of neural control of cardiovascular behavior and
+  its interaction with respiratory behaviorPrimary goal of the model: The primary
+  objective of the modeling study was to evaluate th'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Michelle M Gee
+- Abraham M Lenhoff
+- James S Schwaber
+- Babatunde A Ogunnaike
+- Rajanikanth Vadigepalli
+upstream:
+  id: biomodels_ebi:MODEL2402270001
+  source_db: biomodels_ebi
+  source_id: MODEL2402270001
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL2402270001
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL2402270001?filename=ICN_model_v15.slx
+  license: CC0
+bsim:
+  entrypoint: src.gee2023_central_and_intrinsic_cardiac_circuits_model2402270001_model:Gee2023CentralAndIntrinsicCardiacCircuitsModel2402270001Model
+  init_kwargs:
+    model_path: data/MODEL2402270001.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

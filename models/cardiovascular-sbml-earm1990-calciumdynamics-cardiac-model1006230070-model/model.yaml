@@ -1,0 +1,37 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Earm1990CalciumdynamicsCardiacModel1006230070Model'
+description: 'This a model from the article: A model of the single atrial cell: relation
+  between calcium current and calciumrelease. Earm YE, Noble D. Proc R Soc Lond B
+  Biol Sci 1990 May 22;240(1297):83-96 1972993 '
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Y E Earm
+- D Noble
+upstream:
+  id: biomodels_ebi:MODEL1006230070
+  source_db: biomodels_ebi
+  source_id: MODEL1006230070
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL1006230070
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1006230070?filename=MODEL1006230070_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.earm1990_calciumdynamics_cardiac_model1006230070_model:Earm1990CalciumdynamicsCardiacModel1006230070Model
+  init_kwargs:
+    model_path: data/MODEL1006230070.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

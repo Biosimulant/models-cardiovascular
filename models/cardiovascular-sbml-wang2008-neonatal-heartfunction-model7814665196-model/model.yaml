@@ -1,0 +1,37 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Wang2008NeonatalHeartfunctionModel7814665196Model'
+description: 'This a model from the article: Mathematical model of the neonatal mouse
+  ventricular action potential. Wang LJ, Sobie EA. Am J Physiol Heart Circ Physiol.
+  (2008) 294(6) pp H2565-75; 18408122 , Abstract'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Linda J Wang
+- Eric A Sobie
+upstream:
+  id: biomodels_ebi:MODEL7814665196
+  source_db: biomodels_ebi
+  source_id: MODEL7814665196
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL7814665196
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL7814665196?filename=MODEL7814665196_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.wang2008_neonatal_heartfunction_model7814665196_model:Wang2008NeonatalHeartfunctionModel7814665196Model
+  init_kwargs:
+    model_path: data/MODEL7814665196.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

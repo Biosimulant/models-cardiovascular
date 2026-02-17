@@ -1,0 +1,39 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Benson2008ArrhythmogenesisEpicardialModel1006230101Model'
+description: 'This a model from the article: The canine virtual ventricular wall:
+  a platform for dissecting pharmacologicaleffects on propagation and arrhythmogenesis.
+  Benson AP, Aslanidi OV, Zhang H, Holden AV. Pr'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Alan P Benson
+- Oleg V Aslanidi
+- Henggui Zhang
+- Arun V Holden
+upstream:
+  id: biomodels_ebi:MODEL1006230101
+  source_db: biomodels_ebi
+  source_id: MODEL1006230101
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL1006230101
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1006230101?filename=MODEL1006230101_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.benson2008_arrhythmogenesis_epicardial_model1006230101_model:Benson2008ArrhythmogenesisEpicardialModel1006230101Model
+  init_kwargs:
+    model_path: data/MODEL1006230101.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

@@ -1,0 +1,38 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Irvine1999CardiacsodiumchannelModel0848062679Model'
+description: 'This a model from the article: Cardiac sodium channel Markov model with
+  temperature dependence and recoveryfrom inactivation. Irvine LA, Jafri MS, Winslow
+  RL. Biophys J 1999 Apr;76(4):1868-85 10096885'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- L A Irvine
+- M Saleet Jafri
+- R L Winslow
+upstream:
+  id: biomodels_ebi:MODEL0848062679
+  source_db: biomodels_ebi
+  source_id: MODEL0848062679
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL0848062679
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0848062679?filename=MODEL0848062679_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.irvine1999_cardiacsodiumchannel_model0848062679_model:Irvine1999CardiacsodiumchannelModel0848062679Model
+  init_kwargs:
+    model_path: data/MODEL0848062679.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

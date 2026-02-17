@@ -1,0 +1,39 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Schneider2006CardiaccontractionmodelModel7907879432Model'
+description: 'This a model from the article: Mechanism of the Frank-Starling law--a
+  simulation study with a novel cardiac muscle contraction model that includes titin
+  and troponin I. Schneider NS, Shimayoshi T, Ama'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Natalie S Schneider
+- Takao Shimayoshi
+- Akira Amano
+- Tetsuya Matsuda
+upstream:
+  id: biomodels_ebi:MODEL7907879432
+  source_db: biomodels_ebi
+  source_id: MODEL7907879432
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL7907879432
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL7907879432?filename=MODEL7907879432_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.schneider2006_cardiaccontractionmodel_model7907879432_model:Schneider2006CardiaccontractionmodelModel7907879432Model
+  init_kwargs:
+    model_path: data/MODEL7907879432.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

@@ -1,0 +1,38 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Guyton1972VolumereceptorsModel0909931851Model'
+description: 'This a model from the article: Circulation: overall regulation. Guyton
+  AC, Coleman TG, Granger HJ. Annu Rev Physiol 1972;34:13-46 4334846 , Abstract: No
+  abstract available. This model was taken from t'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- A C Guyton
+- T G Coleman
+- H J Granger
+upstream:
+  id: biomodels_ebi:MODEL0909931851
+  source_db: biomodels_ebi
+  source_id: MODEL0909931851
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL0909931851
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0909931851?filename=MODEL0909931851_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.guyton1972_volumereceptors_model0909931851_model:Guyton1972VolumereceptorsModel0909931851Model
+  init_kwargs:
+    model_path: data/MODEL0909931851.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

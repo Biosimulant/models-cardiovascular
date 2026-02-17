@@ -1,0 +1,39 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Aslanidi2009CaninepvjModel1006230065Model'
+description: 'This a model from the article: Optimal velocity and safety of discontinuous
+  conduction through theheterogeneous Purkinje-ventricular junction. Aslanidi OV,
+  Stewart P, Boyett MR, Zhang H. Biophys J 200'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Oleg V Aslanidi
+- Philip Stewart
+- Mark R Boyett
+- Henggui Zhang
+upstream:
+  id: biomodels_ebi:MODEL1006230065
+  source_db: biomodels_ebi
+  source_id: MODEL1006230065
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL1006230065
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1006230065?filename=MODEL1006230065_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.aslanidi2009_caninepvj_model1006230065_model:Aslanidi2009CaninepvjModel1006230065Model
+  init_kwargs:
+    model_path: data/MODEL1006230065.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

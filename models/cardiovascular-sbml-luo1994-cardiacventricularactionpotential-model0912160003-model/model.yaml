@@ -1,0 +1,37 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Luo1994CardiacventricularactionpotentialModel0912160003Model'
+description: 'This a model from the article: A dynamic model of the cardiac ventricular
+  action potential. I. Simulations ofionic currents and concentration changes. Luo
+  CH, Rudy Y. Circ Res 1994 Jun;74(6):1071-96 7'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- C H Luo
+- Y Rudy
+upstream:
+  id: biomodels_ebi:MODEL0912160003
+  source_db: biomodels_ebi
+  source_id: MODEL0912160003
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL0912160003
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0912160003?filename=MODEL0912160003_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.luo1994_cardiacventricularactionpotential_model0912160003_model:Luo1994CardiacventricularactionpotentialModel0912160003Model
+  init_kwargs:
+    model_path: data/MODEL0912160003.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

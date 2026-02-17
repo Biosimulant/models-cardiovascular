@@ -1,0 +1,38 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Iyer2004VentricularmyocyteModel0847999575Model'
+description: 'This a model from the article: A computational model of the human left-ventricular
+  epicardial myocyte. Iyer V, Mazhari R, Winslow RL. Biophys J 2004 Sep;87(3):1507-25
+  15345532 , Abstract: A computatio'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Vivek Iyer
+- Reza Mazhari
+- Raimond L Winslow
+upstream:
+  id: biomodels_ebi:MODEL0847999575
+  source_db: biomodels_ebi
+  source_id: MODEL0847999575
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL0847999575
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0847999575?filename=MODEL0847999575_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.iyer2004_ventricularmyocyte_model0847999575_model:Iyer2004VentricularmyocyteModel0847999575Model
+  init_kwargs:
+    model_path: data/MODEL0847999575.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

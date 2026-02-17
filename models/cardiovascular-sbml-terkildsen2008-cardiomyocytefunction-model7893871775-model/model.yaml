@@ -1,0 +1,40 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Terkildsen2008CardiomyocytefunctionModel7893871775Model'
+description: 'This a model from the article: Using Physiome standards to couple cellular
+  functions for rat cardiac excitation-contraction. Terkildsen JR, Niederer S, Crampin
+  EJ, Hunter P, Smith NP. Exp Physiol. (20'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Jonna R Terkildsen
+- S A Niederer
+- Edmund J Crampin
+- Peter Hunter
+- Nicolas P Smith
+upstream:
+  id: biomodels_ebi:MODEL7893871775
+  source_db: biomodels_ebi
+  source_id: MODEL7893871775
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL7893871775
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL7893871775?filename=MODEL7893871775_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.terkildsen2008_cardiomyocytefunction_model7893871775_model:Terkildsen2008CardiomyocytefunctionModel7893871775Model
+  init_kwargs:
+    model_path: data/MODEL7893871775.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

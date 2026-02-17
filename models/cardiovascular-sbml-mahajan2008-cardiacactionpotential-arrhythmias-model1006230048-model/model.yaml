@@ -1,0 +1,40 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Mahajan2008CardiacactionpotentialArrhythmiasModel1006230048Model'
+description: 'This a model from the article: A rabbit ventricular action potential
+  model replicating cardiac dynamics atrapid heart rates. Mahajan A, Shiferaw Y, Sato
+  D, Baher A, Olcese R, Xie LH, Yang MJ, Chen PS,'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Aman Mahajan
+- Yohannes Shiferaw
+- Daisuke Sato
+- Ali Baher
+- Riccardo Olcese
+upstream:
+  id: biomodels_ebi:MODEL1006230048
+  source_db: biomodels_ebi
+  source_id: MODEL1006230048
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL1006230048
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1006230048?filename=MODEL1006230048_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.mahajan2008_cardiacactionpotential_arrhythmias_model1006230048_model:Mahajan2008CardiacactionpotentialArrhythmiasModel1006230048Model
+  init_kwargs:
+    model_path: data/MODEL1006230048.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

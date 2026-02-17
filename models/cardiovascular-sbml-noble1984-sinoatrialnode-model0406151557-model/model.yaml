@@ -1,0 +1,37 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Noble1984SinoatrialnodeModel0406151557Model'
+description: 'This a model from the article: A model of sino-atrial node electrical
+  activity based on a modification of the DiFrancesco-Noble (1984) equations. Noble
+  D, Noble SJ. Proc R Soc Lond B Biol Sci. 1984 Se'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- D Noble
+- S J Noble
+upstream:
+  id: biomodels_ebi:MODEL0406151557
+  source_db: biomodels_ebi
+  source_id: MODEL0406151557
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL0406151557
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0406151557?filename=MODEL0406151557_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.noble1984_sinoatrialnode_model0406151557_model:Noble1984SinoatrialnodeModel0406151557Model
+  init_kwargs:
+    model_path: data/MODEL0406151557.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

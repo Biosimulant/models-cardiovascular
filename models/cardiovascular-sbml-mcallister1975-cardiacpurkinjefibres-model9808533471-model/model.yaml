@@ -1,0 +1,38 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Mcallister1975CardiacpurkinjefibresModel9808533471Model'
+description: 'This a model from the article: Reconstruction of the electrical activity
+  of cardiac Purkinje fibres. McAllister RE, Noble D, Tsien RW. J Physiol. 1975; 251(1):1-59
+  1185607 , Abstract: 1. The electrica'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- R E McAllister
+- D Noble
+- R W Tsien
+upstream:
+  id: biomodels_ebi:MODEL9808533471
+  source_db: biomodels_ebi
+  source_id: MODEL9808533471
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL9808533471
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL9808533471?filename=MODEL9808533471_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.mcallister1975_cardiacpurkinjefibres_model9808533471_model:Mcallister1975CardiacpurkinjefibresModel9808533471Model
+  init_kwargs:
+    model_path: data/MODEL9808533471.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

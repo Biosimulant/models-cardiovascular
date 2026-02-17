@@ -1,0 +1,40 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Sakmann2000SodiumcurrentModelcModel1006230020Model'
+description: 'This a model from the article: Distribution of a persistent sodium current
+  across the ventricular wall inguinea pigs. Sakmann BF, Spindler AJ, Bryant SM, Linz
+  KW, Noble D. Circ Res 2000 Nov 10;87(10):'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- B F Sakmann
+- A J Spindler
+- S M Bryant
+- K W Linz
+- D Noble
+upstream:
+  id: biomodels_ebi:MODEL1006230020
+  source_db: biomodels_ebi
+  source_id: MODEL1006230020
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL1006230020
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1006230020?filename=MODEL1006230020_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.sakmann2000_sodiumcurrent_modelc_model1006230020_model:Sakmann2000SodiumcurrentModelcModel1006230020Model
+  init_kwargs:
+    model_path: data/MODEL1006230020.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

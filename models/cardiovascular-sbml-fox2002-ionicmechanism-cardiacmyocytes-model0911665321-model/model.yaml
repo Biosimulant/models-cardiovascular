@@ -1,0 +1,38 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Fox2002IonicmechanismCardiacmyocytesModel0911665321Model'
+description: 'This a model from the article: Ionic mechanism of electrical alternans.
+  Fox JJ, McHarg JL, Gilmour RF Jr. Am J Physiol Heart Circ Physiol 2002 Feb;282(2):H516-30
+  11788399 , Abstract: Although alternan'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Jeffrey J Fox
+- Jennifer L McHarg
+- Robert F Gilmour
+upstream:
+  id: biomodels_ebi:MODEL0911665321
+  source_db: biomodels_ebi
+  source_id: MODEL0911665321
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL0911665321
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0911665321?filename=MODEL0911665321_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.fox2002_ionicmechanism_cardiacmyocytes_model0911665321_model:Fox2002IonicmechanismCardiacmyocytesModel0911665321Model
+  init_kwargs:
+    model_path: data/MODEL0911665321.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

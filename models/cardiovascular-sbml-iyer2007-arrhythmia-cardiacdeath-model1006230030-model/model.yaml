@@ -1,0 +1,38 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Iyer2007ArrhythmiaCardiacdeathModel1006230030Model'
+description: 'This a model from the article: Mechanisms of abnormal calcium homeostasis
+  in mutations responsible forcatecholaminergic polymorphic ventricular tachycardia.
+  Iyer V, Hajjar RJ, Armoundas AA. Circ Res 2'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Vivek Iyer
+- Roger J Hajjar
+- Antonis A Armoundas
+upstream:
+  id: biomodels_ebi:MODEL1006230030
+  source_db: biomodels_ebi
+  source_id: MODEL1006230030
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL1006230030
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1006230030?filename=MODEL1006230030_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.iyer2007_arrhythmia_cardiacdeath_model1006230030_model:Iyer2007ArrhythmiaCardiacdeathModel1006230030Model
+  init_kwargs:
+    model_path: data/MODEL1006230030.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

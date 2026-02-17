@@ -1,0 +1,38 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Courtemanche1998AtrialactionpotentialModel0913049417Model'
+description: 'This a model from the article: Ionic mechanisms underlying human atrial
+  action potential properties: insightsfrom a mathematical model. Courtemanche M,
+  Ramirez RJ, Nattel S. Am J Physiol 1998 Jul;275('
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- M Courtemanche
+- R J Ramirez
+- S Nattel
+upstream:
+  id: biomodels_ebi:MODEL0913049417
+  source_db: biomodels_ebi
+  source_id: MODEL0913049417
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL0913049417
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0913049417?filename=MODEL0913049417_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.courtemanche1998_atrialactionpotential_model0913049417_model:Courtemanche1998AtrialactionpotentialModel0913049417Model
+  init_kwargs:
+    model_path: data/MODEL0913049417.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

@@ -1,0 +1,39 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Karlstaedt2019G6pAccumulationViaPhosphoglucoModel1910170001Model'
+description: 'This model is described in the article: Glucose 6-phosphate accumulates
+  via phosphoglucose isomerase inhibition in heart muscle. Karlstaedt, A and Khanna,
+  R and Thangam, M and Taegtmeyer, H Circulatio'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Anja Karlstaedt
+- Radhika Khanna
+- Manoj Thangam
+- Heinrich Taegtmeyer
+upstream:
+  id: biomodels_ebi:MODEL1910170001
+  source_db: biomodels_ebi
+  source_id: MODEL1910170001
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL1910170001
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1910170001?filename=CardioGlyco-v1.xml
+  license: CC0
+bsim:
+  entrypoint: src.karlstaedt2019_g6p_accumulation_via_phosphogluco_model1910170001_model:Karlstaedt2019G6pAccumulationViaPhosphoglucoModel1910170001Model
+  init_kwargs:
+    model_path: data/MODEL1910170001.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

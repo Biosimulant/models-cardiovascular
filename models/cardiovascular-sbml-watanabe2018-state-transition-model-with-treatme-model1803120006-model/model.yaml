@@ -1,0 +1,38 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Watanabe2018StateTransitionModelWithTreatmeModel1803120006Model'
+description: 'Model with functions depending on Age, Male, BP (Blood Pressure).There
+  are 3 disease states: Healthy, Sick, and Dead, where the Dead state is terminal.
+  The yearly transition probabilities are: Healthy'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Leandro Watanabe
+- Jacob Barhak
+- Chris Myers
+upstream:
+  id: biomodels_ebi:MODEL1803120006
+  source_db: biomodels_ebi
+  source_id: MODEL1803120006
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL1803120006
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1803120006?filename=Example5.xml
+  license: CC0
+bsim:
+  entrypoint: src.watanabe2018_state_transition_model_with_treatme_model1803120006_model:Watanabe2018StateTransitionModelWithTreatmeModel1803120006Model
+  init_kwargs:
+    model_path: data/MODEL1803120006.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

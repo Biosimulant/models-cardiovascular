@@ -1,0 +1,40 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Aslanidi2009RightatrialtissueArrhythmogenesisModel1006230017Model'
+description: 'This a model from the article: Mechanisms of transition from normal
+  to reentrant electrical activity in a modelof rabbit atrial tissue: interaction
+  of tissue heterogeneity and anisotropy. Aslanidi OV,'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Oleg V Aslanidi
+- Mark R Boyett
+- Halina Dobrzynski
+- Jue Li
+- Henggui Zhang
+upstream:
+  id: biomodels_ebi:MODEL1006230017
+  source_db: biomodels_ebi
+  source_id: MODEL1006230017
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL1006230017
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1006230017?filename=MODEL1006230017_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.aslanidi2009_rightatrialtissue_arrhythmogenesis_model1006230017_model:Aslanidi2009RightatrialtissueArrhythmogenesisModel1006230017Model
+  init_kwargs:
+    model_path: data/MODEL1006230017.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

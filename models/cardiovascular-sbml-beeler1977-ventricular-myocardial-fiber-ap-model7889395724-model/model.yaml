@@ -1,0 +1,37 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Beeler1977VentricularMyocardialFiberApModel7889395724Model'
+description: 'This is the model described in the article: Reconstruction of the action
+  potential of ventricular myocardial fibres. Beeler GW, Reuter H. J Physiol. 1977
+  Jun;268(1):177-210. Pubmed ID: 874889 , full t'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- G W Beeler
+- H Reuter
+upstream:
+  id: biomodels_ebi:MODEL7889395724
+  source_db: biomodels_ebi
+  source_id: MODEL7889395724
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL7889395724
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL7889395724?filename=MODEL7889395724_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.beeler1977_ventricular_myocardial_fiber_ap_model7889395724_model:Beeler1977VentricularMyocardialFiberApModel7889395724Model
+  init_kwargs:
+    model_path: data/MODEL7889395724.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

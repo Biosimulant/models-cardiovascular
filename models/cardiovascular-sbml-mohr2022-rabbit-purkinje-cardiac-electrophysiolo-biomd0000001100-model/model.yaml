@@ -1,0 +1,39 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Mohr2022RabbitPurkinjeCardiacElectrophysioloBiomd0000001100Model'
+description: we performed a comparative benchmark and investigated a variety of mathematical
+  cardiac AP models, including a newly developed minimalistic model specifically tailored
+  to the AP of rabbit Purkinje cel
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Marcel Mohr
+- Chambard JM
+- Ballet V
+- Schmidt F
+upstream:
+  id: biomodels_ebi:BIOMD0000001100
+  source_db: biomodels_ebi
+  source_id: BIOMD0000001100
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000001100
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000001100?filename=RabbitPurkinjeAPModel.cellml
+  license: CC0
+bsim:
+  entrypoint: src.mohr2022_rabbit_purkinje_cardiac_electrophysiolo_biomd0000001100_model:Mohr2022RabbitPurkinjeCardiacElectrophysioloBiomd0000001100Model
+  init_kwargs:
+    model_path: data/BIOMD0000001100.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

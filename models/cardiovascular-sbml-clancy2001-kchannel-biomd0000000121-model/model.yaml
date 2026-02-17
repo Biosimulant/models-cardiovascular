@@ -1,0 +1,37 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Clancy2001KchannelBiomd0000000121Model'
+description: 'This model is according to the paper Cellular consequences of HEGR mutations
+  in the long QT syndrome: precursors to sudden cardiac death. The author used Markovian
+  model of cardiac Ikr in the paper. F'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- C E Clancy
+- Y Rudy
+upstream:
+  id: biomodels_ebi:BIOMD0000000121
+  source_db: biomodels_ebi
+  source_id: BIOMD0000000121
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000000121
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000000121?filename=BIOMD0000000121_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.clancy2001_kchannel_biomd0000000121_model:Clancy2001KchannelBiomd0000000121Model
+  init_kwargs:
+    model_path: data/BIOMD0000000121.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

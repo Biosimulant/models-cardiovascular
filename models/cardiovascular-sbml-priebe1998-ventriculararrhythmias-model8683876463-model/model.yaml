@@ -1,0 +1,37 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Priebe1998VentriculararrhythmiasModel8683876463Model'
+description: 'This a model from the article: Simulation study of cellular electric
+  properties in heart failure Priebe L, Beuckelmann DJ. Circ Res. 1998; 82(11):1206-23
+  9633920 , Abstract: Patients with severe heart'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- L Priebe
+- D J Beuckelmann
+upstream:
+  id: biomodels_ebi:MODEL8683876463
+  source_db: biomodels_ebi
+  source_id: MODEL8683876463
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL8683876463
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL8683876463?filename=MODEL8683876463_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.priebe1998_ventriculararrhythmias_model8683876463_model:Priebe1998VentriculararrhythmiasModel8683876463Model
+  init_kwargs:
+    model_path: data/MODEL8683876463.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

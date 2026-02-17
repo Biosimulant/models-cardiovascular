@@ -1,0 +1,37 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Chen2007NeuronalendothelialnosModel0491251823Model'
+description: 'This a model from the article: Vascular and perivascular nitric oxide
+  release and transport: biochemical pathways of neuronal nitric oxide synthase (NOS1)
+  and endothelial nitric oxide synthase (NOS3).'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Kejing Chen
+- Popel AS
+upstream:
+  id: biomodels_ebi:MODEL0491251823
+  source_db: biomodels_ebi
+  source_id: MODEL0491251823
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL0491251823
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0491251823?filename=MODEL0491251823_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.chen2007_neuronalendothelialnos_model0491251823_model:Chen2007NeuronalendothelialnosModel0491251823Model
+  init_kwargs:
+    model_path: data/MODEL0491251823.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

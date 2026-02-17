@@ -1,0 +1,40 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Fink2008VentricularactionpotentialModel1006230009Model'
+description: 'This a model from the article: Contributions of HERG K+ current to repolarization
+  of the human ventricularaction potential. Fink M, Noble D, Virag L, Varro A, Giles
+  WR. Prog Biophys Mol Biol 2008 Jan-'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Martin Fink
+- Denis Noble
+- Laszlo Virag
+- Andras Varro
+- Wayne R Giles
+upstream:
+  id: biomodels_ebi:MODEL1006230009
+  source_db: biomodels_ebi
+  source_id: MODEL1006230009
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL1006230009
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1006230009?filename=MODEL1006230009_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.fink2008_ventricularactionpotential_model1006230009_model:Fink2008VentricularactionpotentialModel1006230009Model
+  init_kwargs:
+    model_path: data/MODEL1006230009.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

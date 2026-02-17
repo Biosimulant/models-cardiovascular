@@ -1,0 +1,37 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Tentusscher2006VentricularcellmodelModel7910499126Model'
+description: 'This a model from the article: Alternans and spiral breakup in a human
+  ventricular tissue model. ten Tusscher KH, Panfilov AV. Am J Physiol Heart Circ
+  Physiol. (2006) 291(3); H1088-100 16565318 , Abst'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- K H W J ten Tusscher
+- A V Panfilov
+upstream:
+  id: biomodels_ebi:MODEL7910499126
+  source_db: biomodels_ebi
+  source_id: MODEL7910499126
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL7910499126
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL7910499126?filename=MODEL7910499126_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.tentusscher2006_ventricularcellmodel_model7910499126_model:Tentusscher2006VentricularcellmodelModel7910499126Model
+  init_kwargs:
+    model_path: data/MODEL7910499126.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

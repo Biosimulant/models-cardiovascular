@@ -1,0 +1,38 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Yanagihara1980PacemakeractivityModel1006230072Model'
+description: 'This a model from the article: Reconstruction of sino-atrial node pacemaker
+  potential based on the voltageclamp experiments. Yanagihara K, Noma A, Irisawa H.
+  Jpn J Physiol 1980;30(6):841-57 7265560 , '
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- K Yanagihara
+- A Noma
+- H Irisawa
+upstream:
+  id: biomodels_ebi:MODEL1006230072
+  source_db: biomodels_ebi
+  source_id: MODEL1006230072
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL1006230072
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1006230072?filename=MODEL1006230072_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.yanagihara1980_pacemakeractivity_model1006230072_model:Yanagihara1980PacemakeractivityModel1006230072Model
+  init_kwargs:
+    model_path: data/MODEL1006230072.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

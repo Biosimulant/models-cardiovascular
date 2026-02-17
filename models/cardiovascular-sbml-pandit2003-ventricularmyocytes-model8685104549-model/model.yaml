@@ -1,0 +1,38 @@
+schema_version: '2.0'
+title: 'Cardiovascular: Pandit2003VentricularmyocytesModel8685104549Model'
+description: 'This a model from the article: A mathematical model of the electrophysiological
+  alterations in rat ventricular myocytes in type-I diabetes. Pandit SV, Giles WR,
+  Demir SS. Biophys J. 2003;84(2 Pt 1):83'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Sandeep V Pandit
+- Wayne R Giles
+- Semahat S Demir
+upstream:
+  id: biomodels_ebi:MODEL8685104549
+  source_db: biomodels_ebi
+  source_id: MODEL8685104549
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL8685104549
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL8685104549?filename=MODEL8685104549_url.xml
+  license: CC0
+bsim:
+  entrypoint: src.pandit2003_ventricularmyocytes_model8685104549_model:Pandit2003VentricularmyocytesModel8685104549Model
+  init_kwargs:
+    model_path: data/MODEL8685104549.xml
+  min_dt: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.3.1
+    - numpy==1.26.4
+io:
+  outputs:
+  - state

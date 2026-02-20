@@ -22,7 +22,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL0910846879
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0910846879?filename=MODEL0910846879_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.guyton1972_thirstdrinking_saltappetite_model0910846879_model:Guyton1972ThirstdrinkingSaltappetiteModel0910846879Model
   init_kwargs:
     model_path: data/MODEL0910846879.xml

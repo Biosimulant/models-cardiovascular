@@ -24,7 +24,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL1150151512
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1150151512?filename=MODEL1150151512_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.bondarenko2004_myocyte_ap_apical_model1150151512_model:Bondarenko2004MyocyteApApicalModel1150151512Model
   init_kwargs:
     model_path: data/MODEL1150151512.xml

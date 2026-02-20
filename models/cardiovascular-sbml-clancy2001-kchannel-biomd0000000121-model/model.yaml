@@ -21,7 +21,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000000121
   download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000000121?filename=BIOMD0000000121_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.clancy2001_kchannel_biomd0000000121_model:Clancy2001KchannelBiomd0000000121Model
   init_kwargs:
     model_path: data/BIOMD0000000121.xml

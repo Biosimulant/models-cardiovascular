@@ -22,7 +22,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL0913049417
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0913049417?filename=MODEL0913049417_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.courtemanche1998_atrialactionpotential_model0913049417_model:Courtemanche1998AtrialactionpotentialModel0913049417Model
   init_kwargs:
     model_path: data/MODEL0913049417.xml

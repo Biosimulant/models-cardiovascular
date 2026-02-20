@@ -21,7 +21,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL0479527919
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0479527919?filename=MODEL0479527919_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.luo1991_ventricularcardiacaction_model0479527919_model:Luo1991VentricularcardiacactionModel0479527919Model
   init_kwargs:
     model_path: data/MODEL0479527919.xml

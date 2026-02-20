@@ -24,7 +24,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL1006230009
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1006230009?filename=MODEL1006230009_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.fink2008_ventricularactionpotential_model1006230009_model:Fink2008VentricularactionpotentialModel1006230009Model
   init_kwargs:
     model_path: data/MODEL1006230009.xml

@@ -22,7 +22,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL0911665321
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0911665321?filename=MODEL0911665321_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.fox2002_ionicmechanism_cardiacmyocytes_model0911665321_model:Fox2002IonicmechanismCardiacmyocytesModel0911665321Model
   init_kwargs:
     model_path: data/MODEL0911665321.xml

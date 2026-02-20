@@ -22,7 +22,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL1006230030
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1006230030?filename=MODEL1006230030_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.iyer2007_arrhythmia_cardiacdeath_model1006230030_model:Iyer2007ArrhythmiaCardiacdeathModel1006230030Model
   init_kwargs:
     model_path: data/MODEL1006230030.xml

@@ -22,7 +22,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL9808533471
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL9808533471?filename=MODEL9808533471_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.mcallister1975_cardiacpurkinjefibres_model9808533471_model:Mcallister1975CardiacpurkinjefibresModel9808533471Model
   init_kwargs:
     model_path: data/MODEL9808533471.xml

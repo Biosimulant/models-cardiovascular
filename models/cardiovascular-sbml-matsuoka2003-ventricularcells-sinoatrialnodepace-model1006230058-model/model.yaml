@@ -24,7 +24,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL1006230058
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1006230058?filename=MODEL1006230058_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.matsuoka2003_ventricularcells_sinoatrialnodepace_model1006230058_model:Matsuoka2003VentricularcellsSinoatrialnodepaceModel1006230058Model
   init_kwargs:
     model_path: data/MODEL1006230058.xml

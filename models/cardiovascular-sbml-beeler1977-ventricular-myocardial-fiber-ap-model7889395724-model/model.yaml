@@ -21,7 +21,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL7889395724
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL7889395724?filename=MODEL7889395724_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.beeler1977_ventricular_myocardial_fiber_ap_model7889395724_model:Beeler1977VentricularMyocardialFiberApModel7889395724Model
   init_kwargs:
     model_path: data/MODEL7889395724.xml

@@ -21,7 +21,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL0406270966
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0406270966?filename=MODEL0406270966_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.livshitz2007_cardiacmyocytes_model0406270966_model:Livshitz2007CardiacmyocytesModel0406270966Model
   init_kwargs:
     model_path: data/MODEL0406270966.xml

@@ -22,7 +22,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL0911270005
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0911270005?filename=MODEL0911270005_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.guyton1972_autonomics_model0911270005_model:Guyton1972AutonomicsModel0911270005Model
   init_kwargs:
     model_path: data/MODEL0911270005.xml

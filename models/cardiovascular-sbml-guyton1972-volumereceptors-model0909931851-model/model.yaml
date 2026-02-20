@@ -22,7 +22,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL0909931851
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0909931851?filename=MODEL0909931851_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.guyton1972_volumereceptors_model0909931851_model:Guyton1972VolumereceptorsModel0909931851Model
   init_kwargs:
     model_path: data/MODEL0909931851.xml

@@ -24,7 +24,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL2402270001
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL2402270001?filename=ICN_model_v15.slx
   license: CC0
-bsim:
+biosim:
   entrypoint: src.gee2023_central_and_intrinsic_cardiac_circuits_model2402270001_model:Gee2023CentralAndIntrinsicCardiacCircuitsModel2402270001Model
   init_kwargs:
     model_path: data/MODEL2402270001.xml

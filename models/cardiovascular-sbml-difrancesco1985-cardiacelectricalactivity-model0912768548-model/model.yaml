@@ -21,7 +21,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL0912768548
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0912768548?filename=MODEL0912768548_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.difrancesco1985_cardiacelectricalactivity_model0912768548_model:Difrancesco1985CardiacelectricalactivityModel0912768548Model
   init_kwargs:
     model_path: data/MODEL0912768548.xml

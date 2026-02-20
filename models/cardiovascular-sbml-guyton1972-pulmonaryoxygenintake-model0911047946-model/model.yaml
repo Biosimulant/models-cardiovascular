@@ -22,7 +22,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL0911047946
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0911047946?filename=MODEL0911047946_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.guyton1972_pulmonaryoxygenintake_model0911047946_model:Guyton1972PulmonaryoxygenintakeModel0911047946Model
   init_kwargs:
     model_path: data/MODEL0911047946.xml

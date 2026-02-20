@@ -23,7 +23,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL1006230065
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1006230065?filename=MODEL1006230065_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.aslanidi2009_caninepvj_model1006230065_model:Aslanidi2009CaninepvjModel1006230065Model
   init_kwargs:
     model_path: data/MODEL1006230065.xml

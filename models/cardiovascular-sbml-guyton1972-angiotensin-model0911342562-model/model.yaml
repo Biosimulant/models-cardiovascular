@@ -22,7 +22,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL0911342562
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0911342562?filename=MODEL0911342562_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.guyton1972_angiotensin_model0911342562_model:Guyton1972AngiotensinModel0911342562Model
   init_kwargs:
     model_path: data/MODEL0911342562.xml

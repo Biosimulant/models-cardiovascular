@@ -21,7 +21,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL0912160003
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0912160003?filename=MODEL0912160003_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.luo1994_cardiacventricularactionpotential_model0912160003_model:Luo1994CardiacventricularactionpotentialModel0912160003Model
   init_kwargs:
     model_path: data/MODEL0912160003.xml

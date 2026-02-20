@@ -24,7 +24,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL1006230073
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1006230073?filename=MODEL1006230073_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.noble1991_cardiacactionpotential_sodiumcalciumex_model1006230073_model:Noble1991CardiacactionpotentialSodiumcalciumexModel1006230073Model
   init_kwargs:
     model_path: data/MODEL1006230073.xml

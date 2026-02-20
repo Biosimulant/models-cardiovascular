@@ -23,7 +23,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL1006230118
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1006230118?filename=MODEL1006230118_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.saucerman2003_cardiacmyocyte_betaadrenergic_model1006230118_model:Saucerman2003CardiacmyocyteBetaadrenergicModel1006230118Model
   init_kwargs:
     model_path: data/MODEL1006230118.xml

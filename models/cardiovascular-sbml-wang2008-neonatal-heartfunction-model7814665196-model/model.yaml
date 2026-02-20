@@ -21,7 +21,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL7814665196
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL7814665196?filename=MODEL7814665196_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.wang2008_neonatal_heartfunction_model7814665196_model:Wang2008NeonatalHeartfunctionModel7814665196Model
   init_kwargs:
     model_path: data/MODEL7814665196.xml

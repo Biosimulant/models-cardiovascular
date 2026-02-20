@@ -24,7 +24,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL1006230021
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1006230021?filename=MODEL1006230021_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.sakmann2000_sodiumcurrent_modela_model1006230021_model:Sakmann2000SodiumcurrentModelaModel1006230021Model
   init_kwargs:
     model_path: data/MODEL1006230021.xml

@@ -23,7 +23,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000001100
   download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000001100?filename=RabbitPurkinjeAPModel.cellml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.mohr2022_rabbit_purkinje_cardiac_electrophysiolo_biomd0000001100_model:Mohr2022RabbitPurkinjeCardiacElectrophysioloBiomd0000001100Model
   init_kwargs:
     model_path: data/BIOMD0000001100.xml

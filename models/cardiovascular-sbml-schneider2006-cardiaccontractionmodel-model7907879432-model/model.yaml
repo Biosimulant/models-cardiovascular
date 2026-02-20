@@ -23,7 +23,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL7907879432
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL7907879432?filename=MODEL7907879432_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.schneider2006_cardiaccontractionmodel_model7907879432_model:Schneider2006CardiaccontractionmodelModel7907879432Model
   init_kwargs:
     model_path: data/MODEL7907879432.xml

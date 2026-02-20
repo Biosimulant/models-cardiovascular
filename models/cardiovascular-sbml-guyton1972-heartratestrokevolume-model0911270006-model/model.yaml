@@ -22,7 +22,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL0911270006
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0911270006?filename=MODEL0911270006_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.guyton1972_heartratestrokevolume_model0911270006_model:Guyton1972HeartratestrokevolumeModel0911270006Model
   init_kwargs:
     model_path: data/MODEL0911270006.xml

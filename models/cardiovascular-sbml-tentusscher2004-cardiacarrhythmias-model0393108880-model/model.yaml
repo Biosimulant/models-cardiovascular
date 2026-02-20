@@ -23,7 +23,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL0393108880
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0393108880?filename=MODEL0393108880_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.tentusscher2004_cardiacarrhythmias_model0393108880_model:Tentusscher2004CardiacarrhythmiasModel0393108880Model
   init_kwargs:
     model_path: data/MODEL0393108880.xml

@@ -24,7 +24,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL1006230000
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1006230000?filename=MODEL1006230000_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.smith2004_cvs_human_model1006230000_model:Smith2004CvsHumanModel1006230000Model
   init_kwargs:
     model_path: data/MODEL1006230000.xml

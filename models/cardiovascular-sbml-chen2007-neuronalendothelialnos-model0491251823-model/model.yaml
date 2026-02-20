@@ -21,7 +21,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL0491251823
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0491251823?filename=MODEL0491251823_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.chen2007_neuronalendothelialnos_model0491251823_model:Chen2007NeuronalendothelialnosModel0491251823Model
   init_kwargs:
     model_path: data/MODEL0491251823.xml

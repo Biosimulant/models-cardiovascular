@@ -22,7 +22,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL0847999575
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0847999575?filename=MODEL0847999575_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.iyer2004_ventricularmyocyte_model0847999575_model:Iyer2004VentricularmyocyteModel0847999575Model
   init_kwargs:
     model_path: data/MODEL0847999575.xml

@@ -24,7 +24,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000001101
   download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000001101?filename=Zhou2024_Updated-model.m
   license: CC0
-bsim:
+biosim:
   entrypoint: src.zhou2024_post_infarction_myocyte_electromechanic_biomd0000001101_model:Zhou2024PostInfarctionMyocyteElectromechanicBiomd0000001101Model
   init_kwargs:
     model_path: data/BIOMD0000001101.xml

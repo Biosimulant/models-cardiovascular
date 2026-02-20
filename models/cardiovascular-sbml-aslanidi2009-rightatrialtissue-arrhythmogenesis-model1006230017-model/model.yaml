@@ -24,7 +24,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL1006230017
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1006230017?filename=MODEL1006230017_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.aslanidi2009_rightatrialtissue_arrhythmogenesis_model1006230017_model:Aslanidi2009RightatrialtissueArrhythmogenesisModel1006230017Model
   init_kwargs:
     model_path: data/MODEL1006230017.xml

@@ -22,7 +22,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL0910896131
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0910896131?filename=MODEL0910896131_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.guyton1972_stressrelaxation_model0910896131_model:Guyton1972StressrelaxationModel0910896131Model
   init_kwargs:
     model_path: data/MODEL0910896131.xml

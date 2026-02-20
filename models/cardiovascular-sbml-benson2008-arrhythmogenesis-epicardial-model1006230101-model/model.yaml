@@ -23,7 +23,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL1006230101
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1006230101?filename=MODEL1006230101_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.benson2008_arrhythmogenesis_epicardial_model1006230101_model:Benson2008ArrhythmogenesisEpicardialModel1006230101Model
   init_kwargs:
     model_path: data/MODEL1006230101.xml

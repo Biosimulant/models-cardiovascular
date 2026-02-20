@@ -21,7 +21,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL0406151557
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0406151557?filename=MODEL0406151557_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.noble1984_sinoatrialnode_model0406151557_model:Noble1984SinoatrialnodeModel0406151557Model
   init_kwargs:
     model_path: data/MODEL0406151557.xml

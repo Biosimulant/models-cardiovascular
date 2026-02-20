@@ -23,7 +23,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL1006230063
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1006230063?filename=MODEL1006230063_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.noble1998_ventricularcellmodel_modelc_model1006230063_model:Noble1998VentricularcellmodelModelcModel1006230063Model
   init_kwargs:
     model_path: data/MODEL1006230063.xml

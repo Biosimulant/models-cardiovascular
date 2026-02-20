@@ -22,7 +22,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL0911231713
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0911231713?filename=MODEL0911231713_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.guyton1972_hearthypertrophy_model0911231713_model:Guyton1972HearthypertrophyModel0911231713Model
   init_kwargs:
     model_path: data/MODEL0911231713.xml

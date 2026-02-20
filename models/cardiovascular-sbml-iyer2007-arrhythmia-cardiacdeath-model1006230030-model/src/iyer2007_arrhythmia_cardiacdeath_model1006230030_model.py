@@ -12,13 +12,13 @@ from pathlib import Path
 from typing import Any, Dict, Optional, Set, TYPE_CHECKING
 
 if TYPE_CHECKING:  # pragma: no cover - typing only
-    from bsim import BioWorld
+    from biosim import BioWorld
 
-import bsim
-from bsim.signals import BioSignal, SignalMetadata
+import biosim
+from biosim.signals import BioSignal, SignalMetadata
 
 
-class SbmlIyer2007ArrhythmiaCardiacdeath(bsim.BioModule):
+class SbmlIyer2007ArrhythmiaCardiacdeath(biosim.BioModule):
     """BioModule wrapper for SBML model: Iyer2007_Arrhythmia_CardiacDeath."""
 
     def __init__(self, model_path: str = "data/MODEL1006230030.xml", min_dt: float = 0.01) -> None:

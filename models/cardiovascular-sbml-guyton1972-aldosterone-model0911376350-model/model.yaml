@@ -22,7 +22,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL0911376350
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0911376350?filename=MODEL0911376350_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.guyton1972_aldosterone_model0911376350_model:Guyton1972AldosteroneModel0911376350Model
   init_kwargs:
     model_path: data/MODEL0911376350.xml

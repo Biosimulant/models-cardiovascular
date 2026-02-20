@@ -21,7 +21,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL0848116681
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0848116681?filename=MODEL0848116681_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.hund2004_ventricularepicardialaction_model0848116681_model:Hund2004VentricularepicardialactionModel0848116681Model
   init_kwargs:
     model_path: data/MODEL0848116681.xml

@@ -21,7 +21,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL1006230070
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1006230070?filename=MODEL1006230070_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.earm1990_calciumdynamics_cardiac_model1006230070_model:Earm1990CalciumdynamicsCardiacModel1006230070Model
   init_kwargs:
     model_path: data/MODEL1006230070.xml

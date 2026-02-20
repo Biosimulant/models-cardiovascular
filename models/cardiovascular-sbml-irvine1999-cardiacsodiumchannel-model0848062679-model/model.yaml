@@ -22,7 +22,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL0848062679
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0848062679?filename=MODEL0848062679_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.irvine1999_cardiacsodiumchannel_model0848062679_model:Irvine1999CardiacsodiumchannelModel0848062679Model
   init_kwargs:
     model_path: data/MODEL0848062679.xml

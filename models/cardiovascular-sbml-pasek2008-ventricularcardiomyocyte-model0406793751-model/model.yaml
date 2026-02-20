@@ -23,7 +23,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL0406793751
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0406793751?filename=MODEL0406793751_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.pasek2008_ventricularcardiomyocyte_model0406793751_model:Pasek2008VentricularcardiomyocyteModel0406793751Model
   init_kwargs:
     model_path: data/MODEL0406793751.xml

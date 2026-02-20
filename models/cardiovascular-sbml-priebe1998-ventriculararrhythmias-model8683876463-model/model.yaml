@@ -21,7 +21,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL8683876463
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL8683876463?filename=MODEL8683876463_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.priebe1998_ventriculararrhythmias_model8683876463_model:Priebe1998VentriculararrhythmiasModel8683876463Model
   init_kwargs:
     model_path: data/MODEL8683876463.xml

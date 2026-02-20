@@ -22,7 +22,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL1006230072
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1006230072?filename=MODEL1006230072_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.yanagihara1980_pacemakeractivity_model1006230072_model:Yanagihara1980PacemakeractivityModel1006230072Model
   init_kwargs:
     model_path: data/MODEL1006230072.xml

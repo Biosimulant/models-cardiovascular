@@ -23,7 +23,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL1006230121
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1006230121?filename=MODEL1006230121_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.tran2009_cadynamicsserca_cardiac_model1006230121_model:Tran2009CadynamicssercaCardiacModel1006230121Model
   init_kwargs:
     model_path: data/MODEL1006230121.xml

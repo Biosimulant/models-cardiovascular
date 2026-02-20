@@ -24,7 +24,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL1006230048
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1006230048?filename=MODEL1006230048_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.mahajan2008_cardiacactionpotential_arrhythmias_model1006230048_model:Mahajan2008CardiacactionpotentialArrhythmiasModel1006230048Model
   init_kwargs:
     model_path: data/MODEL1006230048.xml

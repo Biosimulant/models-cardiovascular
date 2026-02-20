@@ -21,7 +21,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL7910499126
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL7910499126?filename=MODEL7910499126_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.tentusscher2006_ventricularcellmodel_model7910499126_model:Tentusscher2006VentricularcellmodelModel7910499126Model
   init_kwargs:
     model_path: data/MODEL7910499126.xml

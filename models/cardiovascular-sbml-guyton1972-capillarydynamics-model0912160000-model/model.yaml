@@ -22,7 +22,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL0912160000
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0912160000?filename=MODEL0912160000_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.guyton1972_capillarydynamics_model0912160000_model:Guyton1972CapillarydynamicsModel0912160000Model
   init_kwargs:
     model_path: data/MODEL0912160000.xml

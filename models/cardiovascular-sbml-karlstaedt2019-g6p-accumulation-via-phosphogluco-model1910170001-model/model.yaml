@@ -23,7 +23,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL1910170001
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1910170001?filename=CardioGlyco-v1.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.karlstaedt2019_g6p_accumulation_via_phosphogluco_model1910170001_model:Karlstaedt2019G6pAccumulationViaPhosphoglucoModel1910170001Model
   init_kwargs:
     model_path: data/MODEL1910170001.xml

@@ -22,7 +22,7 @@ upstream:
   original_url: https://www.ebi.ac.uk/biomodels/MODEL0911091440
   download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0911091440?filename=MODEL0911091440_url.xml
   license: CC0
-bsim:
+biosim:
   entrypoint: src.guyton1972_pulmonaryfluiddynamics_model0911091440_model:Guyton1972PulmonaryfluiddynamicsModel0911091440Model
   init_kwargs:
     model_path: data/MODEL0911091440.xml

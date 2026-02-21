@@ -1,67 +1,77 @@
-# models
+# models-cardiovascular
 
-Public curated monorepo of biological simulation model packs and composed spaces for the **biosim** platform. Models are modular, composable components that can be wired together into full simulation scenarios without writing code — just YAML.
+Curated collection of **cardiovascular** simulation models for the **biosim** platform. This repository contains comprehensive computational models of the cardiovascular system, including cardiac electrophysiology, ion channels, circulation dynamics, blood pressure regulation, and arrhythmogenesis.
 
 ## What's Inside
 
-### Models (20 packages)
+### Models (74 packages)
 
 Each model is a self-contained simulation component with a `model.yaml` manifest.
 
-**Neuroscience** — spiking neural networks, synaptic dynamics, and neural monitoring:
+**Cardiovascular** — cardiac electrophysiology, hemodynamics, and circulatory regulation:
 
-| Model | Description |
-|-------|-------------|
-| `neuro-izhikevich-population` | Spiking neuron population (Regular Spiking, Fast Spiking presets) |
-| `neuro-hodgkin-huxley-population` | Conductance-based Hodgkin-Huxley neuron population |
-| `neuro-hodgkin-huxley-state-monitor` | Detailed HH state monitor (V, gates, ionic currents) |
-| `neuro-exp-synapse-current` | Exponential-decay synapses with configurable connectivity |
-| `neuro-step-current` | Constant/step current injection into neurons |
-| `neuro-poisson-input` | Poisson-distributed spike train generator |
-| `neuro-spike-monitor` | Spike raster visualization |
-| `neuro-rate-monitor` | Firing rate computation and display |
-| `neuro-state-monitor` | Neuron state variable tracking (membrane potential, etc.) |
-| `neuro-spike-metrics` | Summary statistics from spike streams |
+#### Cardiac Action Potential Models
+- `cardiovascular-sbml-beeler1977-ventricular-myocardial-fiber-ap` — Reconstruction of ventricular action potential
+- `cardiovascular-sbml-courtemanche1998-atrialactionpotential` — Ionic mechanisms underlying human atrial action potential
+- `cardiovascular-sbml-difrancesco1985-cardiacelectricalactivity` — Model of cardiac electrical activity
+- `cardiovascular-sbml-fink2008-ventricularactionpotential` — HERG K+ current contributions to repolarization
+- `cardiovascular-sbml-fox2002-ionicmechanism-cardiacmyocytes` — Ionic mechanism of electrical alternans
+- `cardiovascular-sbml-grandi2009-ventricularmyocyte` — Novel computational model of human ventricular myocyte
+- `cardiovascular-sbml-bondarenko2004-myocyte-ap-apical` — Computer model of action potential in mouse ventricular myocytes
+- `cardiovascular-sbml-luo1991-ventricular-ap` — Dynamic model of ventricular cardiac action potential
+- `cardiovascular-sbml-luo1994-ventricularcell-epicardium` — Model of guinea-pig ventricular cells
+- `cardiovascular-sbml-ten-tusscher-2004-ventricular-myocyte` — Ten Tusscher-Panfilov human ventricular cell model
 
-**Ecology** — population dynamics, environments, and ecosystem interactions:
+#### Ion Channel Models
+- `cardiovascular-sbml-clancy2001-kchannel` — Cellular consequences of HERG mutations in K+ channels
+- `cardiovascular-sbml-luo1995-iks` — Dynamic model of the cardiac delayed rectifier K+ current
+- `cardiovascular-sbml-pandit2003-ikr` — Model of IKr delayed rectifier current in human atrial myocytes
 
-| Model | Description |
-|-------|-------------|
-| `ecology-abiotic-environment` | Broadcasts environmental conditions (temperature, water, food, sunlight) |
-| `ecology-organism-population` | Population dynamics with birth, death, and predation |
-| `ecology-predator-prey-interaction` | Predation rates and functional response |
-| `ecology-population-monitor` | Population size tracking over time |
-| `ecology-phase-space-monitor` | Predator vs prey phase-space visualization |
-| `ecology-population-metrics` | Ecosystem summary statistics |
+#### Arrhythmogenesis & Cardiac Tissue Models
+- `cardiovascular-sbml-aslanidi2009-rightatrialtissue-arrhythmogenesis` — Mechanisms of transition from normal to reentrant electrical activity
+- `cardiovascular-sbml-aslanidi2009-caninepvj` — Optimal velocity and safety of discontinuous conduction
+- `cardiovascular-sbml-benson2008-arrhythmogenesis-endocardial` — Canine virtual ventricular wall (endocardial)
+- `cardiovascular-sbml-benson2008-arrhythmogenesis-epicardial` — Canine virtual ventricular wall (epicardial)
+- `cardiovascular-sbml-benson2008-arrhythmogenesis-mcell` — Canine virtual ventricular wall (M-cell)
 
-**Virtual Cell** — gene regulatory networks, perturbations, and expression monitoring:
+#### Calcium Dynamics
+- `cardiovascular-sbml-cooling2007-ip3transients-cardiacmyocyte` — Modeling hypertrophic IP3 transients in cardiac myocytes
+- `cardiovascular-sbml-earm1990-calciumdynamics-cardiac` — Model of single atrial cell calcium dynamics
+- `cardiovascular-sbml-hinch2004-carelease-spark` — Mathematical model of calcium release sparks
 
-| Model | Description |
-|-------|-------------|
-| `virtualcell-perturbation-source` | Defines gene perturbations (knockout/overexpression) over time |
-| `virtualcell-grn-predictor` | Classical GRN-based virtual cell producing expression profiles |
-| `virtualcell-arc-state-predictor` | Arc Institute State Transition ML model for expression prediction |
-| `virtualcell-expression-translator` | Translates expression profiles into neural input currents |
-| `virtualcell-expression-monitor` | Visualizes gene expression fold-changes and timeseries |
+#### Circulation & Blood Pressure Regulation (Guyton Models)
+- `cardiovascular-sbml-guyton1972-aldosterone` — Aldosterone regulation in circulation
+- `cardiovascular-sbml-guyton1972-angiotensin` — Angiotensin system modeling
+- `cardiovascular-sbml-guyton1972-antidiuretichormone` — Antidiuretic hormone effects
+- `cardiovascular-sbml-guyton1972-atrialnatriureticpeptide` — Atrial natriuretic peptide regulation
+- `cardiovascular-sbml-guyton1972-autonomics` — Autonomic nervous system control
+- `cardiovascular-sbml-guyton1972-capillarydynamics` — Capillary dynamics modeling
+- `cardiovascular-sbml-guyton1972-electrolytes` — Electrolyte balance
+- `cardiovascular-sbml-guyton1972-hearthypertrophy` — Heart hypertrophy modeling
+- `cardiovascular-sbml-guyton1972-heartratestrokevolume` — Heart rate and stroke volume control
+- `cardiovascular-sbml-guyton1972-kidneybloodflow` — Renal blood flow regulation
+- `cardiovascular-sbml-guyton1972-pulmonary` — Pulmonary circulation
+- `cardiovascular-sbml-guyton1972-reninrelease` — Renin release mechanisms
+- `cardiovascular-sbml-guyton1972-stress` — Stress response in circulation
 
-### Spaces (6 composed simulations)
+#### Vascular & Endothelial Models
+- `cardiovascular-sbml-chen2006-nitric-oxide-release-from-endothelial-c` — Nitric oxide release from endothelial cells
+- `cardiovascular-sbml-chen2007-neuronalendothelialnos` — Vascular and perivascular nitric oxide release
 
-Spaces wire multiple models into runnable simulation scenarios.
+#### Neural Control & Autonomics
+- `cardiovascular-sbml-gee2023-central-and-intrinsic-cardiac-circuits` — Neural control of cardiovascular behavior and homeostasis
 
-| Space | Models | Description |
-|-------|--------|-------------|
-| `neuro-single-neuron` | 5 | Single Izhikevich neuron with step current, monitors, and metrics |
-| `neuro-microcircuit` | 13 | Balanced E/I microcircuit: 40 excitatory + 10 inhibitory neurons, Poisson input, recurrent synaptic connectivity |
-| `ecology-predator-prey` | 7 | Classic predator-prey dynamics with environment broadcast and monitors |
-| `ecology-temperature-control` | 7 | Predator-prey ecosystem where environment temperature is an exposed parameter |
-| `virtualcell-drug-neural-effect` | 8 | Virtual cell perturbation translated into a neural spiking response |
+#### Pacemaker & SA Node Models
+- `cardiovascular-sbml-kurata2002-sinoatrialnode` — Pacemaker activity of sinoatrial node cells
+- `cardiovascular-sbml-zhang2000-sinoatrial` — Mathematical models of sinoatrial node pacemaking
+
+**Note:** This repository contains 74 models total. The above represents key categories and examples. For a complete list, see the `models/` directory.
 
 ## Layout
 
 ```
-models/
+models-cardiovascular/
 ├── models/<model-slug>/     # One model package per folder, each with model.yaml
-├── spaces/<space-slug>/     # Composed spaces with space.yaml
 ├── libs/                    # Shared helper code for curated models
 ├── templates/model-pack/    # Starter template for new model packs
 ├── scripts/                 # Manifest and entrypoint validation scripts
@@ -79,25 +89,22 @@ Every model implements the `biosim.BioModule` interface:
 - **`outputs()`** — declares named output signals the module produces
 - **`advance_to(t)`** — advances the model's internal state to time `t`
 
-Most curated models include Python source under `src/` and are wired together via `space.yaml` without additional code.
+Most curated models include Python source under `src/` and are wired together via `space.yaml` in composed simulations without additional code.
 
-### Wiring
+### Model Standards
 
-Spaces connect models by routing outputs to inputs in `space.yaml`:
+All models in this repository:
+- Use SBML (Systems Biology Markup Language) format
+- Are sourced from CellML, BioModels, and other curated electrophysiology repositories
+- Include tellurium runtime for SBML execution
+- Provide `state` output for monitoring simulation results
+- Support configurable timesteps via `min_dt` parameter
 
-```yaml
-wiring:
-  - from: current_source.current
-    to: [neuron.input_current]
-  - from: neuron.spikes
-    to: [spike_monitor.spikes, rate_monitor.spikes]
-```
+### Running Models
 
-No code changes needed to recombine models into new configurations.
+Models are loaded and executed by the `biosim-platform`. The platform reads `model.yaml`, instantiates the model from its entrypoint, and runs the simulation loop at the configured timestep for the specified duration.
 
-### Running a Space
-
-Spaces are loaded and executed by the `biosim-platform`. The platform reads `space.yaml`, instantiates models from their manifests, wires signals, and runs the simulation loop at the configured `tick_dt` timestep for the specified `duration`.
+Individual models can be integrated into larger composed simulations (spaces) by wiring their outputs to other models' inputs, enabling multi-scale cardiac modeling.
 
 ## Getting Started
 
@@ -117,25 +124,27 @@ pip install "biosim @ git+https://github.com/BioSimulant/biosim.git@main"
 1. Copy `templates/model-pack/` to `models/<your-model-slug>/`
 2. Edit `model.yaml` with metadata, entrypoint, and pinned dependencies
 3. Implement your module (subclass `biosim.BioModule` or use a built-in pack)
-4. Validate: `python scripts/validate_manifests.py && python scripts/check_entrypoints.py`
+4. Add cardiovascular-specific tags and categorization
+5. Validate: `python scripts/validate_manifests.py && python scripts/check_entrypoints.py`
 
-### Create a New Space
+### Using Models in Spaces
 
-1. Create `spaces/<your-space-slug>/space.yaml`
-2. Reference models by `manifest_path` (e.g., `models/neuro-step-current/model.yaml`)
-3. Define wiring between model outputs and inputs
-4. Set `runtime.duration` and `runtime.tick_dt`
+To integrate cardiovascular models into larger simulations:
+
+1. Reference models by `manifest_path` (e.g., `models/cardiovascular-sbml-luo1991-ventricular-ap/model.yaml`)
+2. Wire model outputs to inputs of other models in your space configuration
+3. Compose multi-scale simulations combining ion channels, cells, tissues, and circulation
+4. Configure runtime parameters and simulation duration
 
 ## Linking in biosim-platform
 
-- Root manifests can be linked with `manifest_path=model.yaml` or `space.yaml`
-- Subdirectory manifests require explicit paths:
-  - `models/neuro-izhikevich-population/model.yaml`
-  - `spaces/neuro-microcircuit/space.yaml`
+- Models can be linked with explicit paths:
+  - `models/cardiovascular-sbml-courtemanche1998-atrialactionpotential/model.yaml`
+- Models can be composed with other domain models (metabolism, signaling, etc.) in multi-scale simulations
 
 ## External Repos
 
-External authors can keep models in independent repositories and link them directly in `biosim-platform`. This monorepo is curated, not exclusive.
+External authors can keep models in independent repositories and link them directly in `biosim-platform`. This repository is curated, not exclusive.
 
 ## Validation & CI
 
@@ -143,7 +152,7 @@ Three scripts enforce repository integrity on every push:
 
 | Script | Purpose |
 |--------|---------|
-| `scripts/validate_manifests.py` | Schema validation for all model.yaml and space.yaml files |
+| `scripts/validate_manifests.py` | Schema validation for all model.yaml files |
 | `scripts/check_entrypoints.py` | Verifies Python entrypoints are importable and callable |
 | `scripts/check_public_boundary.sh` | Prevents business-sensitive content in this public repo |
 
@@ -152,10 +161,28 @@ The CI pipeline (`.github/workflows/ci.yml`) runs: **secret scan** → **manifes
 ## Contributing
 
 - All dependencies must use exact version pinning (`==`)
-- Model slugs use kebab-case with domain prefix (`neuro-`, `ecology-`, `virtualcell-`)
-- Custom modules must follow the `biosim.BioModule` interface
+- Model slugs use kebab-case with domain prefix (`cardiovascular-sbml-`)
+- Models must follow the `biosim.BioModule` interface
+- SBML/CellML models use tellurium runtime for execution
 - Pre-commit hooks enforce trailing whitespace, EOF newlines, YAML syntax, and secret detection
 - See [docs/PUBLIC_INTERNAL_BOUNDARY.md](docs/PUBLIC_INTERNAL_BOUNDARY.md) for content policy
+
+## Domain-Specific Notes
+
+**Cardiovascular Focus Areas:**
+- **Cardiac Electrophysiology**: Action potential models for ventricular, atrial, SA node, and Purkinje cells
+- **Ion Channels**: Models of Na+, K+, Ca2+, and other cardiac ion currents
+- **Arrhythmogenesis**: Models of reentrant circuits, conduction velocity, and cardiac arrhythmias
+- **Calcium Dynamics**: Intracellular calcium handling, sparks, and excitation-contraction coupling
+- **Circulation Control**: Guyton models of long-term blood pressure regulation, hormonal control, and autonomics
+- **Vascular Function**: Endothelial function, nitric oxide signaling, and hemodynamics
+- **Multi-Scale Integration**: From ion channels → cells → tissue → organ → whole-body circulation
+
+**Common Model Types:**
+- Ordinary differential equation (ODE) models of cellular electrophysiology
+- Hodgkin-Huxley formalism for ion channel gating
+- Markov models of channel state transitions
+- Systems-level circulation and regulation models
 
 ## License
 

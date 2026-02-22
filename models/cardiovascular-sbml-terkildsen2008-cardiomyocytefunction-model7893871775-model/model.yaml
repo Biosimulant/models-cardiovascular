@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Cardiovascular: Terkildsen2008CardiomyocytefunctionModel7893871775Model'
-description: 'This a model from the article: Using Physiome standards to couple cellular
-  functions for rat cardiac excitation-contraction. Terkildsen JR, Niederer S, Crampin
-  EJ, Hunter P, Smith NP. Exp Physiol. (20'
+description: "This a model from the article: Using Physiome standards to couple cellular functions for rat cardiac excitation-contraction. Terkildsen JR, Niederer S, Crampin EJ, Hunter P, Smith NP."
 standard: other
 tags:
 - cardiovascular

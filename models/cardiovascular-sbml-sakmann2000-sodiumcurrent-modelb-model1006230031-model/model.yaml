@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Cardiovascular: Sakmann2000SodiumcurrentModelbModel1006230031Model'
-description: 'This a model from the article: Distribution of a persistent sodium current
-  across the ventricular wall inguinea pigs. Sakmann BF, Spindler AJ, Bryant SM, Linz
-  KW, Noble D. Circ Res 2000 Nov 10;87(10):'
+description: "This a model from the article: Distribution of a persistent sodium current across the ventricular wall inguinea pigs. Sakmann BF, Spindler AJ, Bryant SM, Linz KW, Noble D."
 standard: other
 tags:
 - cardiovascular

@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Cardiovascular: Livshitz2007CardiacmyocytesModel0406270966Model'
-description: 'This a model from the article: Regulation of Ca2+ and electrical alternans
-  in cardiac myocytes: role of CAMKII and repolarizing currents. Livshitz LM, Rudy
-  Y. Am J Physiol Heart Circ Physiol. 2007 Jun'
+description: "This a model from the article: Regulation of Ca2+ and electrical alternans in cardiac myocytes: role of CAMKII and repolarizing currents. It can be used to explore cardiac dynamics and compare response patterns across conditions."
 standard: other
 tags:
 - cardiovascular

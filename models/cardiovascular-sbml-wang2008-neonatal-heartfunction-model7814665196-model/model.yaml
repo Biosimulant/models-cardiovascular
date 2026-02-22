@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Cardiovascular: Wang2008NeonatalHeartfunctionModel7814665196Model'
-description: 'This a model from the article: Mathematical model of the neonatal mouse
-  ventricular action potential. Wang LJ, Sobie EA. Am J Physiol Heart Circ Physiol.
-  (2008) 294(6) pp H2565-75; 18408122 , Abstract'
+description: "This a model from the article: Mathematical model of the neonatal mouse ventricular action potential. It can be used to explore cardiac dynamics and compare response patterns across conditions."
 standard: other
 tags:
 - cardiovascular

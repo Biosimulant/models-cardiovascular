@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Cardiovascular: Aslanidi2009RightatrialtissueArrhythmogenesisModel1006230017Model'
-description: 'This a model from the article: Mechanisms of transition from normal
-  to reentrant electrical activity in a modelof rabbit atrial tissue: interaction
-  of tissue heterogeneity and anisotropy. Aslanidi OV,'
+description: "This a model from the article: Mechanisms of transition from normal to reentrant electrical activity in a modelof rabbit atrial tissue: interaction of tissue heterogeneity and anisotropy. It can be used to explore cardiac dynamics and compare response patterns across conditions."
 standard: other
 tags:
 - cardiovascular

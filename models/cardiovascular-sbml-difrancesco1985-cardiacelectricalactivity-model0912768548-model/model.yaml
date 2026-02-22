@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Cardiovascular: Difrancesco1985CardiacelectricalactivityModel0912768548Model'
-description: 'This a model from the article: A model of cardiac electrical activity
-  incorporating ionic pumps andconcentration changes. DiFrancesco D, Noble D. Philos
-  Trans R Soc Lond B Biol Sci 1985 Jan 10;307(113'
+description: "This a model from the article: A model of cardiac electrical activity incorporating ionic pumps andconcentration changes. It can be used to explore cardiac dynamics and compare response patterns across conditions."
 standard: other
 tags:
 - cardiovascular

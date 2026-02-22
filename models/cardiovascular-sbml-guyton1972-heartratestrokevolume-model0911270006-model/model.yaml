@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Cardiovascular: Guyton1972HeartratestrokevolumeModel0911270006Model'
-description: 'This a model from the article: Circulation: overall regulation. Guyton
-  AC, Coleman TG, Granger HJ. Annu Rev Physiol 1972;34:13-46 4334846 , Abstract: This
-  article is an experiment, one undertaken prim'
+description: "This a model from the article: Circulation: overall regulation. It can be used to explore cardiac dynamics and compare response patterns across conditions."
 standard: other
 tags:
 - cardiovascular

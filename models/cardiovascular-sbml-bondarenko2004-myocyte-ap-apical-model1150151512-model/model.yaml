@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Cardiovascular: Bondarenko2004MyocyteApApicalModel1150151512Model'
-description: 'This the model from the article: Computer model of action potential
-  of mouse ventricular myocytes. Bondarenko VE, Szigeti GP, Bett GC, Kim SJ, Rasmusson
-  RL Am. J. Physiol. Heart Circ. Physiol. 2004 Se'
+description: "This the model from the article: Computer model of action potential of mouse ventricular myocytes. Bondarenko VE, Szigeti GP, Bett GC, Kim SJ, Rasmusson RL Am."
 standard: other
 tags:
 - cardiovascular

@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Cardiovascular: Tentusscher2004CardiacarrhythmiasModel0393108880Model'
-description: 'This a model from the article: A model for human ventricular tissue.
-  ten Tusscher KH, Noble D, Noble PJ, Panfilov AV. Am J Physiol Heart Circ Physiol
-  2004 Apr;286(4):H1573-89. 14656705 , Abstract: The'
+description: "This a model from the article: A model for human ventricular tissue. ten Tusscher KH, Noble D, Noble PJ, Panfilov AV."
 standard: other
 tags:
 - cardiovascular

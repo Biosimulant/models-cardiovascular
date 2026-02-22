@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Cardiovascular: Noble1998VentricularcellmodelModelaModel1006230089Model'
-description: 'This a model from the article: Improved guinea-pig ventricular cell
-  model incorporating a diadic space, IKr andIKs, and length- and tension-dependent
-  processes. Noble D, Varghese A, Kohl P, Noble P. C'
+description: "This a model from the article: Improved guinea-pig ventricular cell model incorporating a diadic space, IKr andIKs, and length- and tension-dependent processes. Noble D, Varghese A, Kohl P, Noble P."
 standard: other
 tags:
 - cardiovascular

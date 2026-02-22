@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Cardiovascular: Beeler1977VentricularMyocardialFiberApModel7889395724Model'
-description: 'This is the model described in the article: Reconstruction of the action
-  potential of ventricular myocardial fibres. Beeler GW, Reuter H. J Physiol. 1977
-  Jun;268(1):177-210. Pubmed ID: 874889 , full t'
+description: "This is the model described in the article: Reconstruction of the action potential of ventricular myocardial fibres. It can be used to explore cardiac dynamics and compare response patterns across conditions."
 standard: other
 tags:
 - cardiovascular

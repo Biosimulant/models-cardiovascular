@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Cardiovascular: Chen2007NeuronalendothelialnosModel0491251823Model'
-description: 'This a model from the article: Vascular and perivascular nitric oxide
-  release and transport: biochemical pathways of neuronal nitric oxide synthase (NOS1)
-  and endothelial nitric oxide synthase (NOS3).'
+description: "This a model from the article: Vascular and perivascular nitric oxide release and transport: biochemical pathways of neuronal nitric oxide synthase (NOS1) and endothelial nitric oxide synthase (NOS3). It can be used to explore cardiac dynamics and compare response patterns across conditions."
 standard: other
 tags:
 - cardiovascular

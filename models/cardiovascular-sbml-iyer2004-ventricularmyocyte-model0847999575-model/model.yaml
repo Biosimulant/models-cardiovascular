@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Cardiovascular: Iyer2004VentricularmyocyteModel0847999575Model'
-description: 'This a model from the article: A computational model of the human left-ventricular
-  epicardial myocyte. Iyer V, Mazhari R, Winslow RL. Biophys J 2004 Sep;87(3):1507-25
-  15345532 , Abstract: A computatio'
+description: "This a model from the article: A computational model of the human left-ventricular epicardial myocyte. It can be used to explore cardiac dynamics and compare response patterns across conditions."
 standard: other
 tags:
 - cardiovascular

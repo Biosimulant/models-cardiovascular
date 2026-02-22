@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Cardiovascular: Shannon2004VentricularmyocyteModel7914464799Model'
-description: 'This a model from the article: A mathematical treatment of integrated
-  Ca dynamics within the ventricular myocyte. Shannon TR, Wang F, Puglisi J, Weber
-  C, Bers DM. Biophys J. 15347581 , doi: 10.1529/bi'
+description: "This a model from the article: A mathematical treatment of integrated Ca dynamics within the ventricular myocyte. Shannon TR, Wang F, Puglisi J, Weber C, Bers DM."
 standard: other
 tags:
 - cardiovascular

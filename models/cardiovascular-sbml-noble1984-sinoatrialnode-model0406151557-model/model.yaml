@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Cardiovascular: Noble1984SinoatrialnodeModel0406151557Model'
-description: 'This a model from the article: A model of sino-atrial node electrical
-  activity based on a modification of the DiFrancesco-Noble (1984) equations. Noble
-  D, Noble SJ. Proc R Soc Lond B Biol Sci. 1984 Se'
+description: "This a model from the article: A model of sino-atrial node electrical activity based on a modification of the DiFrancesco-Noble (1984) equations. It can be used to explore cardiac dynamics and compare response patterns across conditions."
 standard: other
 tags:
 - cardiovascular

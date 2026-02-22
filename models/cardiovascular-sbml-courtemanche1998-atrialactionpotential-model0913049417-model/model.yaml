@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Cardiovascular: Courtemanche1998AtrialactionpotentialModel0913049417Model'
-description: 'This a model from the article: Ionic mechanisms underlying human atrial
-  action potential properties: insightsfrom a mathematical model. Courtemanche M,
-  Ramirez RJ, Nattel S. Am J Physiol 1998 Jul;275('
+description: "This a model from the article: Ionic mechanisms underlying human atrial action potential properties: insightsfrom a mathematical model. It can be used to explore cardiac dynamics and compare response patterns across conditions."
 standard: other
 tags:
 - cardiovascular

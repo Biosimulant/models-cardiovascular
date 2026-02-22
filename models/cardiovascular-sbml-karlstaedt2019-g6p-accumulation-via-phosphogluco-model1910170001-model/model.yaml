@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Cardiovascular: Karlstaedt2019G6pAccumulationViaPhosphoglucoModel1910170001Model'
-description: 'This model is described in the article: Glucose 6-phosphate accumulates
-  via phosphoglucose isomerase inhibition in heart muscle. Karlstaedt, A and Khanna,
-  R and Thangam, M and Taegtmeyer, H Circulatio'
+description: "This model is described in the article: Glucose 6-phosphate accumulates via phosphoglucose isomerase inhibition in heart muscle. Karlstaedt, A and Khanna, R and Thangam, M and Taegtmeyer, H Circulatio."
 standard: other
 tags:
 - cardiovascular

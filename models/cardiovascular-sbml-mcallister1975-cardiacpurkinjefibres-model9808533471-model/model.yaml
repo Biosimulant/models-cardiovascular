@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Cardiovascular: Mcallister1975CardiacpurkinjefibresModel9808533471Model'
-description: 'This a model from the article: Reconstruction of the electrical activity
-  of cardiac Purkinje fibres. McAllister RE, Noble D, Tsien RW. J Physiol. 1975; 251(1):1-59
-  1185607 , Abstract: 1. The electrica'
+description: "This a model from the article: Reconstruction of the electrical activity of cardiac Purkinje fibres. It can be used to explore cardiac dynamics and compare response patterns across conditions."
 standard: other
 tags:
 - cardiovascular

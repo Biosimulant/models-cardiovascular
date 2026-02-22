@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Cardiovascular: Tran2009CadynamicssercaCardiacModel1006230121Model'
-description: 'This a model from the article: A thermodynamic model of the cardiac
-  sarcoplasmic/endoplasmic Ca(2+) (SERCA)pump. Tran K, Smith NP, Loiselle DS, Crampin
-  EJ. Biophys J 2009 Mar 4;96(5):2029-42 19254563 '
+description: "This a model from the article: A thermodynamic model of the cardiac sarcoplasmic/endoplasmic Ca(2+) (SERCA)pump. Tran K, Smith NP, Loiselle DS, Crampin EJ."
 standard: other
 tags:
 - cardiovascular

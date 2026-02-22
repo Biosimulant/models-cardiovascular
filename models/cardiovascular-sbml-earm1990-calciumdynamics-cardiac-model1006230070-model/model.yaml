@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Cardiovascular: Earm1990CalciumdynamicsCardiacModel1006230070Model'
-description: 'This a model from the article: A model of the single atrial cell: relation
-  between calcium current and calciumrelease. Earm YE, Noble D. Proc R Soc Lond B
-  Biol Sci 1990 May 22;240(1297):83-96 1972993 '
+description: "This a model from the article: A model of the single atrial cell: relation between calcium current and calciumrelease. It can be used to explore cardiac dynamics and compare response patterns across conditions."
 standard: other
 tags:
 - cardiovascular

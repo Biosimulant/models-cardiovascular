@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Cardiovascular: Benson2008ArrhythmogenesisMcellModel1006230087Model'
-description: 'This a model from the article: The canine virtual ventricular wall:
-  a platform for dissecting pharmacologicaleffects on propagation and arrhythmogenesis.
-  Benson AP, Aslanidi OV, Zhang H, Holden AV. Pr'
+description: "This a model from the article: The canine virtual ventricular wall: a platform for dissecting pharmacologicaleffects on propagation and arrhythmogenesis. Benson AP, Aslanidi OV, Zhang H, Holden AV."
 standard: other
 tags:
 - cardiovascular

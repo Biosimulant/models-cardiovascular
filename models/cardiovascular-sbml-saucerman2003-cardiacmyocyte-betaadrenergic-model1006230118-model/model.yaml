@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Cardiovascular: Saucerman2003CardiacmyocyteBetaadrenergicModel1006230118Model'
-description: 'This a model from the article: Modeling beta-adrenergic control of cardiac
-  myocyte contractility in silico. Saucerman JJ, Brunton LL, Michailova AP, McCulloch
-  AD. J Biol Chem 2003 Nov 28;278(48):47997'
+description: "This a model from the article: Modeling beta-adrenergic control of cardiac myocyte contractility in silico. Saucerman JJ, Brunton LL, Michailova AP, McCulloch AD."
 standard: other
 tags:
 - cardiovascular

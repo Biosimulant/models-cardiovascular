@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Cardiovascular: Noble1991CardiacactionpotentialSodiumcalciumexModel1006230073Model'
-description: 'This a model from the article: The role of sodium-calcium exchange during
-  the cardiac action potential. Noble D, Noble SJ, Bett GC, Earm YE, Ho WK, So IK.
-  Ann N Y Acad Sci 1991;639:334-53 1785860 , Ab'
+description: "This a model from the article: The role of sodium-calcium exchange during the cardiac action potential. Noble D, Noble SJ, Bett GC, Earm YE, Ho WK, So IK."
 standard: other
 tags:
 - cardiovascular

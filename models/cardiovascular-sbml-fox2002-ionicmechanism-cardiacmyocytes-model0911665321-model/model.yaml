@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Cardiovascular: Fox2002IonicmechanismCardiacmyocytesModel0911665321Model'
-description: 'This a model from the article: Ionic mechanism of electrical alternans.
-  Fox JJ, McHarg JL, Gilmour RF Jr. Am J Physiol Heart Circ Physiol 2002 Feb;282(2):H516-30
-  11788399 , Abstract: Although alternan'
+description: "This a model from the article: Ionic mechanism of electrical alternans. It can be used to explore cardiac dynamics and compare response patterns across conditions."
 standard: other
 tags:
 - cardiovascular

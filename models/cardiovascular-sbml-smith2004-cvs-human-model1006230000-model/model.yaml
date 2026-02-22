@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Cardiovascular: Smith2004CvsHumanModel1006230000Model'
-description: 'This a model from the article: Minimal haemodynamic system model including
-  ventricular interaction and valvedynamics. Smith BW, Chase JG, Nokes RI, Shaw GM,
-  Wake G. Med Eng Phys 2004 Mar;26(2):131-9 1'
+description: "This a model from the article: Minimal haemodynamic system model including ventricular interaction and valvedynamics. Smith BW, Chase JG, Nokes RI, Shaw GM, Wake G."
 standard: other
 tags:
 - cardiovascular

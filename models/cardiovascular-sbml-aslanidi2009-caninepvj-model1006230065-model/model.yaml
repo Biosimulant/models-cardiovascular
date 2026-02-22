@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Cardiovascular: Aslanidi2009CaninepvjModel1006230065Model'
-description: 'This a model from the article: Optimal velocity and safety of discontinuous
-  conduction through theheterogeneous Purkinje-ventricular junction. Aslanidi OV,
-  Stewart P, Boyett MR, Zhang H. Biophys J 200'
+description: "This a model from the article: Optimal velocity and safety of discontinuous conduction through theheterogeneous Purkinje-ventricular junction. Aslanidi OV, Stewart P, Boyett MR, Zhang H."
 standard: other
 tags:
 - cardiovascular

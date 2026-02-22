@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Cardiovascular: Luo1991VentricularcardiacactionModel0479527919Model'
-description: 'This a model from the article: A model of the ventricular cardiac action
-  potential. Depolarization, repolarization, and their interaction. Luo CH, Rudy Y.
-  Circ Res. 1991 Jun;68(6):1501-26. 1709839 , A'
+description: "This a model from the article: A model of the ventricular cardiac action potential. It can be used to explore cardiac dynamics and compare response patterns across conditions."
 standard: other
 tags:
 - cardiovascular

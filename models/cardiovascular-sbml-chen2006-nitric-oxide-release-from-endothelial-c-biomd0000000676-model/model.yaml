@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Cardiovascular: Chen2006NitricOxideReleaseFromEndothelialCBiomd0000000676Model'
-description: 'Chen2006 - Nitric Oxide Release fromEndothelial Cells This model is
-  described in the article: Theoretical analysis of biochemical pathways of nitric
-  oxide release from vascular endothelial cells. Chen'
+description: "Chen2006 - Nitric Oxide Release fromEndothelial Cells This model is described in the article: Theoretical analysis of biochemical pathways of nitric oxide release from vascular endothelial cells. It can be used to explore cardiac dynamics and compare response patterns across conditions."
 standard: other
 tags:
 - cardiovascular

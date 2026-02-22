@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Cardiovascular: Priebe1998VentriculararrhythmiasModel8683876463Model'
-description: 'This a model from the article: Simulation study of cellular electric
-  properties in heart failure Priebe L, Beuckelmann DJ. Circ Res. 1998; 82(11):1206-23
-  9633920 , Abstract: Patients with severe heart'
+description: "This a model from the article: Simulation study of cellular electric properties in heart failure Priebe L, Beuckelmann DJ. It can be used to explore cardiac dynamics and compare response patterns across conditions."
 standard: other
 tags:
 - cardiovascular

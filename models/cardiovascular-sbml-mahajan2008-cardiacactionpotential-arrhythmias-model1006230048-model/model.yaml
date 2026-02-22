@@ -1,8 +1,6 @@
 schema_version: '2.0'
 title: 'Cardiovascular: Mahajan2008CardiacactionpotentialArrhythmiasModel1006230048Model'
-description: 'This a model from the article: A rabbit ventricular action potential
-  model replicating cardiac dynamics atrapid heart rates. Mahajan A, Shiferaw Y, Sato
-  D, Baher A, Olcese R, Xie LH, Yang MJ, Chen PS,'
+description: "This a model from the article: A rabbit ventricular action potential model replicating cardiac dynamics atrapid heart rates. Mahajan A, Shiferaw Y, Sato D, Baher A, Olcese R, Xie LH, Yang MJ, Chen PS,."
 standard: other
 tags:
 - cardiovascular

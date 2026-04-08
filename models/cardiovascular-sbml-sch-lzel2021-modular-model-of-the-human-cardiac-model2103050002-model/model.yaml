@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Cardiovascular: SchLzel2021ModularModelOfTheHumanCardiacModel2103050002Model'
+title: "Schölzel2021 - Modular model of the human cardiac conduction system based on Seidel-Herzel model (v1.1.1)"
 description: "SHM-conduction is a discrete unidirectional model of the human cardiac conduction system. It takes a Boolean input signal from the sinoatrial node (SAN) and includes the refractory behavior of the SAN."
 standard: other
 tags:

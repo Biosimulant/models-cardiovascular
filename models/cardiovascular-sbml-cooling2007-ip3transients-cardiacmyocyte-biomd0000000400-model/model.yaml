@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Cardiovascular: Cooling2007Ip3transientsCardiacmyocyteBiomd0000000400Model'
+title: "Cooling2007_IP3transients_CardiacMyocyte"
 description: "This a model from the article: Modeling hypertrophic IP3 transients in the cardiac myocyte. It can be used to explore cardiac dynamics and compare response patterns across conditions."
 standard: other
 tags:

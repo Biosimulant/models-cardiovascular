@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Cardiovascular: Muraro2014VascularPatterningInArabidopsisRoBiomd0000000522Model'
+title: "Muraro2014 - Vascular patterning in Arabidopsis roots"
 description: "Muraro2014 - Vascular patterning in Arabidopsis roots Using a multicellular model, maintanence of vascular patterning in Arabidopsis roots has been studied. The model that is provided here is the sing."
 standard: other
 tags:

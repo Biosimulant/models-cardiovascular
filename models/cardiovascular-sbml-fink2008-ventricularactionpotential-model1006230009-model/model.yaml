@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Cardiovascular: Fink2008VentricularactionpotentialModel1006230009Model'
+title: "Fink2008_VentricularActionPotential"
 description: "This a model from the article: Contributions of HERG K+ current to repolarization of the human ventricularaction potential. Fink M, Noble D, Virag L, Varro A, Giles WR."
 standard: other
 tags:

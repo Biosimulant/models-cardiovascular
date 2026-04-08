@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Cardiovascular: Grandi2009VentricularmyocyteModel1006230092Model'
+title: "Grandi2009_VentricularMyocyte"
 description: "This a model from the article: A novel computational model of the human ventricular action potential and Catransient. It can be used to explore cardiac dynamics and compare response patterns across conditions."
 standard: other
 tags:

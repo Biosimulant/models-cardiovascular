@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Cardiovascular: Pandit2003VentricularmyocytesModel8685104549Model'
+title: "Pandit2003_VentricularMyocytes"
 description: "This a model from the article: A mathematical model of the electrophysiological alterations in rat ventricular myocytes in type-I diabetes. It can be used to explore cardiac dynamics and compare response patterns across conditions."
 standard: other
 tags:

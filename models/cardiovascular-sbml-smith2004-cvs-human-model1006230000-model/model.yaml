@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Cardiovascular: Smith2004CvsHumanModel1006230000Model'
+title: "Smith2004_CVS_human"
 description: "This a model from the article: Minimal haemodynamic system model including ventricular interaction and valvedynamics. Smith BW, Chase JG, Nokes RI, Shaw GM, Wake G."
 standard: other
 tags:

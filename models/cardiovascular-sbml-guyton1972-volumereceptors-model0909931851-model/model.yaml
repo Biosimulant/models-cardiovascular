@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Cardiovascular: Guyton1972VolumereceptorsModel0909931851Model'
+title: "Guyton1972_volumeReceptors"
 description: "This a model from the article: Circulation: overall regulation. It can be used to explore cardiac dynamics and compare response patterns across conditions."
 standard: other
 tags:

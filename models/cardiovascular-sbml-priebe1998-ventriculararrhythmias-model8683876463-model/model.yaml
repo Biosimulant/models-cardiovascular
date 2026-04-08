@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Cardiovascular: Priebe1998VentriculararrhythmiasModel8683876463Model'
+title: "Priebe1998_VentricularArrhythmias"
 description: "This a model from the article: Simulation study of cellular electric properties in heart failure Priebe L, Beuckelmann DJ. It can be used to explore cardiac dynamics and compare response patterns across conditions."
 standard: other
 tags:

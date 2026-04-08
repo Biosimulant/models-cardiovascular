@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Cardiovascular: Watanabe2018StateTransitionModelWithTreatmeModel1803120006Model'
+title: "Watanabe2018_State Transition Model with Treatment and Costs"
 description: "Model with functions depending on Age, Male, BP (Blood Pressure).There are 3 disease states: Healthy, Sick, and Dead, where the Dead state is terminal. It can be used to explore cardiac dynamics and compare response patterns across conditions."
 standard: other
 tags:

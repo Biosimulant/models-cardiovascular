@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Cardiovascular: Matsuoka2003VentricularcellsSinoatrialnodepaceModel1006230058Model'
+title: "Matsuoka2003_VentricularCells_SinoatrialNodePacemaker"
 description: "This a model from the article: Role of individual ionic current systems in ventricular cells hypothesized by amodel study. Matsuoka S, Sarai N, Kuratomi S, Ono K, Noma A."
 standard: other
 tags:

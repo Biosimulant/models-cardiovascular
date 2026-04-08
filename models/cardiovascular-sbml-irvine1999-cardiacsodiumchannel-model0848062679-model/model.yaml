@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Cardiovascular: Irvine1999CardiacsodiumchannelModel0848062679Model'
+title: "Irvine1999_CardiacSodiumChannel"
 description: "This a model from the article: Cardiac sodium channel Markov model with temperature dependence and recoveryfrom inactivation. It can be used to explore cardiac dynamics and compare response patterns across conditions."
 standard: other
 tags:

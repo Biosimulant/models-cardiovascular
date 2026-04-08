@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Cardiovascular: Zhou2024PostInfarctionMyocyteElectromechanicBiomd0000001101Model'
+title: "Zhou2024 - Post Infarction Myocyte Electromechanics"
 description: "A human ventricular electromechanical modelling and simulation framework is constructed and validated with rich experimental and clinical datasets. Abnormalities caused by scar and border zone ionic r."
 standard: other
 tags:

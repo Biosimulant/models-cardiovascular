@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Cardiovascular: Luo1994CardiacventricularactionpotentialModel0912160003Model'
+title: "Luo1994_CardiacVentricularActionPotential"
 description: "This a model from the article: A dynamic model of the cardiac ventricular action potential. It can be used to explore cardiac dynamics and compare response patterns across conditions."
 standard: other
 tags:

@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Cardiovascular: Niederer2006CardiacmyocyterelaxationModel8687196544Model'
+title: "Niederer2006_CardiacMyocyteRelaxation"
 description: "This a model from the article: A quantitative analysis of cardiac myocyte relaxation: a simulation study. It can be used to explore cardiac dynamics and compare response patterns across conditions."
 standard: other
 tags:

@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Cardiovascular: Hund2004VentricularepicardialactionModel0848116681Model'
+title: "Hund2004_VentricularEpicardialAction"
 description: "This a model from the article: Rate dependence and regulation of action potential and calcium transient in acanine cardiac ventricular cell model. It can be used to explore cardiac dynamics and compare response patterns across conditions."
 standard: other
 tags:

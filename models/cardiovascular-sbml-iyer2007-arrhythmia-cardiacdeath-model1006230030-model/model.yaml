@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Cardiovascular: Iyer2007ArrhythmiaCardiacdeathModel1006230030Model'
+title: "Iyer2007_Arrhythmia_CardiacDeath"
 description: "This a model from the article: Mechanisms of abnormal calcium homeostasis in mutations responsible forcatecholaminergic polymorphic ventricular tachycardia. It can be used to explore cardiac dynamics and compare response patterns across conditions."
 standard: other
 tags:

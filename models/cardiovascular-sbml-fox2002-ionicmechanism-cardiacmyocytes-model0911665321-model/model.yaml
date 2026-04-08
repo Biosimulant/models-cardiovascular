@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Cardiovascular: Fox2002IonicmechanismCardiacmyocytesModel0911665321Model'
+title: "Fox2002_IonicMechanism_CardiacMyocytes"
 description: "This a model from the article: Ionic mechanism of electrical alternans. It can be used to explore cardiac dynamics and compare response patterns across conditions."
 standard: other
 tags:

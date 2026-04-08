@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Cardiovascular: Pasek2006VentricularcardiomyocytesModel0406553884Model'
+title: "Pasek2006_VentricularCardioMyocytes"
 description: "This a model from the article: The functional role of cardiac T-tubules explored in a model of rat ventricular myocytes. It can be used to explore cardiac dynamics and compare response patterns across conditions."
 standard: other
 tags:

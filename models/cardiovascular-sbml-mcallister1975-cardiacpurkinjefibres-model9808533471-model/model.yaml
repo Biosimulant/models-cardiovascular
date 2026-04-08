@@ -1,5 +1,5 @@
 schema_version: '2.0'
-title: 'Cardiovascular: Mcallister1975CardiacpurkinjefibresModel9808533471Model'
+title: "McAllister1975_CardiacPurkinjeFibres"
 description: "This a model from the article: Reconstruction of the electrical activity of cardiac Purkinje fibres. It can be used to explore cardiac dynamics and compare response patterns across conditions."
 standard: other
 tags:

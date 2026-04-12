@@ -11,14 +11,13 @@ A human ventricular electromechanical modelling and simulation framework is cons
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/cardiovascular-sbml-zhou2024-post-infarction-myocyte-electromechanic-biomd0000001101-model
     alias: model
-    manifest_path: models/cardiovascular-sbml-zhou2024-post-infarction-myocyte-electromechanic-biomd0000001101-model/model.yaml
 ```
 
 ## Tags

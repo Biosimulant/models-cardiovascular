@@ -11,14 +11,13 @@ This a model from the article: A dynamic model of the cardiac ventricular action
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/cardiovascular-sbml-luo1994-cardiacventricularactionpotential-model0912160003-model
     alias: model
-    manifest_path: models/cardiovascular-sbml-luo1994-cardiacventricularactionpotential-model0912160003-model/model.yaml
 ```
 
 ## Tags

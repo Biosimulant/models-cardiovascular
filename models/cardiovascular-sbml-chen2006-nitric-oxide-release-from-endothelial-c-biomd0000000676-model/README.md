@@ -11,14 +11,13 @@ Chen2006 - Nitric Oxide Release fromEndothelial Cells This model is described in
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/cardiovascular-sbml-chen2006-nitric-oxide-release-from-endothelial-c-biomd0000000676-model
     alias: model
-    manifest_path: models/cardiovascular-sbml-chen2006-nitric-oxide-release-from-endothelial-c-biomd0000000676-model/model.yaml
 ```
 
 ## Tags

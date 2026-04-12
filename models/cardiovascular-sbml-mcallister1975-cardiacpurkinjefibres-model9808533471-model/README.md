@@ -11,14 +11,13 @@ This a model from the article: Reconstruction of the electrical activity of card
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/cardiovascular-sbml-mcallister1975-cardiacpurkinjefibres-model9808533471-model
     alias: model
-    manifest_path: models/cardiovascular-sbml-mcallister1975-cardiacpurkinjefibres-model9808533471-model/model.yaml
 ```
 
 ## Tags

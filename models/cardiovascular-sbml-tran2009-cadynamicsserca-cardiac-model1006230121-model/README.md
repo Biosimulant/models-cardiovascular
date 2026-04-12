@@ -11,14 +11,13 @@ This a model from the article: A thermodynamic model of the cardiac sarcoplasmic
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/cardiovascular-sbml-tran2009-cadynamicsserca-cardiac-model1006230121-model
     alias: model
-    manifest_path: models/cardiovascular-sbml-tran2009-cadynamicsserca-cardiac-model1006230121-model/model.yaml
 ```
 
 ## Tags

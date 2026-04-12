@@ -11,14 +11,13 @@ This a model from the article: Using Physiome standards to couple cellular funct
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/cardiovascular-sbml-terkildsen2008-cardiomyocytefunction-model7893871775-model
     alias: model
-    manifest_path: models/cardiovascular-sbml-terkildsen2008-cardiomyocytefunction-model7893871775-model/model.yaml
 ```
 
 ## Tags

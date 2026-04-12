@@ -11,14 +11,13 @@ This a model from the article: A mathematical treatment of integrated Ca dynamic
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/cardiovascular-sbml-shannon2004-ventricularmyocyte-model7914464799-model
     alias: model
-    manifest_path: models/cardiovascular-sbml-shannon2004-ventricularmyocyte-model7914464799-model/model.yaml
 ```
 
 ## Tags

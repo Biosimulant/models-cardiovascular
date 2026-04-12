@@ -11,14 +11,13 @@ This a model from the article: Contributions of HERG K+ current to repolarizatio
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/cardiovascular-sbml-fink2008-ventricularactionpotential-model1006230009-model
     alias: model
-    manifest_path: models/cardiovascular-sbml-fink2008-ventricularactionpotential-model1006230009-model/model.yaml
 ```
 
 ## Tags

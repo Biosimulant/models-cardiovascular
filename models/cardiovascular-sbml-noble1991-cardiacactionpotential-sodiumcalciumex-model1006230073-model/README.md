@@ -11,14 +11,13 @@ This a model from the article: The role of sodium-calcium exchange during the ca
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/cardiovascular-sbml-noble1991-cardiacactionpotential-sodiumcalciumex-model1006230073-model
     alias: model
-    manifest_path: models/cardiovascular-sbml-noble1991-cardiacactionpotential-sodiumcalciumex-model1006230073-model/model.yaml
 ```
 
 ## Tags

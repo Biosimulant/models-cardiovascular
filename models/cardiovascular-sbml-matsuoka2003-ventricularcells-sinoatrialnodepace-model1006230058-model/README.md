@@ -11,14 +11,13 @@ This a model from the article: Role of individual ionic current systems in ventr
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/cardiovascular-sbml-matsuoka2003-ventricularcells-sinoatrialnodepace-model1006230058-model
     alias: model
-    manifest_path: models/cardiovascular-sbml-matsuoka2003-ventricularcells-sinoatrialnodepace-model1006230058-model/model.yaml
 ```
 
 ## Tags

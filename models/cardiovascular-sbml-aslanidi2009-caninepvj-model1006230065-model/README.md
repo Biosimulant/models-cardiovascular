@@ -11,14 +11,13 @@ This a model from the article: Optimal velocity and safety of discontinuous cond
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/cardiovascular-sbml-aslanidi2009-caninepvj-model1006230065-model
     alias: model
-    manifest_path: models/cardiovascular-sbml-aslanidi2009-caninepvj-model1006230065-model/model.yaml
 ```
 
 ## Tags

@@ -11,14 +11,13 @@ This a model from the article: Cardiac sodium channel Markov model with temperat
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/cardiovascular-sbml-irvine1999-cardiacsodiumchannel-model0848062679-model
     alias: model
-    manifest_path: models/cardiovascular-sbml-irvine1999-cardiacsodiumchannel-model0848062679-model/model.yaml
 ```
 
 ## Tags

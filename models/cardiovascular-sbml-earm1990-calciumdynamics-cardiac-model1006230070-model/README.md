@@ -11,14 +11,13 @@ This a model from the article: A model of the single atrial cell: relation betwe
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/cardiovascular-sbml-earm1990-calciumdynamics-cardiac-model1006230070-model
     alias: model
-    manifest_path: models/cardiovascular-sbml-earm1990-calciumdynamics-cardiac-model1006230070-model/model.yaml
 ```
 
 ## Tags

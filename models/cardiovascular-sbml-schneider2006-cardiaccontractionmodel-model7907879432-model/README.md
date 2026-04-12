@@ -11,14 +11,13 @@ This a model from the article: Mechanism of the Frank-Starling law--a simulation
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/cardiovascular-sbml-schneider2006-cardiaccontractionmodel-model7907879432-model
     alias: model
-    manifest_path: models/cardiovascular-sbml-schneider2006-cardiaccontractionmodel-model7907879432-model/model.yaml
 ```
 
 ## Tags

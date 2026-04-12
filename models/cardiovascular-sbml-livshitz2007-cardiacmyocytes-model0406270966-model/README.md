@@ -11,14 +11,13 @@ This a model from the article: Regulation of Ca2+ and electrical alternans in ca
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/cardiovascular-sbml-livshitz2007-cardiacmyocytes-model0406270966-model
     alias: model
-    manifest_path: models/cardiovascular-sbml-livshitz2007-cardiacmyocytes-model0406270966-model/model.yaml
 ```
 
 ## Tags

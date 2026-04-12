@@ -11,14 +11,13 @@ This a model from the article: Alternans and spiral breakup in a human ventricul
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/cardiovascular-sbml-tentusscher2006-ventricularcellmodel-model7910499126-model
     alias: model
-    manifest_path: models/cardiovascular-sbml-tentusscher2006-ventricularcellmodel-model7910499126-model/model.yaml
 ```
 
 ## Tags

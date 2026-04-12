@@ -11,14 +11,13 @@ Model with functions depending on Age, Male, BP (Blood Pressure).There are 3 dis
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/cardiovascular-sbml-watanabe2018-state-transition-model-with-treatme-model1803120006-model
     alias: model
-    manifest_path: models/cardiovascular-sbml-watanabe2018-state-transition-model-with-treatme-model1803120006-model/model.yaml
 ```
 
 ## Tags

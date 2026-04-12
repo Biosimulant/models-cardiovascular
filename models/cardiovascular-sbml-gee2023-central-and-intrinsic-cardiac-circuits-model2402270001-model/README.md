@@ -11,14 +11,13 @@ Model Context: Model of neural control of cardiovascular behavior and its intera
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/cardiovascular-sbml-gee2023-central-and-intrinsic-cardiac-circuits-model2402270001-model
     alias: model
-    manifest_path: models/cardiovascular-sbml-gee2023-central-and-intrinsic-cardiac-circuits-model2402270001-model/model.yaml
 ```
 
 ## Tags

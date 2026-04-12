@@ -11,14 +11,13 @@ This model is described in the article: Glucose 6-phosphate accumulates via phos
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/cardiovascular-sbml-karlstaedt2019-g6p-accumulation-via-phosphogluco-model1910170001-model
     alias: model
-    manifest_path: models/cardiovascular-sbml-karlstaedt2019-g6p-accumulation-via-phosphogluco-model1910170001-model/model.yaml
 ```
 
 ## Tags

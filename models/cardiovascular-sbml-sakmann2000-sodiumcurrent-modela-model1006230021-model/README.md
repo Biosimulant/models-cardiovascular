@@ -11,14 +11,13 @@ This a model from the article: Distribution of a persistent sodium current acros
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/cardiovascular-sbml-sakmann2000-sodiumcurrent-modela-model1006230021-model
     alias: model
-    manifest_path: models/cardiovascular-sbml-sakmann2000-sodiumcurrent-modela-model1006230021-model/model.yaml
 ```
 
 ## Tags

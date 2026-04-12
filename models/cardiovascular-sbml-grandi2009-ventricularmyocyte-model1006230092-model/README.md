@@ -11,14 +11,13 @@ This a model from the article: A novel computational model of the human ventricu
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/cardiovascular-sbml-grandi2009-ventricularmyocyte-model1006230092-model
     alias: model
-    manifest_path: models/cardiovascular-sbml-grandi2009-ventricularmyocyte-model1006230092-model/model.yaml
 ```
 
 ## Tags

@@ -11,14 +11,13 @@ This is the model described in the article: Reconstruction of the action potenti
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/cardiovascular-sbml-beeler1977-ventricular-myocardial-fiber-ap-model7889395724-model
     alias: model
-    manifest_path: models/cardiovascular-sbml-beeler1977-ventricular-myocardial-fiber-ap-model7889395724-model/model.yaml
 ```
 
 ## Tags

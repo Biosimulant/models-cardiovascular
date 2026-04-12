@@ -11,14 +11,13 @@ Muraro2014 - Vascular patterning in Arabidopsis roots Using a multicellular mode
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/cardiovascular-sbml-muraro2014-vascular-patterning-in-arabidopsis-ro-biomd0000000522-model
     alias: model
-    manifest_path: models/cardiovascular-sbml-muraro2014-vascular-patterning-in-arabidopsis-ro-biomd0000000522-model/model.yaml
 ```
 
 ## Tags

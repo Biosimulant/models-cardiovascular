@@ -11,14 +11,13 @@ This a model from the article: Modeling beta-adrenergic control of cardiac myocy
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/cardiovascular-sbml-saucerman2003-cardiacmyocyte-betaadrenergic-model1006230118-model
     alias: model
-    manifest_path: models/cardiovascular-sbml-saucerman2003-cardiacmyocyte-betaadrenergic-model1006230118-model/model.yaml
 ```
 
 ## Tags

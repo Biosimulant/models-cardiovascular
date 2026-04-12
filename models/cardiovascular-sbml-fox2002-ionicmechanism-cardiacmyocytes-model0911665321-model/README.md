@@ -11,14 +11,13 @@ This a model from the article: Ionic mechanism of electrical alternans. Fox JJ, 
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/cardiovascular-sbml-fox2002-ionicmechanism-cardiacmyocytes-model0911665321-model
     alias: model
-    manifest_path: models/cardiovascular-sbml-fox2002-ionicmechanism-cardiacmyocytes-model0911665321-model/model.yaml
 ```
 
 ## Tags

@@ -11,14 +11,13 @@ This a model from the article: Mechanisms of transition from normal to reentrant
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/cardiovascular-sbml-aslanidi2009-rightatrialtissue-arrhythmogenesis-model1006230017-model
     alias: model
-    manifest_path: models/cardiovascular-sbml-aslanidi2009-rightatrialtissue-arrhythmogenesis-model1006230017-model/model.yaml
 ```
 
 ## Tags

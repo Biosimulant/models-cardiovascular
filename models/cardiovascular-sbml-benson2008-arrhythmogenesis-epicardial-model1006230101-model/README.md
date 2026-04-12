@@ -11,14 +11,13 @@ This a model from the article: The canine virtual ventricular wall: a platform f
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/cardiovascular-sbml-benson2008-arrhythmogenesis-epicardial-model1006230101-model
     alias: model
-    manifest_path: models/cardiovascular-sbml-benson2008-arrhythmogenesis-epicardial-model1006230101-model/model.yaml
 ```
 
 ## Tags

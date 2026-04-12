@@ -11,14 +11,13 @@ This a model from the article: Mathematical model of the neonatal mouse ventricu
 
 ## Usage
 
-This model was auto-generated from the biomodels_ebi repository.
+This model was auto-generated from the BioModels EBI catalog.
 
 ```yaml
 # In a space.yaml wiring file:
 models:
-  - repo: Biosimulant/models
+  - path: ../../models/cardiovascular-sbml-wang2008-neonatal-heartfunction-model7814665196-model
     alias: model
-    manifest_path: models/cardiovascular-sbml-wang2008-neonatal-heartfunction-model7814665196-model/model.yaml
 ```
 
 ## Tags

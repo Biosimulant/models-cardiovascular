@@ -1,0 +1,57 @@
+{
+  "nodes": [
+    {
+      "id": "guyton1972_non_muscle_blood_flow_scenario",
+      "position": {
+        "x": 120,
+        "y": 0
+      }
+    },
+    {
+      "id": "guyton1972_non_muscle_blood_flow_core",
+      "position": {
+        "x": 500,
+        "y": 0
+      }
+    },
+    {
+      "id": "guyton1972_non_muscle_blood_flow_viz",
+      "position": {
+        "x": 880,
+        "y": 0
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "guyton1972_non_muscle_blood_flow_scenario.tissue_oxygen",
+      "to": [
+        "guyton1972_non_muscle_blood_flow_core.tissue_oxygen"
+      ]
+    },
+    {
+      "from": "guyton1972_non_muscle_blood_flow_scenario.autonomic_drive",
+      "to": [
+        "guyton1972_non_muscle_blood_flow_core.autonomic_drive"
+      ]
+    },
+    {
+      "from": "guyton1972_non_muscle_blood_flow_scenario.scenario_metadata",
+      "to": [
+        "guyton1972_non_muscle_blood_flow_viz.scenario_metadata"
+      ]
+    },
+    {
+      "from": "guyton1972_non_muscle_blood_flow_core.state",
+      "to": [
+        "guyton1972_non_muscle_blood_flow_viz.state"
+      ]
+    },
+    {
+      "from": "guyton1972_non_muscle_blood_flow_core.species_labels",
+      "to": [
+        "guyton1972_non_muscle_blood_flow_viz.species_labels"
+      ]
+    }
+  ]
+}

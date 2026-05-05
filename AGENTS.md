@@ -11,7 +11,7 @@ This is a **public** curated monorepo of biological simulation model packs and c
 ```
 models/
 ├── models/          # 20 model packages, each with a model.yaml manifest
-├── spaces/          # 6 composed simulation spaces, each with a space.yaml manifest
+├── labs/          # 6 composed simulation spaces, each with a lab.yaml manifest
 ├── libs/            # Shared helper code for curated models
 ├── templates/       # Starter template for new model packs
 ├── scripts/         # Validation and CI scripts
@@ -21,10 +21,10 @@ models/
 
 ## Key Concepts
 
-- **Model Pack**: A self-contained simulation component with a `model.yaml` manifest, optional Python source, and dependencies. Each model defines inputs, outputs, and an `advance_to(t)` method.
-- **Space**: A composed simulation defined by `space.yaml` that wires multiple models together with signal routing, runtime parameters, and initial conditions.
-- **BioModule**: The base class (`biosim.BioModule`) that all custom models inherit from. It defines the `inputs()`, `outputs()`, `set_inputs()`, `advance_to()`, and `get_outputs()` interface.
-- **Wiring**: YAML declarations in `space.yaml` that route signals from one model's output to another model's input (`from: module.output → to: module.input`).
+- **Model Pack**: A self-contained simulation component with a `model.yaml` manifest, optional Python source, and dependencies. Each model defines inputs, outputs, and an `advance_window(t)` method.
+- **Space**: A composed simulation defined by `lab.yaml` that wires multiple models together with signal routing, runtime parameters, and initial conditions.
+- **BioModule**: The base class (`biosim.BioModule`) that all custom models inherit from. It defines the `inputs()`, `outputs()`, `set_inputs()`, `advance_window()`, and `get_outputs()` interface.
+- **Wiring**: YAML declarations in `lab.yaml` that route signals from one model's output to another model's input (`from: module.output → to: module.input`).
 
 ## Manifest Schemas
 
@@ -38,7 +38,7 @@ Required fields:
 - `biosim.init_kwargs`: Parameters passed to the model constructor
 - `runtime.dependencies.packages`: All dependencies must be pinned with `==`
 
-### space.yaml (Version 2.0)
+### lab.yaml (Version 2.0)
 
 Required fields:
 - `schema_version`: Must be `"2.0"`
@@ -51,7 +51,7 @@ Required fields:
 
 ### Adding a New Model
 
-All new models and spaces must satisfy the acceptance criteria in [STANDARDS.md](STANDARDS.md). Use the checklist at the bottom of that file before submitting.
+All new embedded models and wrapper labs must satisfy the acceptance criteria in [STANDARDS.md](STANDARDS.md). Use the checklist at the bottom of that file before submitting.
 
 1. Copy `templates/model-pack/` to `models/<your-model-slug>/`
 2. Edit `model.yaml` with your model's metadata, entrypoint, and dependencies
@@ -69,7 +69,7 @@ All new models and spaces must satisfy the acceptance criteria in [STANDARDS.md]
 
 See [STANDARDS.md § Space Standards](STANDARDS.md#space-standards) for full requirements.
 
-1. Create `spaces/<your-space-slug>/space.yaml`
+1. Create `labs/<your-space-slug>/lab.yaml`
 2. Add `wiring.yaml` with local-equivalent module classes and args
 3. Reference models by relative `path` entries or immutable `package` + `version` pairs
 4. Define wiring to connect model outputs to inputs

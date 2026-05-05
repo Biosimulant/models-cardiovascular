@@ -1,0 +1,96 @@
+schema_version: '2.0'
+title: Guyton1972 Heart Rate Stroke Volume Lab
+description: 'Two-model lab for Guyton1972 Heart Rate Stroke Volume: a core SBML simulator
+  wired into a dedicated visualization sub-model that turns the raw state into friendly
+  timeseries and a plain-language summary. This a model from the article: Circulation:
+  overall regulation. It can be used to explore cardiac dynamics and compare response
+  patterns across conditions.'
+models:
+- alias: guyton1972_heart_rate_stroke_volume_scenario
+  path: models/scenario
+  parameters:
+    scenario_name: Pressure-load challenge
+    scenario_description: Baseline is followed by a right atrial pressure challenge
+      and recovery period.
+    baseline_until: 2.5
+    challenge_until: 7.5
+    schedule:
+      autonomic_drive:
+        baseline: 1.3
+        challenge: 1.3
+        recovery: 1.3
+        unit: dimensionless
+        label: autonomic drive
+        description: Scenario-controlled autonomic drive value.
+        active: false
+      right_atrial_pressure:
+        baseline: 0.00852183
+        challenge: 0.010226195999999998
+        recovery: 0.00852183
+        unit: dimensionless
+        label: right atrial pressure
+        description: Scenario-controlled right atrial pressure value.
+        active: true
+      cardiac_output:
+        baseline: 4.9943
+        challenge: 4.9943
+        recovery: 4.9943
+        unit: dimensionless
+        label: cardiac output
+        description: Scenario-controlled cardiac output value.
+        active: false
+- alias: guyton1972_heart_rate_stroke_volume_core
+  path: ./models/core
+  parameters:
+    model_path: data/MODEL0911270006.xml
+    integration_step: 0.01
+- alias: guyton1972_heart_rate_stroke_volume_viz
+  path: ./models/viz
+  parameters:
+    integration_step: 0.01
+    lab_title: Guyton1972 Heart Rate Stroke Volume
+    lab_question: How do heart rate and stroke volume respond?
+runtime:
+  duration: 10.0
+  communication_step: 0.01
+  initial_inputs:
+    guyton1972_heart_rate_stroke_volume_core:
+      integration_step: 0.01
+      parameter_overrides:
+        payload: {}
+      initial_conditions:
+        payload: {}
+io:
+  inputs:
+  - name: integration_step
+    maps_to: guyton1972_heart_rate_stroke_volume_core.integration_step
+  - name: parameter_overrides
+    maps_to: guyton1972_heart_rate_stroke_volume_core.parameter_overrides
+  - name: initial_conditions
+    maps_to: guyton1972_heart_rate_stroke_volume_core.initial_conditions
+  outputs:
+  - name: scenario_metadata
+    maps_to: guyton1972_heart_rate_stroke_volume_scenario.scenario_metadata
+  - name: state
+    maps_to: guyton1972_heart_rate_stroke_volume_core.state
+  - name: run_summary
+    maps_to: guyton1972_heart_rate_stroke_volume_viz.run_summary
+wiring:
+- from: guyton1972_heart_rate_stroke_volume_scenario.autonomic_drive
+  to:
+  - guyton1972_heart_rate_stroke_volume_core.autonomic_drive
+- from: guyton1972_heart_rate_stroke_volume_scenario.right_atrial_pressure
+  to:
+  - guyton1972_heart_rate_stroke_volume_core.right_atrial_pressure
+- from: guyton1972_heart_rate_stroke_volume_scenario.cardiac_output
+  to:
+  - guyton1972_heart_rate_stroke_volume_core.cardiac_output
+- from: guyton1972_heart_rate_stroke_volume_scenario.scenario_metadata
+  to:
+  - guyton1972_heart_rate_stroke_volume_viz.scenario_metadata
+- from: guyton1972_heart_rate_stroke_volume_core.state
+  to:
+  - guyton1972_heart_rate_stroke_volume_viz.state
+- from: guyton1972_heart_rate_stroke_volume_core.species_labels
+  to:
+  - guyton1972_heart_rate_stroke_volume_viz.species_labels

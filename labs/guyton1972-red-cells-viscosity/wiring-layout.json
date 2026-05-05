@@ -1,0 +1,57 @@
+{
+  "nodes": [
+    {
+      "id": "guyton1972_red_cells_viscosity_scenario",
+      "position": {
+        "x": 120,
+        "y": 0
+      }
+    },
+    {
+      "id": "guyton1972_red_cells_viscosity_core",
+      "position": {
+        "x": 500,
+        "y": 0
+      }
+    },
+    {
+      "id": "guyton1972_red_cells_viscosity_viz",
+      "position": {
+        "x": 880,
+        "y": 0
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "guyton1972_red_cells_viscosity_scenario.plasma_volume",
+      "to": [
+        "guyton1972_red_cells_viscosity_core.plasma_volume"
+      ]
+    },
+    {
+      "from": "guyton1972_red_cells_viscosity_scenario.erythropoiesis_drive",
+      "to": [
+        "guyton1972_red_cells_viscosity_core.erythropoiesis_drive"
+      ]
+    },
+    {
+      "from": "guyton1972_red_cells_viscosity_scenario.scenario_metadata",
+      "to": [
+        "guyton1972_red_cells_viscosity_viz.scenario_metadata"
+      ]
+    },
+    {
+      "from": "guyton1972_red_cells_viscosity_core.state",
+      "to": [
+        "guyton1972_red_cells_viscosity_viz.state"
+      ]
+    },
+    {
+      "from": "guyton1972_red_cells_viscosity_core.species_labels",
+      "to": [
+        "guyton1972_red_cells_viscosity_viz.species_labels"
+      ]
+    }
+  ]
+}

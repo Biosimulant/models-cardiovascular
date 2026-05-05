@@ -1,0 +1,99 @@
+schema_version: '1.0'
+title: Iyer2007 Arrhythmia Cardiac Death Scenario
+description: Scenario driver that emits baseline, challenge, and recovery inputs for
+  the cardiovascular core model.
+package: cardiovascular-scenario-iyer2007-arrhythmia-cardiac-death
+version: 0.1.0
+standard: biosim-module
+tags:
+- cardiovascular
+- scenario
+- stimulus
+authors:
+- name: Biosimulant Team
+biosim:
+  entrypoint: src.iyer2007_arrhythmia_cardiac_death_scenario.CardiovascularScenarioModel
+runtime:
+  dependencies:
+    packages: []
+parameters:
+- name: scenario_name
+  value: Calcium activation challenge
+  description: Plain-language name shown in visualizations.
+- name: scenario_description
+  value: Baseline is followed by a intracellular calcium challenge and recovery period.
+  description: Plain-language scenario description shown in visualizations.
+- name: baseline_until
+  value: 0.25
+  units: s
+  min: 0.0
+  description: Simulation time at which the challenge starts.
+- name: challenge_until
+  value: 0.75
+  units: s
+  min: 0.0
+  description: Simulation time at which recovery starts.
+- name: schedule
+  value:
+    temperature:
+      baseline: 310.0
+      challenge: 310.0
+      recovery: 310.0
+      unit: dimensionless
+      label: temperature
+      description: Scenario-controlled temperature value.
+      active: false
+    isoproterenol_drive:
+      baseline: 0.0
+      challenge: 0.0
+      recovery: 0.0
+      unit: dimensionless
+      label: isoproterenol drive
+      description: Scenario-controlled isoproterenol drive value.
+      active: false
+    calsequestrin_buffer:
+      baseline: 0.0
+      challenge: 0.0
+      recovery: 0.0
+      unit: dimensionless
+      label: calsequestrin buffer
+      description: Scenario-controlled calsequestrin buffer value.
+      active: false
+    ryanodine_receptor_pool:
+      baseline: 0.0
+      challenge: 0.0
+      recovery: 0.0
+      unit: dimensionless
+      label: ryanodine receptor pool
+      description: Scenario-controlled ryanodine receptor pool value.
+      active: false
+    intracellular_calcium:
+      baseline: 0.00036396867218
+      challenge: 0.00072793734436
+      recovery: 0.00036396867218
+      unit: mM
+      label: intracellular calcium
+      description: Scenario-controlled intracellular calcium value.
+      active: true
+  description: Per-output baseline, challenge, and recovery values emitted by the
+    scenario driver.
+io:
+  inputs: []
+  outputs:
+  - name: temperature
+    emitted_unit: dimensionless
+    description: Scenario-controlled temperature value.
+  - name: isoproterenol_drive
+    emitted_unit: dimensionless
+    description: Scenario-controlled isoproterenol drive value.
+  - name: calsequestrin_buffer
+    emitted_unit: dimensionless
+    description: Scenario-controlled calsequestrin buffer value.
+  - name: ryanodine_receptor_pool
+    emitted_unit: dimensionless
+    description: Scenario-controlled ryanodine receptor pool value.
+  - name: intracellular_calcium
+    emitted_unit: mM
+    description: Scenario-controlled intracellular calcium value.
+  - name: scenario_metadata
+    description: Scenario name, active input, values, timing, and event markers.

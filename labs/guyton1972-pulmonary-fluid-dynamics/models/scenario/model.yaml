@@ -1,0 +1,66 @@
+schema_version: '1.0'
+title: Guyton1972 Pulmonary Fluid Dynamics Scenario
+description: Scenario driver that emits baseline, challenge, and recovery inputs for
+  the cardiovascular core model.
+package: cardiovascular-scenario-guyton1972-pulmonary-fluid-dynamics
+version: 0.1.0
+standard: biosim-module
+tags:
+- cardiovascular
+- scenario
+- stimulus
+authors:
+- name: Biosimulant Team
+biosim:
+  entrypoint: src.guyton1972_pulmonary_fluid_dynamics_scenario.CardiovascularScenarioModel
+runtime:
+  dependencies:
+    packages: []
+parameters:
+- name: scenario_name
+  value: Pressure-load challenge
+  description: Plain-language name shown in visualizations.
+- name: scenario_description
+  value: Baseline is followed by a capillary pressure challenge and recovery period.
+  description: Plain-language scenario description shown in visualizations.
+- name: baseline_until
+  value: 150.0
+  units: s
+  min: 0.0
+  description: Simulation time at which the challenge starts.
+- name: challenge_until
+  value: 450.0
+  units: s
+  min: 0.0
+  description: Simulation time at which recovery starts.
+- name: schedule
+  value:
+    capillary_pressure:
+      baseline: 29.9941
+      challenge: 35.99292
+      recovery: 29.9941
+      unit: dimensionless
+      label: capillary pressure
+      description: Scenario-controlled capillary pressure value.
+      active: true
+    plasma_oncotic_pressure:
+      baseline: 71.9719
+      challenge: 71.9719
+      recovery: 71.9719
+      unit: dimensionless
+      label: plasma oncotic pressure
+      description: Scenario-controlled plasma oncotic pressure value.
+      active: false
+  description: Per-output baseline, challenge, and recovery values emitted by the
+    scenario driver.
+io:
+  inputs: []
+  outputs:
+  - name: capillary_pressure
+    emitted_unit: dimensionless
+    description: Scenario-controlled capillary pressure value.
+  - name: plasma_oncotic_pressure
+    emitted_unit: dimensionless
+    description: Scenario-controlled plasma oncotic pressure value.
+  - name: scenario_metadata
+    description: Scenario name, active input, values, timing, and event markers.

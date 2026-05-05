@@ -1,0 +1,85 @@
+schema_version: '2.0'
+title: Guyton1972 Non Muscle Blood Flow Lab
+description: 'Two-model lab for Guyton1972 Non Muscle Blood Flow: a core SBML simulator
+  wired into a dedicated visualization sub-model that turns the raw state into friendly
+  timeseries and a plain-language summary. This a model from the article: Circulation:
+  overall regulation. It can be used to explore cardiac dynamics and compare response
+  patterns across conditions.'
+models:
+- alias: guyton1972_non_muscle_blood_flow_scenario
+  path: models/scenario
+  parameters:
+    scenario_name: Oxygen availability challenge
+    scenario_description: Baseline is followed by a tissue oxygen challenge and recovery
+      period.
+    baseline_until: 150.0
+    challenge_until: 450.0
+    schedule:
+      tissue_oxygen:
+        baseline: 35.1148
+        challenge: 17.5574
+        recovery: 35.1148
+        unit: dimensionless
+        label: tissue oxygen
+        description: Scenario-controlled tissue oxygen value.
+        active: true
+      autonomic_drive:
+        baseline: 0.9
+        challenge: 0.9
+        recovery: 0.9
+        unit: dimensionless
+        label: autonomic drive
+        description: Scenario-controlled autonomic drive value.
+        active: false
+- alias: guyton1972_non_muscle_blood_flow_core
+  path: ./models/core
+  parameters:
+    model_path: data/MODEL0911169699.xml
+    integration_step: 1.0
+- alias: guyton1972_non_muscle_blood_flow_viz
+  path: ./models/viz
+  parameters:
+    integration_step: 1.0
+    lab_title: Guyton1972 Non Muscle Blood Flow
+    lab_question: How is non-muscle tissue blood flow regulated?
+runtime:
+  duration: 600.0
+  communication_step: 1.0
+  initial_inputs:
+    guyton1972_non_muscle_blood_flow_core:
+      integration_step: 1.0
+      parameter_overrides:
+        payload: {}
+      initial_conditions:
+        payload: {}
+io:
+  inputs:
+  - name: integration_step
+    maps_to: guyton1972_non_muscle_blood_flow_core.integration_step
+  - name: parameter_overrides
+    maps_to: guyton1972_non_muscle_blood_flow_core.parameter_overrides
+  - name: initial_conditions
+    maps_to: guyton1972_non_muscle_blood_flow_core.initial_conditions
+  outputs:
+  - name: scenario_metadata
+    maps_to: guyton1972_non_muscle_blood_flow_scenario.scenario_metadata
+  - name: state
+    maps_to: guyton1972_non_muscle_blood_flow_core.state
+  - name: run_summary
+    maps_to: guyton1972_non_muscle_blood_flow_viz.run_summary
+wiring:
+- from: guyton1972_non_muscle_blood_flow_scenario.tissue_oxygen
+  to:
+  - guyton1972_non_muscle_blood_flow_core.tissue_oxygen
+- from: guyton1972_non_muscle_blood_flow_scenario.autonomic_drive
+  to:
+  - guyton1972_non_muscle_blood_flow_core.autonomic_drive
+- from: guyton1972_non_muscle_blood_flow_scenario.scenario_metadata
+  to:
+  - guyton1972_non_muscle_blood_flow_viz.scenario_metadata
+- from: guyton1972_non_muscle_blood_flow_core.state
+  to:
+  - guyton1972_non_muscle_blood_flow_viz.state
+- from: guyton1972_non_muscle_blood_flow_core.species_labels
+  to:
+  - guyton1972_non_muscle_blood_flow_viz.species_labels

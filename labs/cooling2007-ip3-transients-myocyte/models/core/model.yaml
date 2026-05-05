@@ -1,0 +1,79 @@
+schema_version: '2.0'
+title: Cooling2007_IP3transients_CardiacMyocyte
+description: 'This a model from the article: Modeling hypertrophic IP3 transients
+  in the cardiac myocyte. It can be used to explore cardiac dynamics and compare response
+  patterns across conditions.'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Michael Cooling
+- Peter Hunter
+- Edmund J Crampin
+upstream:
+  id: biomodels_ebi:BIOMD0000000400
+  source_db: biomodels_ebi
+  source_id: BIOMD0000000400
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000000400
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000000400?filename=BIOMD0000000400_url.xml
+  license: CC0
+biosim:
+  entrypoint: src.cooling2007_ip3transients_cardiacmyocyte_biomd0000000400_model:Cooling2007Ip3transientsCardiacmyocyteBiomd0000000400Model
+  init_kwargs:
+    model_path: data/BIOMD0000000400.xml
+    integration_step: 0.001
+  communication_step: 0.001
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.2.11.2
+parameters:
+- name: model_path
+  value: data/BIOMD0000000400.xml
+  description: Relative path to the SBML file shipped with this model.
+- name: integration_step
+  value: 0.001
+  min: 0.0
+  units: s
+  description: ODE solver integration step size in seconds.
+io:
+  inputs:
+  - name: inositol_trisphosphate_initial
+    accepted_units:
+    - dimensionless
+    description: Sets inositol trisphosphate initial for the simulation scenario.
+      Default `0.015`.
+  - name: calcium_initial
+    accepted_units:
+    - dimensionless
+    description: Sets calcium initial for the simulation scenario. Default `0.1`.
+  - name: receptor_initial
+    accepted_units:
+    - dimensionless
+    description: Sets receptor initial for the simulation scenario. Default `13.9`.
+  - name: integration_step
+    accepted_units:
+    - s
+    description: Override the ODE solver integration step. Smaller = more precise
+      but slower.
+  - name: parameter_overrides
+    description: Map of SBML global parameter name to override value, applied before
+      each advance_window. Use the parameter list in the lab README for keys not surfaced
+      as named ports above.
+  - name: initial_conditions
+    description: Map of SBML species ID to initial concentration override, applied
+      at setup and on reset. Use the species list in the lab README to discover keys.
+  outputs:
+  - name: state
+    description: Species concentrations and state variables read from the SBML model.
+      Wired into the lab's `viz` sub-model for timeseries rendering.
+  - name: species_labels
+    description: Static record mapping each SBML species id to a human-friendly label
+      (read from `<species name=...>` or prettified id). Emitted on every window but
+      only needed once by downstream presenters.

@@ -1,0 +1,75 @@
+{
+  "nodes": [
+    {
+      "id": "iyer2007_arrhythmia_cardiac_death_scenario",
+      "position": {
+        "x": 120,
+        "y": 0
+      }
+    },
+    {
+      "id": "iyer2007_arrhythmia_cardiac_death_core",
+      "position": {
+        "x": 500,
+        "y": 0
+      }
+    },
+    {
+      "id": "iyer2007_arrhythmia_cardiac_death_viz",
+      "position": {
+        "x": 880,
+        "y": 0
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "iyer2007_arrhythmia_cardiac_death_scenario.temperature",
+      "to": [
+        "iyer2007_arrhythmia_cardiac_death_core.temperature"
+      ]
+    },
+    {
+      "from": "iyer2007_arrhythmia_cardiac_death_scenario.isoproterenol_drive",
+      "to": [
+        "iyer2007_arrhythmia_cardiac_death_core.isoproterenol_drive"
+      ]
+    },
+    {
+      "from": "iyer2007_arrhythmia_cardiac_death_scenario.calsequestrin_buffer",
+      "to": [
+        "iyer2007_arrhythmia_cardiac_death_core.calsequestrin_buffer"
+      ]
+    },
+    {
+      "from": "iyer2007_arrhythmia_cardiac_death_scenario.ryanodine_receptor_pool",
+      "to": [
+        "iyer2007_arrhythmia_cardiac_death_core.ryanodine_receptor_pool"
+      ]
+    },
+    {
+      "from": "iyer2007_arrhythmia_cardiac_death_scenario.intracellular_calcium",
+      "to": [
+        "iyer2007_arrhythmia_cardiac_death_core.intracellular_calcium"
+      ]
+    },
+    {
+      "from": "iyer2007_arrhythmia_cardiac_death_scenario.scenario_metadata",
+      "to": [
+        "iyer2007_arrhythmia_cardiac_death_viz.scenario_metadata"
+      ]
+    },
+    {
+      "from": "iyer2007_arrhythmia_cardiac_death_core.state",
+      "to": [
+        "iyer2007_arrhythmia_cardiac_death_viz.state"
+      ]
+    },
+    {
+      "from": "iyer2007_arrhythmia_cardiac_death_core.species_labels",
+      "to": [
+        "iyer2007_arrhythmia_cardiac_death_viz.species_labels"
+      ]
+    }
+  ]
+}

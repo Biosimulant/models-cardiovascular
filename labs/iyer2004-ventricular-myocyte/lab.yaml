@@ -1,0 +1,108 @@
+schema_version: '2.0'
+title: Iyer2004 Ventricular Myocyte Lab
+description: 'Two-model lab for Iyer2004 Ventricular Myocyte: a core SBML simulator
+  wired into a dedicated visualization sub-model that turns the raw state into friendly
+  timeseries and a plain-language summary. This a model from the article: A computational
+  model of the human left-ventricular epicardial myocyte. It can be used to explore
+  cardiac dynamics and compare response patterns across conditions.'
+models:
+- alias: iyer2004_ventricular_myocyte_scenario
+  path: models/scenario
+  parameters:
+    scenario_name: Calcium activation challenge
+    scenario_description: Baseline is followed by a intracellular calcium challenge
+      and recovery period.
+    baseline_until: 0.25
+    challenge_until: 0.75
+    schedule:
+      temperature:
+        baseline: 310.0
+        challenge: 310.0
+        recovery: 310.0
+        unit: dimensionless
+        label: temperature
+        description: Scenario-controlled temperature value.
+        active: false
+      extracellular_sodium:
+        baseline: 9.798304162
+        challenge: 9.798304162
+        recovery: 9.798304162
+        unit: mM
+        label: extracellular sodium
+        description: Scenario-controlled extracellular sodium value.
+        active: false
+      extracellular_potassium:
+        baseline: 125.5589432
+        challenge: 125.5589432
+        recovery: 125.5589432
+        unit: mM
+        label: extracellular potassium
+        description: Scenario-controlled extracellular potassium value.
+        active: false
+      intracellular_calcium:
+        baseline: 8.601192016e-05
+        challenge: 0.00017202384032
+        recovery: 8.601192016e-05
+        unit: mM
+        label: intracellular calcium
+        description: Scenario-controlled intracellular calcium value.
+        active: true
+- alias: iyer2004_ventricular_myocyte_core
+  path: ./models/core
+  parameters:
+    model_path: data/MODEL0847999575.xml
+    integration_step: 0.001
+- alias: iyer2004_ventricular_myocyte_viz
+  path: ./models/viz
+  parameters:
+    integration_step: 0.001
+    lab_title: Iyer2004 Ventricular Myocyte
+    lab_question: How does a ventricular myocyte action potential respond to pacing
+      and conductance changes?
+runtime:
+  duration: 1.0
+  communication_step: 0.001
+  initial_inputs:
+    iyer2004_ventricular_myocyte_core:
+      integration_step: 0.001
+      parameter_overrides:
+        payload: {}
+      initial_conditions:
+        payload: {}
+io:
+  inputs:
+  - name: integration_step
+    maps_to: iyer2004_ventricular_myocyte_core.integration_step
+  - name: parameter_overrides
+    maps_to: iyer2004_ventricular_myocyte_core.parameter_overrides
+  - name: initial_conditions
+    maps_to: iyer2004_ventricular_myocyte_core.initial_conditions
+  outputs:
+  - name: scenario_metadata
+    maps_to: iyer2004_ventricular_myocyte_scenario.scenario_metadata
+  - name: state
+    maps_to: iyer2004_ventricular_myocyte_core.state
+  - name: run_summary
+    maps_to: iyer2004_ventricular_myocyte_viz.run_summary
+wiring:
+- from: iyer2004_ventricular_myocyte_scenario.temperature
+  to:
+  - iyer2004_ventricular_myocyte_core.temperature
+- from: iyer2004_ventricular_myocyte_scenario.extracellular_sodium
+  to:
+  - iyer2004_ventricular_myocyte_core.extracellular_sodium
+- from: iyer2004_ventricular_myocyte_scenario.extracellular_potassium
+  to:
+  - iyer2004_ventricular_myocyte_core.extracellular_potassium
+- from: iyer2004_ventricular_myocyte_scenario.intracellular_calcium
+  to:
+  - iyer2004_ventricular_myocyte_core.intracellular_calcium
+- from: iyer2004_ventricular_myocyte_scenario.scenario_metadata
+  to:
+  - iyer2004_ventricular_myocyte_viz.scenario_metadata
+- from: iyer2004_ventricular_myocyte_core.state
+  to:
+  - iyer2004_ventricular_myocyte_viz.state
+- from: iyer2004_ventricular_myocyte_core.species_labels
+  to:
+  - iyer2004_ventricular_myocyte_viz.species_labels

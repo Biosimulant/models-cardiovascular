@@ -1,0 +1,108 @@
+schema_version: '2.0'
+title: Pasek2006 Ventricular Cardiomyocytes Lab
+description: 'Two-model lab for Pasek2006 Ventricular Cardiomyocytes: a core SBML
+  simulator wired into a dedicated visualization sub-model that turns the raw state
+  into friendly timeseries and a plain-language summary. This a model from the article:
+  The functional role of cardiac T-tubules explored in a model of rat ventricular
+  myocytes. It can be used to explore cardiac dynamics and compare response patterns
+  across conditions.'
+models:
+- alias: pasek2006_ventricular_cardiomyocytes_scenario
+  path: models/scenario
+  parameters:
+    scenario_name: Calcium activation challenge
+    scenario_description: Baseline is followed by a extracellular calcium challenge
+      and recovery period.
+    baseline_until: 0.25
+    challenge_until: 0.75
+    schedule:
+      extracellular_sodium:
+        baseline: 140.0
+        challenge: 140.0
+        recovery: 140.0
+        unit: mM
+        label: extracellular sodium
+        description: Scenario-controlled extracellular sodium value.
+        active: false
+      extracellular_potassium:
+        baseline: 5.4
+        challenge: 5.4
+        recovery: 5.4
+        unit: mM
+        label: extracellular potassium
+        description: Scenario-controlled extracellular potassium value.
+        active: false
+      extracellular_calcium:
+        baseline: 1.2
+        challenge: 2.4
+        recovery: 1.2
+        unit: mM
+        label: extracellular calcium
+        description: Scenario-controlled extracellular calcium value.
+        active: true
+      temperature:
+        baseline: 295.0
+        challenge: 295.0
+        recovery: 295.0
+        unit: dimensionless
+        label: temperature
+        description: Scenario-controlled temperature value.
+        active: false
+- alias: pasek2006_ventricular_cardiomyocytes_core
+  path: ./models/core
+  parameters:
+    model_path: data/MODEL0406553884.xml
+    integration_step: 0.001
+- alias: pasek2006_ventricular_cardiomyocytes_viz
+  path: ./models/viz
+  parameters:
+    integration_step: 0.001
+    lab_title: Pasek2006 Ventricular Cardiomyocytes
+    lab_question: How do T-tubule conditions affect ventricular excitation?
+runtime:
+  duration: 1.0
+  communication_step: 0.001
+  initial_inputs:
+    pasek2006_ventricular_cardiomyocytes_core:
+      integration_step: 0.001
+      parameter_overrides:
+        payload: {}
+      initial_conditions:
+        payload: {}
+io:
+  inputs:
+  - name: integration_step
+    maps_to: pasek2006_ventricular_cardiomyocytes_core.integration_step
+  - name: parameter_overrides
+    maps_to: pasek2006_ventricular_cardiomyocytes_core.parameter_overrides
+  - name: initial_conditions
+    maps_to: pasek2006_ventricular_cardiomyocytes_core.initial_conditions
+  outputs:
+  - name: scenario_metadata
+    maps_to: pasek2006_ventricular_cardiomyocytes_scenario.scenario_metadata
+  - name: state
+    maps_to: pasek2006_ventricular_cardiomyocytes_core.state
+  - name: run_summary
+    maps_to: pasek2006_ventricular_cardiomyocytes_viz.run_summary
+wiring:
+- from: pasek2006_ventricular_cardiomyocytes_scenario.extracellular_sodium
+  to:
+  - pasek2006_ventricular_cardiomyocytes_core.extracellular_sodium
+- from: pasek2006_ventricular_cardiomyocytes_scenario.extracellular_potassium
+  to:
+  - pasek2006_ventricular_cardiomyocytes_core.extracellular_potassium
+- from: pasek2006_ventricular_cardiomyocytes_scenario.extracellular_calcium
+  to:
+  - pasek2006_ventricular_cardiomyocytes_core.extracellular_calcium
+- from: pasek2006_ventricular_cardiomyocytes_scenario.temperature
+  to:
+  - pasek2006_ventricular_cardiomyocytes_core.temperature
+- from: pasek2006_ventricular_cardiomyocytes_scenario.scenario_metadata
+  to:
+  - pasek2006_ventricular_cardiomyocytes_viz.scenario_metadata
+- from: pasek2006_ventricular_cardiomyocytes_core.state
+  to:
+  - pasek2006_ventricular_cardiomyocytes_viz.state
+- from: pasek2006_ventricular_cardiomyocytes_core.species_labels
+  to:
+  - pasek2006_ventricular_cardiomyocytes_viz.species_labels

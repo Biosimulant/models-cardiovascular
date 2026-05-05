@@ -1,0 +1,99 @@
+schema_version: '1.0'
+title: Chen2006 Endothelial No Release Scenario
+description: Scenario driver that emits baseline, challenge, and recovery inputs for
+  the cardiovascular core model.
+package: cardiovascular-scenario-chen2006-endothelial-no-release
+version: 0.1.0
+standard: other
+tags:
+- cardiovascular
+- scenario
+- stimulus
+authors:
+- name: Biosimulant Team
+biosim:
+  entrypoint: src.chen2006_endothelial_no_release_scenario.CardiovascularScenarioModel
+runtime:
+  dependencies:
+    packages: []
+parameters:
+- name: scenario_name
+  value: Oxygen availability challenge
+  description: Plain-language name shown in visualizations.
+- name: scenario_description
+  value: Baseline is followed by a oxygen challenge and recovery period.
+  description: Plain-language scenario description shown in visualizations.
+- name: baseline_until
+  value: 0.25
+  units: s
+  min: 0.0
+  description: Simulation time at which the challenge starts.
+- name: challenge_until
+  value: 0.75
+  units: s
+  min: 0.0
+  description: Simulation time at which recovery starts.
+- name: schedule
+  value:
+    l_arginine:
+      baseline: 100.0
+      challenge: 100.0
+      recovery: 100.0
+      unit: dimensionless
+      label: l arginine
+      description: Scenario-controlled l arginine value.
+      active: false
+    oxygen:
+      baseline: 150.0
+      challenge: 75.0
+      recovery: 150.0
+      unit: dimensionless
+      label: oxygen
+      description: Scenario-controlled oxygen value.
+      active: true
+    nitric_oxide_synthase_pool:
+      baseline: 0.015
+      challenge: 0.015
+      recovery: 0.015
+      unit: dimensionless
+      label: nitric oxide synthase pool
+      description: Scenario-controlled nitric oxide synthase pool value.
+      active: false
+    arg_binding_rate:
+      baseline: 0.1
+      challenge: 0.1
+      recovery: 0.1
+      unit: dimensionless
+      label: arg binding rate
+      description: Scenario-controlled arg binding rate value.
+      active: false
+    oxygen_binding_rate:
+      baseline: 1.89
+      challenge: 1.89
+      recovery: 1.89
+      unit: dimensionless
+      label: oxygen binding rate
+      description: Scenario-controlled oxygen binding rate value.
+      active: false
+  description: Per-output baseline, challenge, and recovery values emitted by the
+    scenario driver.
+io:
+  inputs: []
+  outputs:
+  - name: l_arginine
+    emitted_unit: dimensionless
+    description: Scenario-controlled l arginine value.
+  - name: oxygen
+    emitted_unit: dimensionless
+    description: Scenario-controlled oxygen value.
+  - name: nitric_oxide_synthase_pool
+    emitted_unit: dimensionless
+    description: Scenario-controlled nitric oxide synthase pool value.
+  - name: arg_binding_rate
+    emitted_unit: dimensionless
+    description: Scenario-controlled arg binding rate value.
+  - name: oxygen_binding_rate
+    emitted_unit: dimensionless
+    description: Scenario-controlled oxygen binding rate value.
+  - name: scenario_metadata
+    description: Scenario name, active input, values, timing, and event markers.

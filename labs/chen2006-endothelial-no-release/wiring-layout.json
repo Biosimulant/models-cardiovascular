@@ -1,0 +1,26 @@
+{
+  "edges": [],
+  "nodes": [
+    {
+      "id": "chen2006_endothelial_no_release_scenario",
+      "position": {
+        "x": 114.88401317272748,
+        "y": -1.7053289424241669
+      }
+    },
+    {
+      "id": "chen2006_endothelial_no_release_core",
+      "position": {
+        "x": 513.6426315393934,
+        "y": 356.4137489666512
+      }
+    },
+    {
+      "id": "chen2006_endothelial_no_release_viz",
+      "position": {
+        "x": 874.8840131727275,
+        "y": -73.32914452423927
+      }
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "nodes": [
+    {
+      "id": "guyton1972_atrial_natriuretic_peptide_scenario",
+      "position": {
+        "x": 120,
+        "y": 0
+      }
+    },
+    {
+      "id": "guyton1972_atrial_natriuretic_peptide_core",
+      "position": {
+        "x": 500,
+        "y": 0
+      }
+    },
+    {
+      "id": "guyton1972_atrial_natriuretic_peptide_viz",
+      "position": {
+        "x": 880,
+        "y": 0
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "guyton1972_atrial_natriuretic_peptide_scenario.left_atrial_pressure",
+      "to": [
+        "guyton1972_atrial_natriuretic_peptide_core.left_atrial_pressure"
+      ]
+    },
+    {
+      "from": "guyton1972_atrial_natriuretic_peptide_scenario.right_atrial_pressure",
+      "to": [
+        "guyton1972_atrial_natriuretic_peptide_core.right_atrial_pressure"
+      ]
+    },
+    {
+      "from": "guyton1972_atrial_natriuretic_peptide_scenario.atrial_natriuretic_peptide_infusion",
+      "to": [
+        "guyton1972_atrial_natriuretic_peptide_core.atrial_natriuretic_peptide_infusion"
+      ]
+    },
+    {
+      "from": "guyton1972_atrial_natriuretic_peptide_scenario.scenario_metadata",
+      "to": [
+        "guyton1972_atrial_natriuretic_peptide_viz.scenario_metadata"
+      ]
+    },
+    {
+      "from": "guyton1972_atrial_natriuretic_peptide_core.state",
+      "to": [
+        "guyton1972_atrial_natriuretic_peptide_viz.state"
+      ]
+    },
+    {
+      "from": "guyton1972_atrial_natriuretic_peptide_core.species_labels",
+      "to": [
+        "guyton1972_atrial_natriuretic_peptide_viz.species_labels"
+      ]
+    }
+  ]
+}

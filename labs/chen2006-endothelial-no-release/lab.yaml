@@ -1,0 +1,113 @@
+description: 'Two-model lab for Chen2006 Endothelial No Release: a core SBML simulator wired into a dedicated visualization sub-model that turns the raw state into friendly timeseries and a plain-language summary. Chen2006 - Nitric Oxide Release fromEndothelial Cells This model is described in the article: Theoretical analysis of biochemical pathways of nitric oxide release from vascular endothelial cells. It can be used to explore cardiac dynamics and compare response patterns across conditions.'
+io:
+  inputs:
+  - maps_to: chen2006_endothelial_no_release_core.integration_step
+    name: integration_step
+  - maps_to: chen2006_endothelial_no_release_core.parameter_overrides
+    name: parameter_overrides
+  - maps_to: chen2006_endothelial_no_release_core.initial_conditions
+    name: initial_conditions
+  outputs:
+  - maps_to: chen2006_endothelial_no_release_scenario.scenario_metadata
+    name: scenario_metadata
+  - maps_to: chen2006_endothelial_no_release_core.state
+    name: state
+  - maps_to: chen2006_endothelial_no_release_viz.run_summary
+    name: run_summary
+models:
+- alias: chen2006_endothelial_no_release_scenario
+  parameters:
+    baseline_until: 0.25
+    challenge_until: 0.75
+    scenario_description: Baseline is followed by a oxygen challenge and recovery period.
+    scenario_name: Oxygen availability challenge
+    schedule:
+      arg_binding_rate:
+        active: false
+        baseline: 0.1
+        challenge: 0.1
+        description: Scenario-controlled arg binding rate value.
+        label: arg binding rate
+        recovery: 0.1
+        unit: dimensionless
+      l_arginine:
+        active: false
+        baseline: 100
+        challenge: 100
+        description: Scenario-controlled l arginine value.
+        label: l arginine
+        recovery: 100
+        unit: dimensionless
+      nitric_oxide_synthase_pool:
+        active: false
+        baseline: 0.015
+        challenge: 0.015
+        description: Scenario-controlled nitric oxide synthase pool value.
+        label: nitric oxide synthase pool
+        recovery: 0.015
+        unit: dimensionless
+      oxygen:
+        active: true
+        baseline: 150
+        challenge: 75
+        description: Scenario-controlled oxygen value.
+        label: oxygen
+        recovery: 150
+        unit: dimensionless
+      oxygen_binding_rate:
+        active: false
+        baseline: 1.89
+        challenge: 1.89
+        description: Scenario-controlled oxygen binding rate value.
+        label: oxygen binding rate
+        recovery: 1.89
+        unit: dimensionless
+  path: models/scenario
+- alias: chen2006_endothelial_no_release_core
+  parameters:
+    integration_step: 0.01
+    model_path: data/BIOMD0000000676.xml
+  path: models/core
+- alias: chen2006_endothelial_no_release_viz
+  parameters:
+    integration_step: 0.01
+    lab_question: Does the endothelial pathway produce nitric oxide?
+    lab_title: Chen2006 Endothelial No Release
+  path: models/viz
+runtime:
+  communication_step: 0.01
+  duration: 1
+  initial_inputs:
+    chen2006_endothelial_no_release_core:
+      initial_conditions:
+        payload: {}
+      integration_step: 0.01
+      parameter_overrides:
+        payload: {}
+schema_version: '2.0'
+title: Chen2006 Endothelial No Release Lab
+wiring:
+- from: chen2006_endothelial_no_release_scenario.l_arginine
+  to:
+  - chen2006_endothelial_no_release_core.l_arginine
+- from: chen2006_endothelial_no_release_scenario.oxygen
+  to:
+  - chen2006_endothelial_no_release_core.oxygen
+- from: chen2006_endothelial_no_release_scenario.nitric_oxide_synthase_pool
+  to:
+  - chen2006_endothelial_no_release_core.nitric_oxide_synthase_pool
+- from: chen2006_endothelial_no_release_scenario.arg_binding_rate
+  to:
+  - chen2006_endothelial_no_release_core.arg_binding_rate
+- from: chen2006_endothelial_no_release_scenario.oxygen_binding_rate
+  to:
+  - chen2006_endothelial_no_release_core.oxygen_binding_rate
+- from: chen2006_endothelial_no_release_scenario.scenario_metadata
+  to:
+  - chen2006_endothelial_no_release_viz.scenario_metadata
+- from: chen2006_endothelial_no_release_core.state
+  to:
+  - chen2006_endothelial_no_release_viz.state
+- from: chen2006_endothelial_no_release_core.species_labels
+  to:
+  - chen2006_endothelial_no_release_viz.species_labels

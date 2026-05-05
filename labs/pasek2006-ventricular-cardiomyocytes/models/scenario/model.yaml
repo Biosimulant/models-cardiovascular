@@ -1,0 +1,88 @@
+schema_version: '1.0'
+title: Pasek2006 Ventricular Cardiomyocytes Scenario
+description: Scenario driver that emits baseline, challenge, and recovery inputs for
+  the cardiovascular core model.
+package: cardiovascular-scenario-pasek2006-ventricular-cardiomyocytes
+version: 0.1.0
+standard: biosim-module
+tags:
+- cardiovascular
+- scenario
+- stimulus
+authors:
+- name: Biosimulant Team
+biosim:
+  entrypoint: src.pasek2006_ventricular_cardiomyocytes_scenario.CardiovascularScenarioModel
+runtime:
+  dependencies:
+    packages: []
+parameters:
+- name: scenario_name
+  value: Calcium activation challenge
+  description: Plain-language name shown in visualizations.
+- name: scenario_description
+  value: Baseline is followed by a extracellular calcium challenge and recovery period.
+  description: Plain-language scenario description shown in visualizations.
+- name: baseline_until
+  value: 0.25
+  units: s
+  min: 0.0
+  description: Simulation time at which the challenge starts.
+- name: challenge_until
+  value: 0.75
+  units: s
+  min: 0.0
+  description: Simulation time at which recovery starts.
+- name: schedule
+  value:
+    extracellular_sodium:
+      baseline: 140.0
+      challenge: 140.0
+      recovery: 140.0
+      unit: mM
+      label: extracellular sodium
+      description: Scenario-controlled extracellular sodium value.
+      active: false
+    extracellular_potassium:
+      baseline: 5.4
+      challenge: 5.4
+      recovery: 5.4
+      unit: mM
+      label: extracellular potassium
+      description: Scenario-controlled extracellular potassium value.
+      active: false
+    extracellular_calcium:
+      baseline: 1.2
+      challenge: 2.4
+      recovery: 1.2
+      unit: mM
+      label: extracellular calcium
+      description: Scenario-controlled extracellular calcium value.
+      active: true
+    temperature:
+      baseline: 295.0
+      challenge: 295.0
+      recovery: 295.0
+      unit: dimensionless
+      label: temperature
+      description: Scenario-controlled temperature value.
+      active: false
+  description: Per-output baseline, challenge, and recovery values emitted by the
+    scenario driver.
+io:
+  inputs: []
+  outputs:
+  - name: extracellular_sodium
+    emitted_unit: mM
+    description: Scenario-controlled extracellular sodium value.
+  - name: extracellular_potassium
+    emitted_unit: mM
+    description: Scenario-controlled extracellular potassium value.
+  - name: extracellular_calcium
+    emitted_unit: mM
+    description: Scenario-controlled extracellular calcium value.
+  - name: temperature
+    emitted_unit: dimensionless
+    description: Scenario-controlled temperature value.
+  - name: scenario_metadata
+    description: Scenario name, active input, values, timing, and event markers.

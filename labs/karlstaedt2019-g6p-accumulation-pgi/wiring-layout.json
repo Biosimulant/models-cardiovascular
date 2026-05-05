@@ -1,0 +1,57 @@
+{
+  "nodes": [
+    {
+      "id": "karlstaedt2019_g6p_accumulation_pgi_scenario",
+      "position": {
+        "x": 120,
+        "y": 0
+      }
+    },
+    {
+      "id": "karlstaedt2019_g6p_accumulation_pgi_core",
+      "position": {
+        "x": 500,
+        "y": 0
+      }
+    },
+    {
+      "id": "karlstaedt2019_g6p_accumulation_pgi_viz",
+      "position": {
+        "x": 880,
+        "y": 0
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "karlstaedt2019_g6p_accumulation_pgi_scenario.extracellular_glucose",
+      "to": [
+        "karlstaedt2019_g6p_accumulation_pgi_core.extracellular_glucose"
+      ]
+    },
+    {
+      "from": "karlstaedt2019_g6p_accumulation_pgi_scenario.cellular_energy_pool",
+      "to": [
+        "karlstaedt2019_g6p_accumulation_pgi_core.cellular_energy_pool"
+      ]
+    },
+    {
+      "from": "karlstaedt2019_g6p_accumulation_pgi_scenario.scenario_metadata",
+      "to": [
+        "karlstaedt2019_g6p_accumulation_pgi_viz.scenario_metadata"
+      ]
+    },
+    {
+      "from": "karlstaedt2019_g6p_accumulation_pgi_core.state",
+      "to": [
+        "karlstaedt2019_g6p_accumulation_pgi_viz.state"
+      ]
+    },
+    {
+      "from": "karlstaedt2019_g6p_accumulation_pgi_core.species_labels",
+      "to": [
+        "karlstaedt2019_g6p_accumulation_pgi_viz.species_labels"
+      ]
+    }
+  ]
+}

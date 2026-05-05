@@ -1,0 +1,77 @@
+schema_version: '1.0'
+title: Guyton1972 Aldosterone Scenario
+description: Scenario driver that emits baseline, challenge, and recovery inputs for
+  the cardiovascular core model.
+package: cardiovascular-scenario-guyton1972-aldosterone
+version: 0.1.0
+standard: biosim-module
+tags:
+- cardiovascular
+- scenario
+- stimulus
+authors:
+- name: Biosimulant Team
+biosim:
+  entrypoint: src.guyton1972_aldosterone_scenario.CardiovascularScenarioModel
+runtime:
+  dependencies:
+    packages: []
+parameters:
+- name: scenario_name
+  value: Cardiovascular control challenge
+  description: Plain-language name shown in visualizations.
+- name: scenario_description
+  value: Baseline is followed by a angiotensin drive challenge and recovery period.
+  description: Plain-language scenario description shown in visualizations.
+- name: baseline_until
+  value: 150.0
+  units: s
+  min: 0.0
+  description: Simulation time at which the challenge starts.
+- name: challenge_until
+  value: 450.0
+  units: s
+  min: 0.0
+  description: Simulation time at which recovery starts.
+- name: schedule
+  value:
+    angiotensin_drive:
+      baseline: 0.987545
+      challenge: 1.4813175
+      recovery: 0.987545
+      unit: dimensionless
+      label: angiotensin drive
+      description: Scenario-controlled angiotensin drive value.
+      active: true
+    potassium_effect:
+      baseline: 4.44092
+      challenge: 4.44092
+      recovery: 4.44092
+      unit: dimensionless
+      label: potassium effect
+      description: Scenario-controlled potassium effect value.
+      active: false
+    sympathetic_drive:
+      baseline: 0.65
+      challenge: 0.65
+      recovery: 0.65
+      unit: dimensionless
+      label: sympathetic drive
+      description: Scenario-controlled sympathetic drive value.
+      active: false
+  description: Per-output baseline, challenge, and recovery values emitted by the
+    scenario driver.
+io:
+  inputs: []
+  outputs:
+  - name: angiotensin_drive
+    emitted_unit: dimensionless
+    description: Scenario-controlled angiotensin drive value.
+  - name: potassium_effect
+    emitted_unit: dimensionless
+    description: Scenario-controlled potassium effect value.
+  - name: sympathetic_drive
+    emitted_unit: dimensionless
+    description: Scenario-controlled sympathetic drive value.
+  - name: scenario_metadata
+    description: Scenario name, active input, values, timing, and event markers.

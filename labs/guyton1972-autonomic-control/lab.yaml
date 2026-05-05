@@ -1,0 +1,107 @@
+schema_version: '2.0'
+title: Guyton1972 Autonomic Control Lab
+description: 'Two-model lab for Guyton1972 Autonomic Control: a core SBML simulator
+  wired into a dedicated visualization sub-model that turns the raw state into friendly
+  timeseries and a plain-language summary. This a model from the article: Circulation:
+  overall regulation. It can be used to explore cardiac dynamics and compare response
+  patterns across conditions.'
+models:
+- alias: guyton1972_autonomic_control_scenario
+  path: models/scenario
+  parameters:
+    scenario_name: Oxygen availability challenge
+    scenario_description: Baseline is followed by a arterial oxygen challenge and
+      recovery period.
+    baseline_until: 150.0
+    challenge_until: 450.0
+    schedule:
+      arterial_pressure:
+        baseline: 103.525
+        challenge: 103.525
+        recovery: 103.525
+        unit: dimensionless
+        label: arterial pressure
+        description: Scenario-controlled arterial pressure value.
+        active: false
+      arterial_oxygen:
+        baseline: 97.0439
+        challenge: 48.52195
+        recovery: 97.0439
+        unit: dimensionless
+        label: arterial oxygen
+        description: Scenario-controlled arterial oxygen value.
+        active: true
+      left_atrial_pressure:
+        baseline: 2.0
+        challenge: 2.0
+        recovery: 2.0
+        unit: dimensionless
+        label: left atrial pressure
+        description: Scenario-controlled left atrial pressure value.
+        active: false
+      right_atrial_pressure:
+        baseline: 0.00852183
+        challenge: 0.00852183
+        recovery: 0.00852183
+        unit: dimensionless
+        label: right atrial pressure
+        description: Scenario-controlled right atrial pressure value.
+        active: false
+- alias: guyton1972_autonomic_control_core
+  path: ./models/core
+  parameters:
+    model_path: data/MODEL0911270005.xml
+    integration_step: 1.0
+- alias: guyton1972_autonomic_control_viz
+  path: ./models/viz
+  parameters:
+    integration_step: 1.0
+    lab_title: Guyton1972 Autonomic Control
+    lab_question: How does autonomic feedback stabilize circulation?
+runtime:
+  duration: 600.0
+  communication_step: 1.0
+  initial_inputs:
+    guyton1972_autonomic_control_core:
+      integration_step: 1.0
+      parameter_overrides:
+        payload: {}
+      initial_conditions:
+        payload: {}
+io:
+  inputs:
+  - name: integration_step
+    maps_to: guyton1972_autonomic_control_core.integration_step
+  - name: parameter_overrides
+    maps_to: guyton1972_autonomic_control_core.parameter_overrides
+  - name: initial_conditions
+    maps_to: guyton1972_autonomic_control_core.initial_conditions
+  outputs:
+  - name: scenario_metadata
+    maps_to: guyton1972_autonomic_control_scenario.scenario_metadata
+  - name: state
+    maps_to: guyton1972_autonomic_control_core.state
+  - name: run_summary
+    maps_to: guyton1972_autonomic_control_viz.run_summary
+wiring:
+- from: guyton1972_autonomic_control_scenario.arterial_pressure
+  to:
+  - guyton1972_autonomic_control_core.arterial_pressure
+- from: guyton1972_autonomic_control_scenario.arterial_oxygen
+  to:
+  - guyton1972_autonomic_control_core.arterial_oxygen
+- from: guyton1972_autonomic_control_scenario.left_atrial_pressure
+  to:
+  - guyton1972_autonomic_control_core.left_atrial_pressure
+- from: guyton1972_autonomic_control_scenario.right_atrial_pressure
+  to:
+  - guyton1972_autonomic_control_core.right_atrial_pressure
+- from: guyton1972_autonomic_control_scenario.scenario_metadata
+  to:
+  - guyton1972_autonomic_control_viz.scenario_metadata
+- from: guyton1972_autonomic_control_core.state
+  to:
+  - guyton1972_autonomic_control_viz.state
+- from: guyton1972_autonomic_control_core.species_labels
+  to:
+  - guyton1972_autonomic_control_viz.species_labels

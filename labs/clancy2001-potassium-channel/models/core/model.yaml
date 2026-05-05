@@ -1,0 +1,87 @@
+schema_version: '2.0'
+title: Clancy2001_Kchannel
+description: 'This model is according to the paper Cellular consequences of HEGR mutations
+  in the long QT syndrome: precursors to sudden cardiac death. The author used Markovian
+  model of cardiac Ikr in the paper.'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- C E Clancy
+- Y Rudy
+upstream:
+  id: biomodels_ebi:BIOMD0000000121
+  source_db: biomodels_ebi
+  source_id: BIOMD0000000121
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/BIOMD0000000121
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000000121?filename=BIOMD0000000121_url.xml
+  license: CC0
+biosim:
+  entrypoint: src.clancy2001_kchannel_biomd0000000121_model:Clancy2001KchannelBiomd0000000121Model
+  init_kwargs:
+    model_path: data/BIOMD0000000121.xml
+    integration_step: 0.01
+  communication_step: 0.01
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.2.11.2
+parameters:
+- name: model_path
+  value: data/BIOMD0000000121.xml
+  description: Relative path to the SBML file shipped with this model.
+- name: integration_step
+  value: 0.01
+  min: 0.0
+  units: s
+  description: ODE solver integration step size in seconds.
+io:
+  inputs:
+  - name: temperature
+    accepted_units:
+    - dimensionless
+    description: Sets temperature for the simulation scenario. Default `310.0`.
+  - name: extracellular_potassium
+    accepted_units:
+    - mM
+    description: Sets extracellular potassium for the simulation scenario. Default
+      `5.4`.
+  - name: intracellular_potassium
+    accepted_units:
+    - mM
+    description: Sets intracellular potassium for the simulation scenario. Default
+      `140.0`.
+  - name: holding_voltage
+    accepted_units:
+    - mV
+    description: Sets holding voltage for the simulation scenario. Default `-40.0`.
+  - name: test_voltage
+    accepted_units:
+    - mV
+    description: Sets test voltage for the simulation scenario. Default `0.0`.
+  - name: integration_step
+    accepted_units:
+    - s
+    description: Override the ODE solver integration step. Smaller = more precise
+      but slower.
+  - name: parameter_overrides
+    description: Map of SBML global parameter name to override value, applied before
+      each advance_window. Use the parameter list in the lab README for keys not surfaced
+      as named ports above.
+  - name: initial_conditions
+    description: Map of SBML species ID to initial concentration override, applied
+      at setup and on reset. Use the species list in the lab README to discover keys.
+  outputs:
+  - name: state
+    description: Species concentrations and state variables read from the SBML model.
+      Wired into the lab's `viz` sub-model for timeseries rendering.
+  - name: species_labels
+    description: Static record mapping each SBML species id to a human-friendly label
+      (read from `<species name=...>` or prettified id). Emitted on every window but
+      only needed once by downstream presenters.

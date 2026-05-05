@@ -1,0 +1,63 @@
+{
+  "nodes": [
+    {
+      "id": "guyton1972_angiotensin_scenario",
+      "position": {
+        "x": 120,
+        "y": 0
+      }
+    },
+    {
+      "id": "guyton1972_angiotensin_core",
+      "position": {
+        "x": 500,
+        "y": 0
+      }
+    },
+    {
+      "id": "guyton1972_angiotensin_viz",
+      "position": {
+        "x": 880,
+        "y": 0
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "guyton1972_angiotensin_scenario.renal_perfusion",
+      "to": [
+        "guyton1972_angiotensin_core.renal_perfusion"
+      ]
+    },
+    {
+      "from": "guyton1972_angiotensin_scenario.sympathetic_drive",
+      "to": [
+        "guyton1972_angiotensin_core.sympathetic_drive"
+      ]
+    },
+    {
+      "from": "guyton1972_angiotensin_scenario.angiotensin_infusion",
+      "to": [
+        "guyton1972_angiotensin_core.angiotensin_infusion"
+      ]
+    },
+    {
+      "from": "guyton1972_angiotensin_scenario.scenario_metadata",
+      "to": [
+        "guyton1972_angiotensin_viz.scenario_metadata"
+      ]
+    },
+    {
+      "from": "guyton1972_angiotensin_core.state",
+      "to": [
+        "guyton1972_angiotensin_viz.state"
+      ]
+    },
+    {
+      "from": "guyton1972_angiotensin_core.species_labels",
+      "to": [
+        "guyton1972_angiotensin_viz.species_labels"
+      ]
+    }
+  ]
+}

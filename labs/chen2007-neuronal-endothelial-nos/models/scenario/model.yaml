@@ -1,0 +1,77 @@
+schema_version: '1.0'
+title: Chen2007 Neuronal Endothelial Nos Scenario
+description: Scenario driver that emits baseline, challenge, and recovery inputs for
+  the cardiovascular core model.
+package: cardiovascular-scenario-chen2007-neuronal-endothelial-nos
+version: 0.1.0
+standard: biosim-module
+tags:
+- cardiovascular
+- scenario
+- stimulus
+authors:
+- name: Biosimulant Team
+biosim:
+  entrypoint: src.chen2007_neuronal_endothelial_nos_scenario.CardiovascularScenarioModel
+runtime:
+  dependencies:
+    packages: []
+parameters:
+- name: scenario_name
+  value: L arginine challenge
+  description: Plain-language name shown in visualizations.
+- name: scenario_description
+  value: Baseline is followed by a l arginine challenge and recovery period.
+  description: Plain-language scenario description shown in visualizations.
+- name: baseline_until
+  value: 0.25
+  units: s
+  min: 0.0
+  description: Simulation time at which the challenge starts.
+- name: challenge_until
+  value: 0.75
+  units: s
+  min: 0.0
+  description: Simulation time at which recovery starts.
+- name: schedule
+  value:
+    l_arginine:
+      baseline: 0.0
+      challenge: 1.0
+      recovery: 0.0
+      unit: dimensionless
+      label: l arginine
+      description: Scenario-controlled l arginine value.
+      active: true
+    oxygen:
+      baseline: 0.0
+      challenge: 0.0
+      recovery: 0.0
+      unit: dimensionless
+      label: oxygen
+      description: Scenario-controlled oxygen value.
+      active: false
+    nitric_oxide_synthase_pool:
+      baseline: 0.3
+      challenge: 0.3
+      recovery: 0.3
+      unit: dimensionless
+      label: nitric oxide synthase pool
+      description: Scenario-controlled nitric oxide synthase pool value.
+      active: false
+  description: Per-output baseline, challenge, and recovery values emitted by the
+    scenario driver.
+io:
+  inputs: []
+  outputs:
+  - name: l_arginine
+    emitted_unit: dimensionless
+    description: Scenario-controlled l arginine value.
+  - name: oxygen
+    emitted_unit: dimensionless
+    description: Scenario-controlled oxygen value.
+  - name: nitric_oxide_synthase_pool
+    emitted_unit: dimensionless
+    description: Scenario-controlled nitric oxide synthase pool value.
+  - name: scenario_metadata
+    description: Scenario name, active input, values, timing, and event markers.

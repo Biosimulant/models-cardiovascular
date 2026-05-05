@@ -1,0 +1,96 @@
+schema_version: '2.0'
+title: Guyton1972 Electrolytes Lab
+description: 'Two-model lab for Guyton1972 Electrolytes: a core SBML simulator wired
+  into a dedicated visualization sub-model that turns the raw state into friendly
+  timeseries and a plain-language summary. This a model from the article: Circulation:
+  overall regulation. It can be used to explore cardiac dynamics and compare response
+  patterns across conditions.'
+models:
+- alias: guyton1972_electrolytes_scenario
+  path: models/scenario
+  parameters:
+    scenario_name: Cardiovascular control challenge
+    scenario_description: Baseline is followed by a aldosterone drive challenge and
+      recovery period.
+    baseline_until: 150.0
+    challenge_until: 450.0
+    schedule:
+      sodium_intake:
+        baseline: 0.1
+        challenge: 0.1
+        recovery: 0.1
+        unit: dimensionless
+        label: sodium intake
+        description: Scenario-controlled sodium intake value.
+        active: false
+      potassium_intake:
+        baseline: 0.08
+        challenge: 0.08
+        recovery: 0.08
+        unit: dimensionless
+        label: potassium intake
+        description: Scenario-controlled potassium intake value.
+        active: false
+      aldosterone_drive:
+        baseline: 1.037
+        challenge: 1.5554999999999999
+        recovery: 1.037
+        unit: dimensionless
+        label: aldosterone drive
+        description: Scenario-controlled aldosterone drive value.
+        active: true
+- alias: guyton1972_electrolytes_core
+  path: ./models/core
+  parameters:
+    model_path: data/MODEL0912160001.xml
+    integration_step: 1.0
+- alias: guyton1972_electrolytes_viz
+  path: ./models/viz
+  parameters:
+    integration_step: 1.0
+    lab_title: Guyton1972 Electrolytes
+    lab_question: How does electrolyte balance shift?
+runtime:
+  duration: 600.0
+  communication_step: 1.0
+  initial_inputs:
+    guyton1972_electrolytes_core:
+      integration_step: 1.0
+      parameter_overrides:
+        payload: {}
+      initial_conditions:
+        payload: {}
+io:
+  inputs:
+  - name: integration_step
+    maps_to: guyton1972_electrolytes_core.integration_step
+  - name: parameter_overrides
+    maps_to: guyton1972_electrolytes_core.parameter_overrides
+  - name: initial_conditions
+    maps_to: guyton1972_electrolytes_core.initial_conditions
+  outputs:
+  - name: scenario_metadata
+    maps_to: guyton1972_electrolytes_scenario.scenario_metadata
+  - name: state
+    maps_to: guyton1972_electrolytes_core.state
+  - name: run_summary
+    maps_to: guyton1972_electrolytes_viz.run_summary
+wiring:
+- from: guyton1972_electrolytes_scenario.sodium_intake
+  to:
+  - guyton1972_electrolytes_core.sodium_intake
+- from: guyton1972_electrolytes_scenario.potassium_intake
+  to:
+  - guyton1972_electrolytes_core.potassium_intake
+- from: guyton1972_electrolytes_scenario.aldosterone_drive
+  to:
+  - guyton1972_electrolytes_core.aldosterone_drive
+- from: guyton1972_electrolytes_scenario.scenario_metadata
+  to:
+  - guyton1972_electrolytes_viz.scenario_metadata
+- from: guyton1972_electrolytes_core.state
+  to:
+  - guyton1972_electrolytes_viz.state
+- from: guyton1972_electrolytes_core.species_labels
+  to:
+  - guyton1972_electrolytes_viz.species_labels

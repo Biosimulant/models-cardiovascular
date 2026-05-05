@@ -1,0 +1,96 @@
+schema_version: '2.0'
+title: Guyton1972 Aldosterone Lab
+description: 'Two-model lab for Guyton1972 Aldosterone: a core SBML simulator wired
+  into a dedicated visualization sub-model that turns the raw state into friendly
+  timeseries and a plain-language summary. This a model from the article: Circulation:
+  overall regulation. It can be used to explore cardiac dynamics and compare response
+  patterns across conditions.'
+models:
+- alias: guyton1972_aldosterone_scenario
+  path: models/scenario
+  parameters:
+    scenario_name: Cardiovascular control challenge
+    scenario_description: Baseline is followed by a angiotensin drive challenge and
+      recovery period.
+    baseline_until: 150.0
+    challenge_until: 450.0
+    schedule:
+      angiotensin_drive:
+        baseline: 0.987545
+        challenge: 1.4813175
+        recovery: 0.987545
+        unit: dimensionless
+        label: angiotensin drive
+        description: Scenario-controlled angiotensin drive value.
+        active: true
+      potassium_effect:
+        baseline: 4.44092
+        challenge: 4.44092
+        recovery: 4.44092
+        unit: dimensionless
+        label: potassium effect
+        description: Scenario-controlled potassium effect value.
+        active: false
+      sympathetic_drive:
+        baseline: 0.65
+        challenge: 0.65
+        recovery: 0.65
+        unit: dimensionless
+        label: sympathetic drive
+        description: Scenario-controlled sympathetic drive value.
+        active: false
+- alias: guyton1972_aldosterone_core
+  path: ./models/core
+  parameters:
+    model_path: data/MODEL0911376350.xml
+    integration_step: 1.0
+- alias: guyton1972_aldosterone_viz
+  path: ./models/viz
+  parameters:
+    integration_step: 1.0
+    lab_title: Guyton1972 Aldosterone
+    lab_question: How does aldosterone respond to cardiovascular control signals?
+runtime:
+  duration: 600.0
+  communication_step: 1.0
+  initial_inputs:
+    guyton1972_aldosterone_core:
+      integration_step: 1.0
+      parameter_overrides:
+        payload: {}
+      initial_conditions:
+        payload: {}
+io:
+  inputs:
+  - name: integration_step
+    maps_to: guyton1972_aldosterone_core.integration_step
+  - name: parameter_overrides
+    maps_to: guyton1972_aldosterone_core.parameter_overrides
+  - name: initial_conditions
+    maps_to: guyton1972_aldosterone_core.initial_conditions
+  outputs:
+  - name: scenario_metadata
+    maps_to: guyton1972_aldosterone_scenario.scenario_metadata
+  - name: state
+    maps_to: guyton1972_aldosterone_core.state
+  - name: run_summary
+    maps_to: guyton1972_aldosterone_viz.run_summary
+wiring:
+- from: guyton1972_aldosterone_scenario.angiotensin_drive
+  to:
+  - guyton1972_aldosterone_core.angiotensin_drive
+- from: guyton1972_aldosterone_scenario.potassium_effect
+  to:
+  - guyton1972_aldosterone_core.potassium_effect
+- from: guyton1972_aldosterone_scenario.sympathetic_drive
+  to:
+  - guyton1972_aldosterone_core.sympathetic_drive
+- from: guyton1972_aldosterone_scenario.scenario_metadata
+  to:
+  - guyton1972_aldosterone_viz.scenario_metadata
+- from: guyton1972_aldosterone_core.state
+  to:
+  - guyton1972_aldosterone_viz.state
+- from: guyton1972_aldosterone_core.species_labels
+  to:
+  - guyton1972_aldosterone_viz.species_labels

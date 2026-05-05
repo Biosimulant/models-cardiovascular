@@ -1,0 +1,77 @@
+schema_version: '1.0'
+title: Guyton1972 Pulmonary Oxygen Intake Scenario
+description: Scenario driver that emits baseline, challenge, and recovery inputs for
+  the cardiovascular core model.
+package: cardiovascular-scenario-guyton1972-pulmonary-oxygen-intake
+version: 0.1.0
+standard: biosim-module
+tags:
+- cardiovascular
+- scenario
+- stimulus
+authors:
+- name: Biosimulant Team
+biosim:
+  entrypoint: src.guyton1972_pulmonary_oxygen_intake_scenario.CardiovascularScenarioModel
+runtime:
+  dependencies:
+    packages: []
+parameters:
+- name: scenario_name
+  value: Oxygen availability challenge
+  description: Plain-language name shown in visualizations.
+- name: scenario_description
+  value: Baseline is followed by a oxygen demand challenge and recovery period.
+  description: Plain-language scenario description shown in visualizations.
+- name: baseline_until
+  value: 150.0
+  units: s
+  min: 0.0
+  description: Simulation time at which the challenge starts.
+- name: challenge_until
+  value: 450.0
+  units: s
+  min: 0.0
+  description: Simulation time at which recovery starts.
+- name: schedule
+  value:
+    pulmonary_blood_flow:
+      baseline: 4.97838
+      challenge: 4.97838
+      recovery: 4.97838
+      unit: dimensionless
+      label: pulmonary blood flow
+      description: Scenario-controlled pulmonary blood flow value.
+      active: false
+    oxygen_demand:
+      baseline: 56.8057
+      challenge: 28.40285
+      recovery: 56.8057
+      unit: dimensionless
+      label: oxygen demand
+      description: Scenario-controlled oxygen demand value.
+      active: true
+    ambient_oxygen:
+      baseline: 150.0
+      challenge: 150.0
+      recovery: 150.0
+      unit: dimensionless
+      label: ambient oxygen
+      description: Scenario-controlled ambient oxygen value.
+      active: false
+  description: Per-output baseline, challenge, and recovery values emitted by the
+    scenario driver.
+io:
+  inputs: []
+  outputs:
+  - name: pulmonary_blood_flow
+    emitted_unit: dimensionless
+    description: Scenario-controlled pulmonary blood flow value.
+  - name: oxygen_demand
+    emitted_unit: dimensionless
+    description: Scenario-controlled oxygen demand value.
+  - name: ambient_oxygen
+    emitted_unit: dimensionless
+    description: Scenario-controlled ambient oxygen value.
+  - name: scenario_metadata
+    description: Scenario name, active input, values, timing, and event markers.

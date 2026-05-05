@@ -1,0 +1,57 @@
+{
+  "nodes": [
+    {
+      "id": "guyton1972_pulmonary_fluid_dynamics_scenario",
+      "position": {
+        "x": 120,
+        "y": 0
+      }
+    },
+    {
+      "id": "guyton1972_pulmonary_fluid_dynamics_core",
+      "position": {
+        "x": 500,
+        "y": 0
+      }
+    },
+    {
+      "id": "guyton1972_pulmonary_fluid_dynamics_viz",
+      "position": {
+        "x": 880,
+        "y": 0
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "guyton1972_pulmonary_fluid_dynamics_scenario.capillary_pressure",
+      "to": [
+        "guyton1972_pulmonary_fluid_dynamics_core.capillary_pressure"
+      ]
+    },
+    {
+      "from": "guyton1972_pulmonary_fluid_dynamics_scenario.plasma_oncotic_pressure",
+      "to": [
+        "guyton1972_pulmonary_fluid_dynamics_core.plasma_oncotic_pressure"
+      ]
+    },
+    {
+      "from": "guyton1972_pulmonary_fluid_dynamics_scenario.scenario_metadata",
+      "to": [
+        "guyton1972_pulmonary_fluid_dynamics_viz.scenario_metadata"
+      ]
+    },
+    {
+      "from": "guyton1972_pulmonary_fluid_dynamics_core.state",
+      "to": [
+        "guyton1972_pulmonary_fluid_dynamics_viz.state"
+      ]
+    },
+    {
+      "from": "guyton1972_pulmonary_fluid_dynamics_core.species_labels",
+      "to": [
+        "guyton1972_pulmonary_fluid_dynamics_viz.species_labels"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "nodes": [
+    {
+      "id": "guyton1972_heart_rate_stroke_volume_scenario",
+      "position": {
+        "x": 120,
+        "y": 0
+      }
+    },
+    {
+      "id": "guyton1972_heart_rate_stroke_volume_core",
+      "position": {
+        "x": 500,
+        "y": 0
+      }
+    },
+    {
+      "id": "guyton1972_heart_rate_stroke_volume_viz",
+      "position": {
+        "x": 880,
+        "y": 0
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "guyton1972_heart_rate_stroke_volume_scenario.autonomic_drive",
+      "to": [
+        "guyton1972_heart_rate_stroke_volume_core.autonomic_drive"
+      ]
+    },
+    {
+      "from": "guyton1972_heart_rate_stroke_volume_scenario.right_atrial_pressure",
+      "to": [
+        "guyton1972_heart_rate_stroke_volume_core.right_atrial_pressure"
+      ]
+    },
+    {
+      "from": "guyton1972_heart_rate_stroke_volume_scenario.cardiac_output",
+      "to": [
+        "guyton1972_heart_rate_stroke_volume_core.cardiac_output"
+      ]
+    },
+    {
+      "from": "guyton1972_heart_rate_stroke_volume_scenario.scenario_metadata",
+      "to": [
+        "guyton1972_heart_rate_stroke_volume_viz.scenario_metadata"
+      ]
+    },
+    {
+      "from": "guyton1972_heart_rate_stroke_volume_core.state",
+      "to": [
+        "guyton1972_heart_rate_stroke_volume_viz.state"
+      ]
+    },
+    {
+      "from": "guyton1972_heart_rate_stroke_volume_core.species_labels",
+      "to": [
+        "guyton1972_heart_rate_stroke_volume_viz.species_labels"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+schema_version: '2.0'
+title: Iyer2007 Arrhythmia Cardiac Death Lab
+description: 'Two-model lab for Iyer2007 Arrhythmia Cardiac Death: a core SBML simulator
+  wired into a dedicated visualization sub-model that turns the raw state into friendly
+  timeseries and a plain-language summary. This a model from the article: Mechanisms
+  of abnormal calcium homeostasis in mutations responsible forcatecholaminergic polymorphic
+  ventricular tachycardia. It can be used to explore cardiac dynamics and compare
+  response patterns across conditions.'
+models:
+- alias: iyer2007_arrhythmia_cardiac_death_scenario
+  path: models/scenario
+  parameters:
+    scenario_name: Calcium activation challenge
+    scenario_description: Baseline is followed by a intracellular calcium challenge
+      and recovery period.
+    baseline_until: 0.25
+    challenge_until: 0.75
+    schedule:
+      temperature:
+        baseline: 310.0
+        challenge: 310.0
+        recovery: 310.0
+        unit: dimensionless
+        label: temperature
+        description: Scenario-controlled temperature value.
+        active: false
+      isoproterenol_drive:
+        baseline: 0.0
+        challenge: 0.0
+        recovery: 0.0
+        unit: dimensionless
+        label: isoproterenol drive
+        description: Scenario-controlled isoproterenol drive value.
+        active: false
+      calsequestrin_buffer:
+        baseline: 0.0
+        challenge: 0.0
+        recovery: 0.0
+        unit: dimensionless
+        label: calsequestrin buffer
+        description: Scenario-controlled calsequestrin buffer value.
+        active: false
+      ryanodine_receptor_pool:
+        baseline: 0.0
+        challenge: 0.0
+        recovery: 0.0
+        unit: dimensionless
+        label: ryanodine receptor pool
+        description: Scenario-controlled ryanodine receptor pool value.
+        active: false
+      intracellular_calcium:
+        baseline: 0.00036396867218
+        challenge: 0.00072793734436
+        recovery: 0.00036396867218
+        unit: mM
+        label: intracellular calcium
+        description: Scenario-controlled intracellular calcium value.
+        active: true
+- alias: iyer2007_arrhythmia_cardiac_death_core
+  path: ./models/core
+  parameters:
+    model_path: data/MODEL1006230030.xml
+    integration_step: 0.001
+- alias: iyer2007_arrhythmia_cardiac_death_viz
+  path: ./models/viz
+  parameters:
+    integration_step: 0.001
+    lab_title: Iyer2007 Arrhythmia Cardiac Death
+    lab_question: Does abnormal calcium handling create arrhythmogenic behaviour?
+runtime:
+  duration: 1.0
+  communication_step: 0.001
+  initial_inputs:
+    iyer2007_arrhythmia_cardiac_death_core:
+      integration_step: 0.001
+      parameter_overrides:
+        payload: {}
+      initial_conditions:
+        payload: {}
+io:
+  inputs:
+  - name: integration_step
+    maps_to: iyer2007_arrhythmia_cardiac_death_core.integration_step
+  - name: parameter_overrides
+    maps_to: iyer2007_arrhythmia_cardiac_death_core.parameter_overrides
+  - name: initial_conditions
+    maps_to: iyer2007_arrhythmia_cardiac_death_core.initial_conditions
+  outputs:
+  - name: scenario_metadata
+    maps_to: iyer2007_arrhythmia_cardiac_death_scenario.scenario_metadata
+  - name: state
+    maps_to: iyer2007_arrhythmia_cardiac_death_core.state
+  - name: run_summary
+    maps_to: iyer2007_arrhythmia_cardiac_death_viz.run_summary
+wiring:
+- from: iyer2007_arrhythmia_cardiac_death_scenario.temperature
+  to:
+  - iyer2007_arrhythmia_cardiac_death_core.temperature
+- from: iyer2007_arrhythmia_cardiac_death_scenario.isoproterenol_drive
+  to:
+  - iyer2007_arrhythmia_cardiac_death_core.isoproterenol_drive
+- from: iyer2007_arrhythmia_cardiac_death_scenario.calsequestrin_buffer
+  to:
+  - iyer2007_arrhythmia_cardiac_death_core.calsequestrin_buffer
+- from: iyer2007_arrhythmia_cardiac_death_scenario.ryanodine_receptor_pool
+  to:
+  - iyer2007_arrhythmia_cardiac_death_core.ryanodine_receptor_pool
+- from: iyer2007_arrhythmia_cardiac_death_scenario.intracellular_calcium
+  to:
+  - iyer2007_arrhythmia_cardiac_death_core.intracellular_calcium
+- from: iyer2007_arrhythmia_cardiac_death_scenario.scenario_metadata
+  to:
+  - iyer2007_arrhythmia_cardiac_death_viz.scenario_metadata
+- from: iyer2007_arrhythmia_cardiac_death_core.state
+  to:
+  - iyer2007_arrhythmia_cardiac_death_viz.state
+- from: iyer2007_arrhythmia_cardiac_death_core.species_labels
+  to:
+  - iyer2007_arrhythmia_cardiac_death_viz.species_labels

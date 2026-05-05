@@ -1,0 +1,63 @@
+{
+  "nodes": [
+    {
+      "id": "irvine1999_cardiac_sodium_channel_scenario",
+      "position": {
+        "x": 120,
+        "y": 0
+      }
+    },
+    {
+      "id": "irvine1999_cardiac_sodium_channel_core",
+      "position": {
+        "x": 500,
+        "y": 0
+      }
+    },
+    {
+      "id": "irvine1999_cardiac_sodium_channel_viz",
+      "position": {
+        "x": 880,
+        "y": 0
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "irvine1999_cardiac_sodium_channel_scenario.holding_voltage",
+      "to": [
+        "irvine1999_cardiac_sodium_channel_core.holding_voltage"
+      ]
+    },
+    {
+      "from": "irvine1999_cardiac_sodium_channel_scenario.sodium_reversal_voltage",
+      "to": [
+        "irvine1999_cardiac_sodium_channel_core.sodium_reversal_voltage"
+      ]
+    },
+    {
+      "from": "irvine1999_cardiac_sodium_channel_scenario.sodium_conductance",
+      "to": [
+        "irvine1999_cardiac_sodium_channel_core.sodium_conductance"
+      ]
+    },
+    {
+      "from": "irvine1999_cardiac_sodium_channel_scenario.scenario_metadata",
+      "to": [
+        "irvine1999_cardiac_sodium_channel_viz.scenario_metadata"
+      ]
+    },
+    {
+      "from": "irvine1999_cardiac_sodium_channel_core.state",
+      "to": [
+        "irvine1999_cardiac_sodium_channel_viz.state"
+      ]
+    },
+    {
+      "from": "irvine1999_cardiac_sodium_channel_core.species_labels",
+      "to": [
+        "irvine1999_cardiac_sodium_channel_viz.species_labels"
+      ]
+    }
+  ]
+}

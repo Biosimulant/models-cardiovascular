@@ -1,0 +1,96 @@
+schema_version: '2.0'
+title: Guyton1972 Stress Relaxation Lab
+description: 'Two-model lab for Guyton1972 Stress Relaxation: a core SBML simulator
+  wired into a dedicated visualization sub-model that turns the raw state into friendly
+  timeseries and a plain-language summary. This a model from the article: Circulation:
+  overall regulation. It can be used to explore cardiac dynamics and compare response
+  patterns across conditions.'
+models:
+- alias: guyton1972_stress_relaxation_scenario
+  path: models/scenario
+  parameters:
+    scenario_name: Effective volume challenge
+    scenario_description: Baseline is followed by a effective volume challenge and
+      recovery period.
+    baseline_until: 0.25
+    challenge_until: 0.75
+    schedule:
+      effective_volume:
+        baseline: 0.743224
+        challenge: 0.8547075999999999
+        recovery: 0.743224
+        unit: dimensionless
+        label: effective volume
+        description: Scenario-controlled effective volume value.
+        active: true
+      stress_relaxation_gain:
+        baseline: 5.0
+        challenge: 5.0
+        recovery: 5.0
+        unit: dimensionless
+        label: stress relaxation gain
+        description: Scenario-controlled stress relaxation gain value.
+        active: false
+      stress_relaxation_gain_2:
+        baseline: 10000.0
+        challenge: 10000.0
+        recovery: 10000.0
+        unit: dimensionless
+        label: stress relaxation gain 2
+        description: Scenario-controlled stress relaxation gain 2 value.
+        active: false
+- alias: guyton1972_stress_relaxation_core
+  path: ./models/core
+  parameters:
+    model_path: data/MODEL0910896131.xml
+    integration_step: 0.001
+- alias: guyton1972_stress_relaxation_viz
+  path: ./models/viz
+  parameters:
+    integration_step: 0.001
+    lab_title: Guyton1972 Stress Relaxation
+    lab_question: Does vascular stress relaxation buffer pressure?
+runtime:
+  duration: 1.0
+  communication_step: 0.001
+  initial_inputs:
+    guyton1972_stress_relaxation_core:
+      integration_step: 0.001
+      parameter_overrides:
+        payload: {}
+      initial_conditions:
+        payload: {}
+io:
+  inputs:
+  - name: integration_step
+    maps_to: guyton1972_stress_relaxation_core.integration_step
+  - name: parameter_overrides
+    maps_to: guyton1972_stress_relaxation_core.parameter_overrides
+  - name: initial_conditions
+    maps_to: guyton1972_stress_relaxation_core.initial_conditions
+  outputs:
+  - name: scenario_metadata
+    maps_to: guyton1972_stress_relaxation_scenario.scenario_metadata
+  - name: state
+    maps_to: guyton1972_stress_relaxation_core.state
+  - name: run_summary
+    maps_to: guyton1972_stress_relaxation_viz.run_summary
+wiring:
+- from: guyton1972_stress_relaxation_scenario.effective_volume
+  to:
+  - guyton1972_stress_relaxation_core.effective_volume
+- from: guyton1972_stress_relaxation_scenario.stress_relaxation_gain
+  to:
+  - guyton1972_stress_relaxation_core.stress_relaxation_gain
+- from: guyton1972_stress_relaxation_scenario.stress_relaxation_gain_2
+  to:
+  - guyton1972_stress_relaxation_core.stress_relaxation_gain_2
+- from: guyton1972_stress_relaxation_scenario.scenario_metadata
+  to:
+  - guyton1972_stress_relaxation_viz.scenario_metadata
+- from: guyton1972_stress_relaxation_core.state
+  to:
+  - guyton1972_stress_relaxation_viz.state
+- from: guyton1972_stress_relaxation_core.species_labels
+  to:
+  - guyton1972_stress_relaxation_viz.species_labels

@@ -1,0 +1,77 @@
+schema_version: '1.0'
+title: Cooling2007 Ip3 Transients Myocyte Scenario
+description: Scenario driver that emits baseline, challenge, and recovery inputs for
+  the cardiovascular core model.
+package: cardiovascular-scenario-cooling2007-ip3-transients-myocyte
+version: 0.1.0
+standard: biosim-module
+tags:
+- cardiovascular
+- scenario
+- stimulus
+authors:
+- name: Biosimulant Team
+biosim:
+  entrypoint: src.cooling2007_ip3_transients_myocyte_scenario.CardiovascularScenarioModel
+runtime:
+  dependencies:
+    packages: []
+parameters:
+- name: scenario_name
+  value: Calcium activation challenge
+  description: Plain-language name shown in visualizations.
+- name: scenario_description
+  value: Baseline is followed by a calcium initial challenge and recovery period.
+  description: Plain-language scenario description shown in visualizations.
+- name: baseline_until
+  value: 0.25
+  units: s
+  min: 0.0
+  description: Simulation time at which the challenge starts.
+- name: challenge_until
+  value: 0.75
+  units: s
+  min: 0.0
+  description: Simulation time at which recovery starts.
+- name: schedule
+  value:
+    inositol_trisphosphate_initial:
+      baseline: 0.015
+      challenge: 0.015
+      recovery: 0.015
+      unit: dimensionless
+      label: inositol trisphosphate initial
+      description: Scenario-controlled inositol trisphosphate initial value.
+      active: false
+    calcium_initial:
+      baseline: 0.1
+      challenge: 0.2
+      recovery: 0.1
+      unit: dimensionless
+      label: calcium initial
+      description: Scenario-controlled calcium initial value.
+      active: true
+    receptor_initial:
+      baseline: 13.9
+      challenge: 13.9
+      recovery: 13.9
+      unit: dimensionless
+      label: receptor initial
+      description: Scenario-controlled receptor initial value.
+      active: false
+  description: Per-output baseline, challenge, and recovery values emitted by the
+    scenario driver.
+io:
+  inputs: []
+  outputs:
+  - name: inositol_trisphosphate_initial
+    emitted_unit: dimensionless
+    description: Scenario-controlled inositol trisphosphate initial value.
+  - name: calcium_initial
+    emitted_unit: dimensionless
+    description: Scenario-controlled calcium initial value.
+  - name: receptor_initial
+    emitted_unit: dimensionless
+    description: Scenario-controlled receptor initial value.
+  - name: scenario_metadata
+    description: Scenario name, active input, values, timing, and event markers.

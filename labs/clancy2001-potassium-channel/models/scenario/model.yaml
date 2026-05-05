@@ -1,0 +1,99 @@
+schema_version: '1.0'
+title: Clancy2001 Potassium Channel Scenario
+description: Scenario driver that emits baseline, challenge, and recovery inputs for
+  the cardiovascular core model.
+package: cardiovascular-scenario-clancy2001-potassium-channel
+version: 0.1.0
+standard: biosim-module
+tags:
+- cardiovascular
+- scenario
+- stimulus
+authors:
+- name: Biosimulant Team
+biosim:
+  entrypoint: src.clancy2001_potassium_channel_scenario.CardiovascularScenarioModel
+runtime:
+  dependencies:
+    packages: []
+parameters:
+- name: scenario_name
+  value: Voltage-step channel challenge
+  description: Plain-language name shown in visualizations.
+- name: scenario_description
+  value: Baseline is followed by a holding voltage challenge and recovery period.
+  description: Plain-language scenario description shown in visualizations.
+- name: baseline_until
+  value: 0.25
+  units: s
+  min: 0.0
+  description: Simulation time at which the challenge starts.
+- name: challenge_until
+  value: 0.75
+  units: s
+  min: 0.0
+  description: Simulation time at which recovery starts.
+- name: schedule
+  value:
+    temperature:
+      baseline: 310.0
+      challenge: 310.0
+      recovery: 310.0
+      unit: dimensionless
+      label: temperature
+      description: Scenario-controlled temperature value.
+      active: false
+    extracellular_potassium:
+      baseline: 5.4
+      challenge: 5.4
+      recovery: 5.4
+      unit: mM
+      label: extracellular potassium
+      description: Scenario-controlled extracellular potassium value.
+      active: false
+    intracellular_potassium:
+      baseline: 140.0
+      challenge: 140.0
+      recovery: 140.0
+      unit: mM
+      label: intracellular potassium
+      description: Scenario-controlled intracellular potassium value.
+      active: false
+    holding_voltage:
+      baseline: -40.0
+      challenge: -60.0
+      recovery: -40.0
+      unit: mV
+      label: holding voltage
+      description: Scenario-controlled holding voltage value.
+      active: true
+    test_voltage:
+      baseline: 0.0
+      challenge: 0.0
+      recovery: 0.0
+      unit: mV
+      label: test voltage
+      description: Scenario-controlled test voltage value.
+      active: false
+  description: Per-output baseline, challenge, and recovery values emitted by the
+    scenario driver.
+io:
+  inputs: []
+  outputs:
+  - name: temperature
+    emitted_unit: dimensionless
+    description: Scenario-controlled temperature value.
+  - name: extracellular_potassium
+    emitted_unit: mM
+    description: Scenario-controlled extracellular potassium value.
+  - name: intracellular_potassium
+    emitted_unit: mM
+    description: Scenario-controlled intracellular potassium value.
+  - name: holding_voltage
+    emitted_unit: mV
+    description: Scenario-controlled holding voltage value.
+  - name: test_voltage
+    emitted_unit: mV
+    description: Scenario-controlled test voltage value.
+  - name: scenario_metadata
+    description: Scenario name, active input, values, timing, and event markers.

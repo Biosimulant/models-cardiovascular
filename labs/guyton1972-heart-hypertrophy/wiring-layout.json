@@ -1,0 +1,63 @@
+{
+  "nodes": [
+    {
+      "id": "guyton1972_heart_hypertrophy_scenario",
+      "position": {
+        "x": 120,
+        "y": 0
+      }
+    },
+    {
+      "id": "guyton1972_heart_hypertrophy_core",
+      "position": {
+        "x": 500,
+        "y": 0
+      }
+    },
+    {
+      "id": "guyton1972_heart_hypertrophy_viz",
+      "position": {
+        "x": 880,
+        "y": 0
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "guyton1972_heart_hypertrophy_scenario.aortic_flow",
+      "to": [
+        "guyton1972_heart_hypertrophy_core.aortic_flow"
+      ]
+    },
+    {
+      "from": "guyton1972_heart_hypertrophy_scenario.arterial_pressure",
+      "to": [
+        "guyton1972_heart_hypertrophy_core.arterial_pressure"
+      ]
+    },
+    {
+      "from": "guyton1972_heart_hypertrophy_scenario.pulmonary_artery_pressure",
+      "to": [
+        "guyton1972_heart_hypertrophy_core.pulmonary_artery_pressure"
+      ]
+    },
+    {
+      "from": "guyton1972_heart_hypertrophy_scenario.scenario_metadata",
+      "to": [
+        "guyton1972_heart_hypertrophy_viz.scenario_metadata"
+      ]
+    },
+    {
+      "from": "guyton1972_heart_hypertrophy_core.state",
+      "to": [
+        "guyton1972_heart_hypertrophy_viz.state"
+      ]
+    },
+    {
+      "from": "guyton1972_heart_hypertrophy_core.species_labels",
+      "to": [
+        "guyton1972_heart_hypertrophy_viz.species_labels"
+      ]
+    }
+  ]
+}

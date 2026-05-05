@@ -1,0 +1,96 @@
+schema_version: '2.0'
+title: Guyton1972 Heart Hypertrophy Lab
+description: 'Two-model lab for Guyton1972 Heart Hypertrophy: a core SBML simulator
+  wired into a dedicated visualization sub-model that turns the raw state into friendly
+  timeseries and a plain-language summary. This a model from the article: Circulation:
+  overall regulation. It can be used to explore cardiac dynamics and compare response
+  patterns across conditions.'
+models:
+- alias: guyton1972_heart_hypertrophy_scenario
+  path: models/scenario
+  parameters:
+    scenario_name: Pressure-load challenge
+    scenario_description: Baseline is followed by a arterial pressure challenge and
+      recovery period.
+    baseline_until: 150.0
+    challenge_until: 450.0
+    schedule:
+      aortic_flow:
+        baseline: 5.00707
+        challenge: 5.00707
+        recovery: 5.00707
+        unit: dimensionless
+        label: aortic flow
+        description: Scenario-controlled aortic flow value.
+        active: false
+      arterial_pressure:
+        baseline: 103.525
+        challenge: 124.23
+        recovery: 103.525
+        unit: dimensionless
+        label: arterial pressure
+        description: Scenario-controlled arterial pressure value.
+        active: true
+      pulmonary_artery_pressure:
+        baseline: 15.6376
+        challenge: 15.6376
+        recovery: 15.6376
+        unit: dimensionless
+        label: pulmonary artery pressure
+        description: Scenario-controlled pulmonary artery pressure value.
+        active: false
+- alias: guyton1972_heart_hypertrophy_core
+  path: ./models/core
+  parameters:
+    model_path: data/MODEL0911231713.xml
+    integration_step: 1.0
+- alias: guyton1972_heart_hypertrophy_viz
+  path: ./models/viz
+  parameters:
+    integration_step: 1.0
+    lab_title: Guyton1972 Heart Hypertrophy
+    lab_question: Does sustained workload drive hypertrophy?
+runtime:
+  duration: 600.0
+  communication_step: 1.0
+  initial_inputs:
+    guyton1972_heart_hypertrophy_core:
+      integration_step: 1.0
+      parameter_overrides:
+        payload: {}
+      initial_conditions:
+        payload: {}
+io:
+  inputs:
+  - name: integration_step
+    maps_to: guyton1972_heart_hypertrophy_core.integration_step
+  - name: parameter_overrides
+    maps_to: guyton1972_heart_hypertrophy_core.parameter_overrides
+  - name: initial_conditions
+    maps_to: guyton1972_heart_hypertrophy_core.initial_conditions
+  outputs:
+  - name: scenario_metadata
+    maps_to: guyton1972_heart_hypertrophy_scenario.scenario_metadata
+  - name: state
+    maps_to: guyton1972_heart_hypertrophy_core.state
+  - name: run_summary
+    maps_to: guyton1972_heart_hypertrophy_viz.run_summary
+wiring:
+- from: guyton1972_heart_hypertrophy_scenario.aortic_flow
+  to:
+  - guyton1972_heart_hypertrophy_core.aortic_flow
+- from: guyton1972_heart_hypertrophy_scenario.arterial_pressure
+  to:
+  - guyton1972_heart_hypertrophy_core.arterial_pressure
+- from: guyton1972_heart_hypertrophy_scenario.pulmonary_artery_pressure
+  to:
+  - guyton1972_heart_hypertrophy_core.pulmonary_artery_pressure
+- from: guyton1972_heart_hypertrophy_scenario.scenario_metadata
+  to:
+  - guyton1972_heart_hypertrophy_viz.scenario_metadata
+- from: guyton1972_heart_hypertrophy_core.state
+  to:
+  - guyton1972_heart_hypertrophy_viz.state
+- from: guyton1972_heart_hypertrophy_core.species_labels
+  to:
+  - guyton1972_heart_hypertrophy_viz.species_labels

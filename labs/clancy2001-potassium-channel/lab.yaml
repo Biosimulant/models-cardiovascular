@@ -1,0 +1,119 @@
+schema_version: '2.0'
+title: Clancy2001 Potassium Channel Lab
+description: 'Two-model lab for Clancy2001 Potassium Channel: a core SBML simulator
+  wired into a dedicated visualization sub-model that turns the raw state into friendly
+  timeseries and a plain-language summary. This model is according to the paper Cellular
+  consequences of HEGR mutations in the long QT syndrome: precursors to sudden cardiac
+  death. The author used Markovian model of cardiac Ikr in the paper.'
+models:
+- alias: clancy2001_potassium_channel_scenario
+  path: models/scenario
+  parameters:
+    scenario_name: Voltage-step channel challenge
+    scenario_description: Baseline is followed by a holding voltage challenge and
+      recovery period.
+    baseline_until: 0.25
+    challenge_until: 0.75
+    schedule:
+      temperature:
+        baseline: 310.0
+        challenge: 310.0
+        recovery: 310.0
+        unit: dimensionless
+        label: temperature
+        description: Scenario-controlled temperature value.
+        active: false
+      extracellular_potassium:
+        baseline: 5.4
+        challenge: 5.4
+        recovery: 5.4
+        unit: mM
+        label: extracellular potassium
+        description: Scenario-controlled extracellular potassium value.
+        active: false
+      intracellular_potassium:
+        baseline: 140.0
+        challenge: 140.0
+        recovery: 140.0
+        unit: mM
+        label: intracellular potassium
+        description: Scenario-controlled intracellular potassium value.
+        active: false
+      holding_voltage:
+        baseline: -40.0
+        challenge: -60.0
+        recovery: -40.0
+        unit: mV
+        label: holding voltage
+        description: Scenario-controlled holding voltage value.
+        active: true
+      test_voltage:
+        baseline: 0.0
+        challenge: 0.0
+        recovery: 0.0
+        unit: mV
+        label: test voltage
+        description: Scenario-controlled test voltage value.
+        active: false
+- alias: clancy2001_potassium_channel_core
+  path: ./models/core
+  parameters:
+    model_path: data/BIOMD0000000121.xml
+    integration_step: 0.01
+- alias: clancy2001_potassium_channel_viz
+  path: ./models/viz
+  parameters:
+    integration_step: 0.01
+    lab_title: Clancy2001 Potassium Channel
+    lab_question: How does the delayed rectifier potassium channel state distribution
+      respond to voltage?
+runtime:
+  duration: 1.0
+  communication_step: 0.01
+  initial_inputs:
+    clancy2001_potassium_channel_core:
+      integration_step: 0.01
+      parameter_overrides:
+        payload: {}
+      initial_conditions:
+        payload: {}
+io:
+  inputs:
+  - name: integration_step
+    maps_to: clancy2001_potassium_channel_core.integration_step
+  - name: parameter_overrides
+    maps_to: clancy2001_potassium_channel_core.parameter_overrides
+  - name: initial_conditions
+    maps_to: clancy2001_potassium_channel_core.initial_conditions
+  outputs:
+  - name: scenario_metadata
+    maps_to: clancy2001_potassium_channel_scenario.scenario_metadata
+  - name: state
+    maps_to: clancy2001_potassium_channel_core.state
+  - name: run_summary
+    maps_to: clancy2001_potassium_channel_viz.run_summary
+wiring:
+- from: clancy2001_potassium_channel_scenario.temperature
+  to:
+  - clancy2001_potassium_channel_core.temperature
+- from: clancy2001_potassium_channel_scenario.extracellular_potassium
+  to:
+  - clancy2001_potassium_channel_core.extracellular_potassium
+- from: clancy2001_potassium_channel_scenario.intracellular_potassium
+  to:
+  - clancy2001_potassium_channel_core.intracellular_potassium
+- from: clancy2001_potassium_channel_scenario.holding_voltage
+  to:
+  - clancy2001_potassium_channel_core.holding_voltage
+- from: clancy2001_potassium_channel_scenario.test_voltage
+  to:
+  - clancy2001_potassium_channel_core.test_voltage
+- from: clancy2001_potassium_channel_scenario.scenario_metadata
+  to:
+  - clancy2001_potassium_channel_viz.scenario_metadata
+- from: clancy2001_potassium_channel_core.state
+  to:
+  - clancy2001_potassium_channel_viz.state
+- from: clancy2001_potassium_channel_core.species_labels
+  to:
+  - clancy2001_potassium_channel_viz.species_labels

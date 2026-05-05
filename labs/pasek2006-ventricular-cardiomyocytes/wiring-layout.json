@@ -1,0 +1,69 @@
+{
+  "nodes": [
+    {
+      "id": "pasek2006_ventricular_cardiomyocytes_scenario",
+      "position": {
+        "x": 120,
+        "y": 0
+      }
+    },
+    {
+      "id": "pasek2006_ventricular_cardiomyocytes_core",
+      "position": {
+        "x": 500,
+        "y": 0
+      }
+    },
+    {
+      "id": "pasek2006_ventricular_cardiomyocytes_viz",
+      "position": {
+        "x": 880,
+        "y": 0
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "pasek2006_ventricular_cardiomyocytes_scenario.extracellular_sodium",
+      "to": [
+        "pasek2006_ventricular_cardiomyocytes_core.extracellular_sodium"
+      ]
+    },
+    {
+      "from": "pasek2006_ventricular_cardiomyocytes_scenario.extracellular_potassium",
+      "to": [
+        "pasek2006_ventricular_cardiomyocytes_core.extracellular_potassium"
+      ]
+    },
+    {
+      "from": "pasek2006_ventricular_cardiomyocytes_scenario.extracellular_calcium",
+      "to": [
+        "pasek2006_ventricular_cardiomyocytes_core.extracellular_calcium"
+      ]
+    },
+    {
+      "from": "pasek2006_ventricular_cardiomyocytes_scenario.temperature",
+      "to": [
+        "pasek2006_ventricular_cardiomyocytes_core.temperature"
+      ]
+    },
+    {
+      "from": "pasek2006_ventricular_cardiomyocytes_scenario.scenario_metadata",
+      "to": [
+        "pasek2006_ventricular_cardiomyocytes_viz.scenario_metadata"
+      ]
+    },
+    {
+      "from": "pasek2006_ventricular_cardiomyocytes_core.state",
+      "to": [
+        "pasek2006_ventricular_cardiomyocytes_viz.state"
+      ]
+    },
+    {
+      "from": "pasek2006_ventricular_cardiomyocytes_core.species_labels",
+      "to": [
+        "pasek2006_ventricular_cardiomyocytes_viz.species_labels"
+      ]
+    }
+  ]
+}

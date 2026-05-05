@@ -1,0 +1,63 @@
+{
+  "nodes": [
+    {
+      "id": "niederer2006_myocyte_relaxation_scenario",
+      "position": {
+        "x": 120,
+        "y": 0
+      }
+    },
+    {
+      "id": "niederer2006_myocyte_relaxation_core",
+      "position": {
+        "x": 500,
+        "y": 0
+      }
+    },
+    {
+      "id": "niederer2006_myocyte_relaxation_viz",
+      "position": {
+        "x": 880,
+        "y": 0
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "niederer2006_myocyte_relaxation_scenario.troponin_pool",
+      "to": [
+        "niederer2006_myocyte_relaxation_core.troponin_pool"
+      ]
+    },
+    {
+      "from": "niederer2006_myocyte_relaxation_scenario.relaxation_rate",
+      "to": [
+        "niederer2006_myocyte_relaxation_core.relaxation_rate"
+      ]
+    },
+    {
+      "from": "niederer2006_myocyte_relaxation_scenario.cooperativity",
+      "to": [
+        "niederer2006_myocyte_relaxation_core.cooperativity"
+      ]
+    },
+    {
+      "from": "niederer2006_myocyte_relaxation_scenario.scenario_metadata",
+      "to": [
+        "niederer2006_myocyte_relaxation_viz.scenario_metadata"
+      ]
+    },
+    {
+      "from": "niederer2006_myocyte_relaxation_core.state",
+      "to": [
+        "niederer2006_myocyte_relaxation_viz.state"
+      ]
+    },
+    {
+      "from": "niederer2006_myocyte_relaxation_core.species_labels",
+      "to": [
+        "niederer2006_myocyte_relaxation_viz.species_labels"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+schema_version: '2.0'
+title: Guyton1972 Capillary Dynamics Lab
+description: 'Two-model lab for Guyton1972 Capillary Dynamics: a core SBML simulator
+  wired into a dedicated visualization sub-model that turns the raw state into friendly
+  timeseries and a plain-language summary. This a model from the article: Circulation:
+  overall regulation. It can be used to explore cardiac dynamics and compare response
+  patterns across conditions.'
+models:
+- alias: guyton1972_capillary_dynamics_scenario
+  path: models/scenario
+  parameters:
+    scenario_name: Pressure-load challenge
+    scenario_description: Baseline is followed by a capillary pressure challenge and
+      recovery period.
+    baseline_until: 150.0
+    challenge_until: 450.0
+    schedule:
+      capillary_pressure:
+        baseline: 16.9144
+        challenge: 20.29728
+        recovery: 16.9144
+        unit: dimensionless
+        label: capillary pressure
+        description: Scenario-controlled capillary pressure value.
+        active: true
+      filtration_coefficient:
+        baseline: -4.078e-07
+        challenge: -4.078e-07
+        recovery: -4.078e-07
+        unit: dimensionless
+        label: filtration coefficient
+        description: Scenario-controlled filtration coefficient value.
+        active: false
+- alias: guyton1972_capillary_dynamics_core
+  path: ./models/core
+  parameters:
+    model_path: data/MODEL0912160000.xml
+    integration_step: 1.0
+- alias: guyton1972_capillary_dynamics_viz
+  path: ./models/viz
+  parameters:
+    integration_step: 1.0
+    lab_title: Guyton1972 Capillary Dynamics
+    lab_question: Does fluid move into or out of the capillaries?
+runtime:
+  duration: 600.0
+  communication_step: 1.0
+  initial_inputs:
+    guyton1972_capillary_dynamics_core:
+      integration_step: 1.0
+      parameter_overrides:
+        payload: {}
+      initial_conditions:
+        payload: {}
+io:
+  inputs:
+  - name: integration_step
+    maps_to: guyton1972_capillary_dynamics_core.integration_step
+  - name: parameter_overrides
+    maps_to: guyton1972_capillary_dynamics_core.parameter_overrides
+  - name: initial_conditions
+    maps_to: guyton1972_capillary_dynamics_core.initial_conditions
+  outputs:
+  - name: scenario_metadata
+    maps_to: guyton1972_capillary_dynamics_scenario.scenario_metadata
+  - name: state
+    maps_to: guyton1972_capillary_dynamics_core.state
+  - name: run_summary
+    maps_to: guyton1972_capillary_dynamics_viz.run_summary
+wiring:
+- from: guyton1972_capillary_dynamics_scenario.capillary_pressure
+  to:
+  - guyton1972_capillary_dynamics_core.capillary_pressure
+- from: guyton1972_capillary_dynamics_scenario.filtration_coefficient
+  to:
+  - guyton1972_capillary_dynamics_core.filtration_coefficient
+- from: guyton1972_capillary_dynamics_scenario.scenario_metadata
+  to:
+  - guyton1972_capillary_dynamics_viz.scenario_metadata
+- from: guyton1972_capillary_dynamics_core.state
+  to:
+  - guyton1972_capillary_dynamics_viz.state
+- from: guyton1972_capillary_dynamics_core.species_labels
+  to:
+  - guyton1972_capillary_dynamics_viz.species_labels

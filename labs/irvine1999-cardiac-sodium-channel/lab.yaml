@@ -1,0 +1,97 @@
+schema_version: '2.0'
+title: Irvine1999 Cardiac Sodium Channel Lab
+description: 'Two-model lab for Irvine1999 Cardiac Sodium Channel: a core SBML simulator
+  wired into a dedicated visualization sub-model that turns the raw state into friendly
+  timeseries and a plain-language summary. This a model from the article: Cardiac
+  sodium channel Markov model with temperature dependence and recoveryfrom inactivation.
+  It can be used to explore cardiac dynamics and compare response patterns across
+  conditions.'
+models:
+- alias: irvine1999_cardiac_sodium_channel_scenario
+  path: models/scenario
+  parameters:
+    scenario_name: Voltage-step channel challenge
+    scenario_description: Baseline is followed by a holding voltage challenge and
+      recovery period.
+    baseline_until: 0.25
+    challenge_until: 0.75
+    schedule:
+      holding_voltage:
+        baseline: -0.12
+        challenge: -0.02
+        recovery: -0.12
+        unit: mV
+        label: holding voltage
+        description: Scenario-controlled holding voltage value.
+        active: true
+      sodium_reversal_voltage:
+        baseline: 0.044675
+        challenge: 0.044675
+        recovery: 0.044675
+        unit: mV
+        label: sodium reversal voltage
+        description: Scenario-controlled sodium reversal voltage value.
+        active: false
+      sodium_conductance:
+        baseline: 0.0131
+        challenge: 0.0131
+        recovery: 0.0131
+        unit: mS_per_uF
+        label: sodium conductance
+        description: Scenario-controlled sodium conductance value.
+        active: false
+- alias: irvine1999_cardiac_sodium_channel_core
+  path: ./models/core
+  parameters:
+    model_path: data/MODEL0848062679.xml
+    integration_step: 0.001
+- alias: irvine1999_cardiac_sodium_channel_viz
+  path: ./models/viz
+  parameters:
+    integration_step: 0.001
+    lab_title: Irvine1999 Cardiac Sodium Channel
+    lab_question: How does the cardiac sodium channel recover and inactivate?
+runtime:
+  duration: 1.0
+  communication_step: 0.001
+  initial_inputs:
+    irvine1999_cardiac_sodium_channel_core:
+      integration_step: 0.001
+      parameter_overrides:
+        payload: {}
+      initial_conditions:
+        payload: {}
+io:
+  inputs:
+  - name: integration_step
+    maps_to: irvine1999_cardiac_sodium_channel_core.integration_step
+  - name: parameter_overrides
+    maps_to: irvine1999_cardiac_sodium_channel_core.parameter_overrides
+  - name: initial_conditions
+    maps_to: irvine1999_cardiac_sodium_channel_core.initial_conditions
+  outputs:
+  - name: scenario_metadata
+    maps_to: irvine1999_cardiac_sodium_channel_scenario.scenario_metadata
+  - name: state
+    maps_to: irvine1999_cardiac_sodium_channel_core.state
+  - name: run_summary
+    maps_to: irvine1999_cardiac_sodium_channel_viz.run_summary
+wiring:
+- from: irvine1999_cardiac_sodium_channel_scenario.holding_voltage
+  to:
+  - irvine1999_cardiac_sodium_channel_core.holding_voltage
+- from: irvine1999_cardiac_sodium_channel_scenario.sodium_reversal_voltage
+  to:
+  - irvine1999_cardiac_sodium_channel_core.sodium_reversal_voltage
+- from: irvine1999_cardiac_sodium_channel_scenario.sodium_conductance
+  to:
+  - irvine1999_cardiac_sodium_channel_core.sodium_conductance
+- from: irvine1999_cardiac_sodium_channel_scenario.scenario_metadata
+  to:
+  - irvine1999_cardiac_sodium_channel_viz.scenario_metadata
+- from: irvine1999_cardiac_sodium_channel_core.state
+  to:
+  - irvine1999_cardiac_sodium_channel_viz.state
+- from: irvine1999_cardiac_sodium_channel_core.species_labels
+  to:
+  - irvine1999_cardiac_sodium_channel_viz.species_labels

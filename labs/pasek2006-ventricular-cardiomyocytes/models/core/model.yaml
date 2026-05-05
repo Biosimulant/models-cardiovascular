@@ -1,0 +1,83 @@
+schema_version: '2.0'
+title: Pasek2006_VentricularCardioMyocytes
+description: 'This a model from the article: The functional role of cardiac T-tubules
+  explored in a model of rat ventricular myocytes. It can be used to explore cardiac
+  dynamics and compare response patterns across conditions.'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- "Michal P\xE1sek"
+- Jiri Simurda
+- "Georges Christ\xE9"
+upstream:
+  id: biomodels_ebi:MODEL0406553884
+  source_db: biomodels_ebi
+  source_id: MODEL0406553884
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL0406553884
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0406553884?filename=MODEL0406553884_url.xml
+  license: CC0
+biosim:
+  entrypoint: src.pasek2006_ventricularcardiomyocytes_model0406553884_model:Pasek2006VentricularcardiomyocytesModel0406553884Model
+  init_kwargs:
+    model_path: data/MODEL0406553884.xml
+    integration_step: 0.001
+  communication_step: 0.001
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.2.11.2
+parameters:
+- name: model_path
+  value: data/MODEL0406553884.xml
+  description: Relative path to the SBML file shipped with this model.
+- name: integration_step
+  value: 0.001
+  min: 0.0
+  units: s
+  description: ODE solver integration step size in seconds.
+io:
+  inputs:
+  - name: extracellular_sodium
+    accepted_units:
+    - mM
+    description: Sets extracellular sodium for the simulation scenario. Default `140.0`.
+  - name: extracellular_potassium
+    accepted_units:
+    - mM
+    description: Sets extracellular potassium for the simulation scenario. Default
+      `5.4`.
+  - name: extracellular_calcium
+    accepted_units:
+    - mM
+    description: Sets extracellular calcium for the simulation scenario. Default `1.2`.
+  - name: temperature
+    accepted_units:
+    - dimensionless
+    description: Sets temperature for the simulation scenario. Default `295.0`.
+  - name: integration_step
+    accepted_units:
+    - s
+    description: Override the ODE solver integration step. Smaller = more precise
+      but slower.
+  - name: parameter_overrides
+    description: Map of SBML global parameter name to override value, applied before
+      each advance_window. Use the parameter list in the lab README for keys not surfaced
+      as named ports above.
+  - name: initial_conditions
+    description: Map of SBML species ID to initial concentration override, applied
+      at setup and on reset. Use the species list in the lab README to discover keys.
+  outputs:
+  - name: state
+    description: Species concentrations and state variables read from the SBML model.
+      Wired into the lab's `viz` sub-model for timeseries rendering.
+  - name: species_labels
+    description: Static record mapping each SBML species id to a human-friendly label
+      (read from `<species name=...>` or prettified id). Emitted on every window but
+      only needed once by downstream presenters.

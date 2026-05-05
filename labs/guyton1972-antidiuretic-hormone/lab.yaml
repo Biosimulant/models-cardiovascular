@@ -1,0 +1,96 @@
+schema_version: '2.0'
+title: Guyton1972 Antidiuretic Hormone Lab
+description: 'Two-model lab for Guyton1972 Antidiuretic Hormone: a core SBML simulator
+  wired into a dedicated visualization sub-model that turns the raw state into friendly
+  timeseries and a plain-language summary. This a model from the article: Circulation:
+  overall regulation. It can be used to explore cardiac dynamics and compare response
+  patterns across conditions.'
+models:
+- alias: guyton1972_antidiuretic_hormone_scenario
+  path: models/scenario
+  parameters:
+    scenario_name: Antidiuretic hormone challenge
+    scenario_description: Baseline is followed by a antidiuretic hormone infusion
+      challenge and recovery period.
+    baseline_until: 150.0
+    challenge_until: 450.0
+    schedule:
+      sodium_concentration:
+        baseline: 142.035
+        challenge: 142.035
+        recovery: 142.035
+        unit: dimensionless
+        label: sodium concentration
+        description: Scenario-controlled sodium concentration value.
+        active: false
+      arterial_pressure:
+        baseline: 103.525
+        challenge: 103.525
+        recovery: 103.525
+        unit: dimensionless
+        label: arterial pressure
+        description: Scenario-controlled arterial pressure value.
+        active: false
+      antidiuretic_hormone_infusion:
+        baseline: 0.0
+        challenge: 1.0
+        recovery: 0.0
+        unit: dimensionless
+        label: antidiuretic hormone infusion
+        description: Scenario-controlled antidiuretic hormone infusion value.
+        active: true
+- alias: guyton1972_antidiuretic_hormone_core
+  path: ./models/core
+  parameters:
+    model_path: data/MODEL0911309080.xml
+    integration_step: 1.0
+- alias: guyton1972_antidiuretic_hormone_viz
+  path: ./models/viz
+  parameters:
+    integration_step: 1.0
+    lab_title: Guyton1972 Antidiuretic Hormone
+    lab_question: Does the model conserve water through antidiuretic hormone?
+runtime:
+  duration: 600.0
+  communication_step: 1.0
+  initial_inputs:
+    guyton1972_antidiuretic_hormone_core:
+      integration_step: 1.0
+      parameter_overrides:
+        payload: {}
+      initial_conditions:
+        payload: {}
+io:
+  inputs:
+  - name: integration_step
+    maps_to: guyton1972_antidiuretic_hormone_core.integration_step
+  - name: parameter_overrides
+    maps_to: guyton1972_antidiuretic_hormone_core.parameter_overrides
+  - name: initial_conditions
+    maps_to: guyton1972_antidiuretic_hormone_core.initial_conditions
+  outputs:
+  - name: scenario_metadata
+    maps_to: guyton1972_antidiuretic_hormone_scenario.scenario_metadata
+  - name: state
+    maps_to: guyton1972_antidiuretic_hormone_core.state
+  - name: run_summary
+    maps_to: guyton1972_antidiuretic_hormone_viz.run_summary
+wiring:
+- from: guyton1972_antidiuretic_hormone_scenario.sodium_concentration
+  to:
+  - guyton1972_antidiuretic_hormone_core.sodium_concentration
+- from: guyton1972_antidiuretic_hormone_scenario.arterial_pressure
+  to:
+  - guyton1972_antidiuretic_hormone_core.arterial_pressure
+- from: guyton1972_antidiuretic_hormone_scenario.antidiuretic_hormone_infusion
+  to:
+  - guyton1972_antidiuretic_hormone_core.antidiuretic_hormone_infusion
+- from: guyton1972_antidiuretic_hormone_scenario.scenario_metadata
+  to:
+  - guyton1972_antidiuretic_hormone_viz.scenario_metadata
+- from: guyton1972_antidiuretic_hormone_core.state
+  to:
+  - guyton1972_antidiuretic_hormone_viz.state
+- from: guyton1972_antidiuretic_hormone_core.species_labels
+  to:
+  - guyton1972_antidiuretic_hormone_viz.species_labels

@@ -1,0 +1,63 @@
+{
+  "nodes": [
+    {
+      "id": "cooling2007_ip3_transients_myocyte_scenario",
+      "position": {
+        "x": 120,
+        "y": 0
+      }
+    },
+    {
+      "id": "cooling2007_ip3_transients_myocyte_core",
+      "position": {
+        "x": 500,
+        "y": 0
+      }
+    },
+    {
+      "id": "cooling2007_ip3_transients_myocyte_viz",
+      "position": {
+        "x": 880,
+        "y": 0
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "cooling2007_ip3_transients_myocyte_scenario.inositol_trisphosphate_initial",
+      "to": [
+        "cooling2007_ip3_transients_myocyte_core.inositol_trisphosphate_initial"
+      ]
+    },
+    {
+      "from": "cooling2007_ip3_transients_myocyte_scenario.calcium_initial",
+      "to": [
+        "cooling2007_ip3_transients_myocyte_core.calcium_initial"
+      ]
+    },
+    {
+      "from": "cooling2007_ip3_transients_myocyte_scenario.receptor_initial",
+      "to": [
+        "cooling2007_ip3_transients_myocyte_core.receptor_initial"
+      ]
+    },
+    {
+      "from": "cooling2007_ip3_transients_myocyte_scenario.scenario_metadata",
+      "to": [
+        "cooling2007_ip3_transients_myocyte_viz.scenario_metadata"
+      ]
+    },
+    {
+      "from": "cooling2007_ip3_transients_myocyte_core.state",
+      "to": [
+        "cooling2007_ip3_transients_myocyte_viz.state"
+      ]
+    },
+    {
+      "from": "cooling2007_ip3_transients_myocyte_core.species_labels",
+      "to": [
+        "cooling2007_ip3_transients_myocyte_viz.species_labels"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+schema_version: '2.0'
+title: Guyton1972 Atrial Natriuretic Peptide Lab
+description: 'Two-model lab for Guyton1972 Atrial Natriuretic Peptide: a core SBML
+  simulator wired into a dedicated visualization sub-model that turns the raw state
+  into friendly timeseries and a plain-language summary. This a model from the article:
+  Circulation: overall regulation. It can be used to explore cardiac dynamics and
+  compare response patterns across conditions.'
+models:
+- alias: guyton1972_atrial_natriuretic_peptide_scenario
+  path: models/scenario
+  parameters:
+    scenario_name: Atrial natriuretic peptide challenge
+    scenario_description: Baseline is followed by a atrial natriuretic peptide infusion
+      challenge and recovery period.
+    baseline_until: 150.0
+    challenge_until: 450.0
+    schedule:
+      left_atrial_pressure:
+        baseline: 2.0
+        challenge: 2.0
+        recovery: 2.0
+        unit: dimensionless
+        label: left atrial pressure
+        description: Scenario-controlled left atrial pressure value.
+        active: false
+      right_atrial_pressure:
+        baseline: 0.00852183
+        challenge: 0.00852183
+        recovery: 0.00852183
+        unit: dimensionless
+        label: right atrial pressure
+        description: Scenario-controlled right atrial pressure value.
+        active: false
+      atrial_natriuretic_peptide_infusion:
+        baseline: 0.0
+        challenge: 1.0
+        recovery: 0.0
+        unit: dimensionless
+        label: atrial natriuretic peptide infusion
+        description: Scenario-controlled atrial natriuretic peptide infusion value.
+        active: true
+- alias: guyton1972_atrial_natriuretic_peptide_core
+  path: ./models/core
+  parameters:
+    model_path: data/MODEL0911272039.xml
+    integration_step: 1.0
+- alias: guyton1972_atrial_natriuretic_peptide_viz
+  path: ./models/viz
+  parameters:
+    integration_step: 1.0
+    lab_title: Guyton1972 Atrial Natriuretic Peptide
+    lab_question: Does atrial stretch trigger natriuretic response?
+runtime:
+  duration: 600.0
+  communication_step: 1.0
+  initial_inputs:
+    guyton1972_atrial_natriuretic_peptide_core:
+      integration_step: 1.0
+      parameter_overrides:
+        payload: {}
+      initial_conditions:
+        payload: {}
+io:
+  inputs:
+  - name: integration_step
+    maps_to: guyton1972_atrial_natriuretic_peptide_core.integration_step
+  - name: parameter_overrides
+    maps_to: guyton1972_atrial_natriuretic_peptide_core.parameter_overrides
+  - name: initial_conditions
+    maps_to: guyton1972_atrial_natriuretic_peptide_core.initial_conditions
+  outputs:
+  - name: scenario_metadata
+    maps_to: guyton1972_atrial_natriuretic_peptide_scenario.scenario_metadata
+  - name: state
+    maps_to: guyton1972_atrial_natriuretic_peptide_core.state
+  - name: run_summary
+    maps_to: guyton1972_atrial_natriuretic_peptide_viz.run_summary
+wiring:
+- from: guyton1972_atrial_natriuretic_peptide_scenario.left_atrial_pressure
+  to:
+  - guyton1972_atrial_natriuretic_peptide_core.left_atrial_pressure
+- from: guyton1972_atrial_natriuretic_peptide_scenario.right_atrial_pressure
+  to:
+  - guyton1972_atrial_natriuretic_peptide_core.right_atrial_pressure
+- from: guyton1972_atrial_natriuretic_peptide_scenario.atrial_natriuretic_peptide_infusion
+  to:
+  - guyton1972_atrial_natriuretic_peptide_core.atrial_natriuretic_peptide_infusion
+- from: guyton1972_atrial_natriuretic_peptide_scenario.scenario_metadata
+  to:
+  - guyton1972_atrial_natriuretic_peptide_viz.scenario_metadata
+- from: guyton1972_atrial_natriuretic_peptide_core.state
+  to:
+  - guyton1972_atrial_natriuretic_peptide_viz.state
+- from: guyton1972_atrial_natriuretic_peptide_core.species_labels
+  to:
+  - guyton1972_atrial_natriuretic_peptide_viz.species_labels

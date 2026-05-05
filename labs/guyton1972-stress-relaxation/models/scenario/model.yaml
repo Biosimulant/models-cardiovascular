@@ -1,0 +1,77 @@
+schema_version: '1.0'
+title: Guyton1972 Stress Relaxation Scenario
+description: Scenario driver that emits baseline, challenge, and recovery inputs for
+  the cardiovascular core model.
+package: cardiovascular-scenario-guyton1972-stress-relaxation
+version: 0.1.0
+standard: biosim-module
+tags:
+- cardiovascular
+- scenario
+- stimulus
+authors:
+- name: Biosimulant Team
+biosim:
+  entrypoint: src.guyton1972_stress_relaxation_scenario.CardiovascularScenarioModel
+runtime:
+  dependencies:
+    packages: []
+parameters:
+- name: scenario_name
+  value: Effective volume challenge
+  description: Plain-language name shown in visualizations.
+- name: scenario_description
+  value: Baseline is followed by a effective volume challenge and recovery period.
+  description: Plain-language scenario description shown in visualizations.
+- name: baseline_until
+  value: 0.25
+  units: s
+  min: 0.0
+  description: Simulation time at which the challenge starts.
+- name: challenge_until
+  value: 0.75
+  units: s
+  min: 0.0
+  description: Simulation time at which recovery starts.
+- name: schedule
+  value:
+    effective_volume:
+      baseline: 0.743224
+      challenge: 0.8547075999999999
+      recovery: 0.743224
+      unit: dimensionless
+      label: effective volume
+      description: Scenario-controlled effective volume value.
+      active: true
+    stress_relaxation_gain:
+      baseline: 5.0
+      challenge: 5.0
+      recovery: 5.0
+      unit: dimensionless
+      label: stress relaxation gain
+      description: Scenario-controlled stress relaxation gain value.
+      active: false
+    stress_relaxation_gain_2:
+      baseline: 10000.0
+      challenge: 10000.0
+      recovery: 10000.0
+      unit: dimensionless
+      label: stress relaxation gain 2
+      description: Scenario-controlled stress relaxation gain 2 value.
+      active: false
+  description: Per-output baseline, challenge, and recovery values emitted by the
+    scenario driver.
+io:
+  inputs: []
+  outputs:
+  - name: effective_volume
+    emitted_unit: dimensionless
+    description: Scenario-controlled effective volume value.
+  - name: stress_relaxation_gain
+    emitted_unit: dimensionless
+    description: Scenario-controlled stress relaxation gain value.
+  - name: stress_relaxation_gain_2
+    emitted_unit: dimensionless
+    description: Scenario-controlled stress relaxation gain 2 value.
+  - name: scenario_metadata
+    description: Scenario name, active input, values, timing, and event markers.

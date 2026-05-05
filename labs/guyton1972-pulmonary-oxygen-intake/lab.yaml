@@ -1,0 +1,96 @@
+schema_version: '2.0'
+title: Guyton1972 Pulmonary Oxygen Intake Lab
+description: 'Two-model lab for Guyton1972 Pulmonary Oxygen Intake: a core SBML simulator
+  wired into a dedicated visualization sub-model that turns the raw state into friendly
+  timeseries and a plain-language summary. This a model from the article: Circulation:
+  overall regulation. It can be used to explore cardiac dynamics and compare response
+  patterns across conditions.'
+models:
+- alias: guyton1972_pulmonary_oxygen_intake_scenario
+  path: models/scenario
+  parameters:
+    scenario_name: Oxygen availability challenge
+    scenario_description: Baseline is followed by a oxygen demand challenge and recovery
+      period.
+    baseline_until: 150.0
+    challenge_until: 450.0
+    schedule:
+      pulmonary_blood_flow:
+        baseline: 4.97838
+        challenge: 4.97838
+        recovery: 4.97838
+        unit: dimensionless
+        label: pulmonary blood flow
+        description: Scenario-controlled pulmonary blood flow value.
+        active: false
+      oxygen_demand:
+        baseline: 56.8057
+        challenge: 28.40285
+        recovery: 56.8057
+        unit: dimensionless
+        label: oxygen demand
+        description: Scenario-controlled oxygen demand value.
+        active: true
+      ambient_oxygen:
+        baseline: 150.0
+        challenge: 150.0
+        recovery: 150.0
+        unit: dimensionless
+        label: ambient oxygen
+        description: Scenario-controlled ambient oxygen value.
+        active: false
+- alias: guyton1972_pulmonary_oxygen_intake_core
+  path: ./models/core
+  parameters:
+    model_path: data/MODEL0911047946.xml
+    integration_step: 1.0
+- alias: guyton1972_pulmonary_oxygen_intake_viz
+  path: ./models/viz
+  parameters:
+    integration_step: 1.0
+    lab_title: Guyton1972 Pulmonary Oxygen Intake
+    lab_question: Is pulmonary oxygen uptake sufficient?
+runtime:
+  duration: 600.0
+  communication_step: 1.0
+  initial_inputs:
+    guyton1972_pulmonary_oxygen_intake_core:
+      integration_step: 1.0
+      parameter_overrides:
+        payload: {}
+      initial_conditions:
+        payload: {}
+io:
+  inputs:
+  - name: integration_step
+    maps_to: guyton1972_pulmonary_oxygen_intake_core.integration_step
+  - name: parameter_overrides
+    maps_to: guyton1972_pulmonary_oxygen_intake_core.parameter_overrides
+  - name: initial_conditions
+    maps_to: guyton1972_pulmonary_oxygen_intake_core.initial_conditions
+  outputs:
+  - name: scenario_metadata
+    maps_to: guyton1972_pulmonary_oxygen_intake_scenario.scenario_metadata
+  - name: state
+    maps_to: guyton1972_pulmonary_oxygen_intake_core.state
+  - name: run_summary
+    maps_to: guyton1972_pulmonary_oxygen_intake_viz.run_summary
+wiring:
+- from: guyton1972_pulmonary_oxygen_intake_scenario.pulmonary_blood_flow
+  to:
+  - guyton1972_pulmonary_oxygen_intake_core.pulmonary_blood_flow
+- from: guyton1972_pulmonary_oxygen_intake_scenario.oxygen_demand
+  to:
+  - guyton1972_pulmonary_oxygen_intake_core.oxygen_demand
+- from: guyton1972_pulmonary_oxygen_intake_scenario.ambient_oxygen
+  to:
+  - guyton1972_pulmonary_oxygen_intake_core.ambient_oxygen
+- from: guyton1972_pulmonary_oxygen_intake_scenario.scenario_metadata
+  to:
+  - guyton1972_pulmonary_oxygen_intake_viz.scenario_metadata
+- from: guyton1972_pulmonary_oxygen_intake_core.state
+  to:
+  - guyton1972_pulmonary_oxygen_intake_viz.state
+- from: guyton1972_pulmonary_oxygen_intake_core.species_labels
+  to:
+  - guyton1972_pulmonary_oxygen_intake_viz.species_labels

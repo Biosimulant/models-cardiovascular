@@ -1,0 +1,96 @@
+schema_version: '2.0'
+title: Guyton1972 Angiotensin Lab
+description: 'Two-model lab for Guyton1972 Angiotensin: a core SBML simulator wired
+  into a dedicated visualization sub-model that turns the raw state into friendly
+  timeseries and a plain-language summary. This a model from the article: Circulation:
+  overall regulation. It can be used to explore cardiac dynamics and compare response
+  patterns across conditions.'
+models:
+- alias: guyton1972_angiotensin_scenario
+  path: models/scenario
+  parameters:
+    scenario_name: Cardiovascular control challenge
+    scenario_description: Baseline is followed by a angiotensin infusion challenge
+      and recovery period.
+    baseline_until: 150.0
+    challenge_until: 450.0
+    schedule:
+      renal_perfusion:
+        baseline: 1.00051
+        challenge: 1.00051
+        recovery: 1.00051
+        unit: dimensionless
+        label: renal perfusion
+        description: Scenario-controlled renal perfusion value.
+        active: false
+      sympathetic_drive:
+        baseline: 0.4
+        challenge: 0.4
+        recovery: 0.4
+        unit: dimensionless
+        label: sympathetic drive
+        description: Scenario-controlled sympathetic drive value.
+        active: false
+      angiotensin_infusion:
+        baseline: 0.0
+        challenge: 1.0
+        recovery: 0.0
+        unit: dimensionless
+        label: angiotensin infusion
+        description: Scenario-controlled angiotensin infusion value.
+        active: true
+- alias: guyton1972_angiotensin_core
+  path: ./models/core
+  parameters:
+    model_path: data/MODEL0911342562.xml
+    integration_step: 1.0
+- alias: guyton1972_angiotensin_viz
+  path: ./models/viz
+  parameters:
+    integration_step: 1.0
+    lab_title: Guyton1972 Angiotensin
+    lab_question: How strongly is the angiotensin system activated?
+runtime:
+  duration: 600.0
+  communication_step: 1.0
+  initial_inputs:
+    guyton1972_angiotensin_core:
+      integration_step: 1.0
+      parameter_overrides:
+        payload: {}
+      initial_conditions:
+        payload: {}
+io:
+  inputs:
+  - name: integration_step
+    maps_to: guyton1972_angiotensin_core.integration_step
+  - name: parameter_overrides
+    maps_to: guyton1972_angiotensin_core.parameter_overrides
+  - name: initial_conditions
+    maps_to: guyton1972_angiotensin_core.initial_conditions
+  outputs:
+  - name: scenario_metadata
+    maps_to: guyton1972_angiotensin_scenario.scenario_metadata
+  - name: state
+    maps_to: guyton1972_angiotensin_core.state
+  - name: run_summary
+    maps_to: guyton1972_angiotensin_viz.run_summary
+wiring:
+- from: guyton1972_angiotensin_scenario.renal_perfusion
+  to:
+  - guyton1972_angiotensin_core.renal_perfusion
+- from: guyton1972_angiotensin_scenario.sympathetic_drive
+  to:
+  - guyton1972_angiotensin_core.sympathetic_drive
+- from: guyton1972_angiotensin_scenario.angiotensin_infusion
+  to:
+  - guyton1972_angiotensin_core.angiotensin_infusion
+- from: guyton1972_angiotensin_scenario.scenario_metadata
+  to:
+  - guyton1972_angiotensin_viz.scenario_metadata
+- from: guyton1972_angiotensin_core.state
+  to:
+  - guyton1972_angiotensin_viz.state
+- from: guyton1972_angiotensin_core.species_labels
+  to:
+  - guyton1972_angiotensin_viz.species_labels

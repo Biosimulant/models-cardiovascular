@@ -1,0 +1,96 @@
+schema_version: '2.0'
+title: Cooling2007 Ip3 Transients Myocyte Lab
+description: 'Two-model lab for Cooling2007 Ip3 Transients Myocyte: a core SBML simulator
+  wired into a dedicated visualization sub-model that turns the raw state into friendly
+  timeseries and a plain-language summary. This a model from the article: Modeling
+  hypertrophic IP3 transients in the cardiac myocyte. It can be used to explore cardiac
+  dynamics and compare response patterns across conditions.'
+models:
+- alias: cooling2007_ip3_transients_myocyte_scenario
+  path: models/scenario
+  parameters:
+    scenario_name: Calcium activation challenge
+    scenario_description: Baseline is followed by a calcium initial challenge and
+      recovery period.
+    baseline_until: 0.25
+    challenge_until: 0.75
+    schedule:
+      inositol_trisphosphate_initial:
+        baseline: 0.015
+        challenge: 0.015
+        recovery: 0.015
+        unit: dimensionless
+        label: inositol trisphosphate initial
+        description: Scenario-controlled inositol trisphosphate initial value.
+        active: false
+      calcium_initial:
+        baseline: 0.1
+        challenge: 0.2
+        recovery: 0.1
+        unit: dimensionless
+        label: calcium initial
+        description: Scenario-controlled calcium initial value.
+        active: true
+      receptor_initial:
+        baseline: 13.9
+        challenge: 13.9
+        recovery: 13.9
+        unit: dimensionless
+        label: receptor initial
+        description: Scenario-controlled receptor initial value.
+        active: false
+- alias: cooling2007_ip3_transients_myocyte_core
+  path: ./models/core
+  parameters:
+    model_path: data/BIOMD0000000400.xml
+    integration_step: 0.001
+- alias: cooling2007_ip3_transients_myocyte_viz
+  path: ./models/viz
+  parameters:
+    integration_step: 0.001
+    lab_title: Cooling2007 Ip3 Transients Myocyte
+    lab_question: Does inositol trisphosphate stimulation create a calcium transient?
+runtime:
+  duration: 1.0
+  communication_step: 0.001
+  initial_inputs:
+    cooling2007_ip3_transients_myocyte_core:
+      integration_step: 0.001
+      parameter_overrides:
+        payload: {}
+      initial_conditions:
+        payload: {}
+io:
+  inputs:
+  - name: integration_step
+    maps_to: cooling2007_ip3_transients_myocyte_core.integration_step
+  - name: parameter_overrides
+    maps_to: cooling2007_ip3_transients_myocyte_core.parameter_overrides
+  - name: initial_conditions
+    maps_to: cooling2007_ip3_transients_myocyte_core.initial_conditions
+  outputs:
+  - name: scenario_metadata
+    maps_to: cooling2007_ip3_transients_myocyte_scenario.scenario_metadata
+  - name: state
+    maps_to: cooling2007_ip3_transients_myocyte_core.state
+  - name: run_summary
+    maps_to: cooling2007_ip3_transients_myocyte_viz.run_summary
+wiring:
+- from: cooling2007_ip3_transients_myocyte_scenario.inositol_trisphosphate_initial
+  to:
+  - cooling2007_ip3_transients_myocyte_core.inositol_trisphosphate_initial
+- from: cooling2007_ip3_transients_myocyte_scenario.calcium_initial
+  to:
+  - cooling2007_ip3_transients_myocyte_core.calcium_initial
+- from: cooling2007_ip3_transients_myocyte_scenario.receptor_initial
+  to:
+  - cooling2007_ip3_transients_myocyte_core.receptor_initial
+- from: cooling2007_ip3_transients_myocyte_scenario.scenario_metadata
+  to:
+  - cooling2007_ip3_transients_myocyte_viz.scenario_metadata
+- from: cooling2007_ip3_transients_myocyte_core.state
+  to:
+  - cooling2007_ip3_transients_myocyte_viz.state
+- from: cooling2007_ip3_transients_myocyte_core.species_labels
+  to:
+  - cooling2007_ip3_transients_myocyte_viz.species_labels

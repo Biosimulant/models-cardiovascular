@@ -1,0 +1,77 @@
+schema_version: '1.0'
+title: Guyton1972 Angiotensin Scenario
+description: Scenario driver that emits baseline, challenge, and recovery inputs for
+  the cardiovascular core model.
+package: cardiovascular-scenario-guyton1972-angiotensin
+version: 0.1.0
+standard: biosim-module
+tags:
+- cardiovascular
+- scenario
+- stimulus
+authors:
+- name: Biosimulant Team
+biosim:
+  entrypoint: src.guyton1972_angiotensin_scenario.CardiovascularScenarioModel
+runtime:
+  dependencies:
+    packages: []
+parameters:
+- name: scenario_name
+  value: Cardiovascular control challenge
+  description: Plain-language name shown in visualizations.
+- name: scenario_description
+  value: Baseline is followed by a angiotensin infusion challenge and recovery period.
+  description: Plain-language scenario description shown in visualizations.
+- name: baseline_until
+  value: 150.0
+  units: s
+  min: 0.0
+  description: Simulation time at which the challenge starts.
+- name: challenge_until
+  value: 450.0
+  units: s
+  min: 0.0
+  description: Simulation time at which recovery starts.
+- name: schedule
+  value:
+    renal_perfusion:
+      baseline: 1.00051
+      challenge: 1.00051
+      recovery: 1.00051
+      unit: dimensionless
+      label: renal perfusion
+      description: Scenario-controlled renal perfusion value.
+      active: false
+    sympathetic_drive:
+      baseline: 0.4
+      challenge: 0.4
+      recovery: 0.4
+      unit: dimensionless
+      label: sympathetic drive
+      description: Scenario-controlled sympathetic drive value.
+      active: false
+    angiotensin_infusion:
+      baseline: 0.0
+      challenge: 1.0
+      recovery: 0.0
+      unit: dimensionless
+      label: angiotensin infusion
+      description: Scenario-controlled angiotensin infusion value.
+      active: true
+  description: Per-output baseline, challenge, and recovery values emitted by the
+    scenario driver.
+io:
+  inputs: []
+  outputs:
+  - name: renal_perfusion
+    emitted_unit: dimensionless
+    description: Scenario-controlled renal perfusion value.
+  - name: sympathetic_drive
+    emitted_unit: dimensionless
+    description: Scenario-controlled sympathetic drive value.
+  - name: angiotensin_infusion
+    emitted_unit: dimensionless
+    description: Scenario-controlled angiotensin infusion value.
+  - name: scenario_metadata
+    description: Scenario name, active input, values, timing, and event markers.

@@ -1,0 +1,77 @@
+schema_version: '1.0'
+title: Irvine1999 Cardiac Sodium Channel Scenario
+description: Scenario driver that emits baseline, challenge, and recovery inputs for
+  the cardiovascular core model.
+package: cardiovascular-scenario-irvine1999-cardiac-sodium-channel
+version: 0.1.0
+standard: biosim-module
+tags:
+- cardiovascular
+- scenario
+- stimulus
+authors:
+- name: Biosimulant Team
+biosim:
+  entrypoint: src.irvine1999_cardiac_sodium_channel_scenario.CardiovascularScenarioModel
+runtime:
+  dependencies:
+    packages: []
+parameters:
+- name: scenario_name
+  value: Voltage-step channel challenge
+  description: Plain-language name shown in visualizations.
+- name: scenario_description
+  value: Baseline is followed by a holding voltage challenge and recovery period.
+  description: Plain-language scenario description shown in visualizations.
+- name: baseline_until
+  value: 0.25
+  units: s
+  min: 0.0
+  description: Simulation time at which the challenge starts.
+- name: challenge_until
+  value: 0.75
+  units: s
+  min: 0.0
+  description: Simulation time at which recovery starts.
+- name: schedule
+  value:
+    holding_voltage:
+      baseline: -0.12
+      challenge: -20.12
+      recovery: -0.12
+      unit: mV
+      label: holding voltage
+      description: Scenario-controlled holding voltage value.
+      active: true
+    sodium_reversal_voltage:
+      baseline: 0.044675
+      challenge: 0.044675
+      recovery: 0.044675
+      unit: mV
+      label: sodium reversal voltage
+      description: Scenario-controlled sodium reversal voltage value.
+      active: false
+    sodium_conductance:
+      baseline: 0.0131
+      challenge: 0.0131
+      recovery: 0.0131
+      unit: mS_per_uF
+      label: sodium conductance
+      description: Scenario-controlled sodium conductance value.
+      active: false
+  description: Per-output baseline, challenge, and recovery values emitted by the
+    scenario driver.
+io:
+  inputs: []
+  outputs:
+  - name: holding_voltage
+    emitted_unit: mV
+    description: Scenario-controlled holding voltage value.
+  - name: sodium_reversal_voltage
+    emitted_unit: mV
+    description: Scenario-controlled sodium reversal voltage value.
+  - name: sodium_conductance
+    emitted_unit: mS_per_uF
+    description: Scenario-controlled sodium conductance value.
+  - name: scenario_metadata
+    description: Scenario name, active input, values, timing, and event markers.

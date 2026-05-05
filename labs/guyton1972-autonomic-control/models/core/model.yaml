@@ -1,0 +1,81 @@
+schema_version: '2.0'
+title: Guyton1972_Autonomics
+description: 'This a model from the article: Circulation: overall regulation. It can
+  be used to explore cardiac dynamics and compare response patterns across conditions.'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- A C Guyton
+- T G Coleman
+- H J Granger
+upstream:
+  id: biomodels_ebi:MODEL0911270005
+  source_db: biomodels_ebi
+  source_id: MODEL0911270005
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL0911270005
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0911270005?filename=MODEL0911270005_url.xml
+  license: CC0
+biosim:
+  entrypoint: src.guyton1972_autonomics_model0911270005_model:Guyton1972AutonomicsModel0911270005Model
+  init_kwargs:
+    model_path: data/MODEL0911270005.xml
+    integration_step: 1.0
+  communication_step: 1.0
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.2.11.2
+parameters:
+- name: model_path
+  value: data/MODEL0911270005.xml
+  description: Relative path to the SBML file shipped with this model.
+- name: integration_step
+  value: 1.0
+  min: 0.0
+  units: s
+  description: ODE solver integration step size in seconds.
+io:
+  inputs:
+  - name: arterial_pressure
+    accepted_units:
+    - dimensionless
+    description: Sets arterial pressure for the simulation scenario. Default `103.525`.
+  - name: arterial_oxygen
+    accepted_units:
+    - dimensionless
+    description: Sets arterial oxygen for the simulation scenario. Default `97.0439`.
+  - name: left_atrial_pressure
+    accepted_units:
+    - dimensionless
+    description: Sets left atrial pressure for the simulation scenario. Default `2.0`.
+  - name: right_atrial_pressure
+    accepted_units:
+    - dimensionless
+    description: Sets right atrial pressure for the simulation scenario. Default `0.00852183`.
+  - name: integration_step
+    accepted_units:
+    - s
+    description: Override the ODE solver integration step. Smaller = more precise
+      but slower.
+  - name: parameter_overrides
+    description: Map of SBML global parameter name to override value, applied before
+      each advance_window. Use the parameter list in the lab README for keys not surfaced
+      as named ports above.
+  - name: initial_conditions
+    description: Map of SBML species ID to initial concentration override, applied
+      at setup and on reset. Use the species list in the lab README to discover keys.
+  outputs:
+  - name: state
+    description: Species concentrations and state variables read from the SBML model.
+      Wired into the lab's `viz` sub-model for timeseries rendering.
+  - name: species_labels
+    description: Static record mapping each SBML species id to a human-friendly label
+      (read from `<species name=...>` or prettified id). Emitted on every window but
+      only needed once by downstream presenters.

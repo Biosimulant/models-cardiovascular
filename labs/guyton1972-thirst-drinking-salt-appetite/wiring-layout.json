@@ -1,0 +1,63 @@
+{
+  "nodes": [
+    {
+      "id": "guyton1972_thirst_drinking_salt_appetite_scenario",
+      "position": {
+        "x": 120,
+        "y": 0
+      }
+    },
+    {
+      "id": "guyton1972_thirst_drinking_salt_appetite_core",
+      "position": {
+        "x": 500,
+        "y": 0
+      }
+    },
+    {
+      "id": "guyton1972_thirst_drinking_salt_appetite_viz",
+      "position": {
+        "x": 880,
+        "y": 0
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "guyton1972_thirst_drinking_salt_appetite_scenario.antidiuretic_hormone_concentration",
+      "to": [
+        "guyton1972_thirst_drinking_salt_appetite_core.antidiuretic_hormone_concentration"
+      ]
+    },
+    {
+      "from": "guyton1972_thirst_drinking_salt_appetite_scenario.angiotensin_drive",
+      "to": [
+        "guyton1972_thirst_drinking_salt_appetite_core.angiotensin_drive"
+      ]
+    },
+    {
+      "from": "guyton1972_thirst_drinking_salt_appetite_scenario.arterial_pressure",
+      "to": [
+        "guyton1972_thirst_drinking_salt_appetite_core.arterial_pressure"
+      ]
+    },
+    {
+      "from": "guyton1972_thirst_drinking_salt_appetite_scenario.scenario_metadata",
+      "to": [
+        "guyton1972_thirst_drinking_salt_appetite_viz.scenario_metadata"
+      ]
+    },
+    {
+      "from": "guyton1972_thirst_drinking_salt_appetite_core.state",
+      "to": [
+        "guyton1972_thirst_drinking_salt_appetite_viz.state"
+      ]
+    },
+    {
+      "from": "guyton1972_thirst_drinking_salt_appetite_core.species_labels",
+      "to": [
+        "guyton1972_thirst_drinking_salt_appetite_viz.species_labels"
+      ]
+    }
+  ]
+}

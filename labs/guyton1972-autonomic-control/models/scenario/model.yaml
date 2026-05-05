@@ -1,0 +1,88 @@
+schema_version: '1.0'
+title: Guyton1972 Autonomic Control Scenario
+description: Scenario driver that emits baseline, challenge, and recovery inputs for
+  the cardiovascular core model.
+package: cardiovascular-scenario-guyton1972-autonomic-control
+version: 0.1.0
+standard: biosim-module
+tags:
+- cardiovascular
+- scenario
+- stimulus
+authors:
+- name: Biosimulant Team
+biosim:
+  entrypoint: src.guyton1972_autonomic_control_scenario.CardiovascularScenarioModel
+runtime:
+  dependencies:
+    packages: []
+parameters:
+- name: scenario_name
+  value: Oxygen availability challenge
+  description: Plain-language name shown in visualizations.
+- name: scenario_description
+  value: Baseline is followed by a arterial oxygen challenge and recovery period.
+  description: Plain-language scenario description shown in visualizations.
+- name: baseline_until
+  value: 150.0
+  units: s
+  min: 0.0
+  description: Simulation time at which the challenge starts.
+- name: challenge_until
+  value: 450.0
+  units: s
+  min: 0.0
+  description: Simulation time at which recovery starts.
+- name: schedule
+  value:
+    arterial_pressure:
+      baseline: 103.525
+      challenge: 103.525
+      recovery: 103.525
+      unit: dimensionless
+      label: arterial pressure
+      description: Scenario-controlled arterial pressure value.
+      active: false
+    arterial_oxygen:
+      baseline: 97.0439
+      challenge: 48.52195
+      recovery: 97.0439
+      unit: dimensionless
+      label: arterial oxygen
+      description: Scenario-controlled arterial oxygen value.
+      active: true
+    left_atrial_pressure:
+      baseline: 2.0
+      challenge: 2.0
+      recovery: 2.0
+      unit: dimensionless
+      label: left atrial pressure
+      description: Scenario-controlled left atrial pressure value.
+      active: false
+    right_atrial_pressure:
+      baseline: 0.00852183
+      challenge: 0.00852183
+      recovery: 0.00852183
+      unit: dimensionless
+      label: right atrial pressure
+      description: Scenario-controlled right atrial pressure value.
+      active: false
+  description: Per-output baseline, challenge, and recovery values emitted by the
+    scenario driver.
+io:
+  inputs: []
+  outputs:
+  - name: arterial_pressure
+    emitted_unit: dimensionless
+    description: Scenario-controlled arterial pressure value.
+  - name: arterial_oxygen
+    emitted_unit: dimensionless
+    description: Scenario-controlled arterial oxygen value.
+  - name: left_atrial_pressure
+    emitted_unit: dimensionless
+    description: Scenario-controlled left atrial pressure value.
+  - name: right_atrial_pressure
+    emitted_unit: dimensionless
+    description: Scenario-controlled right atrial pressure value.
+  - name: scenario_metadata
+    description: Scenario name, active input, values, timing, and event markers.

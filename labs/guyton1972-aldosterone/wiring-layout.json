@@ -1,0 +1,63 @@
+{
+  "nodes": [
+    {
+      "id": "guyton1972_aldosterone_scenario",
+      "position": {
+        "x": 120,
+        "y": 0
+      }
+    },
+    {
+      "id": "guyton1972_aldosterone_core",
+      "position": {
+        "x": 500,
+        "y": 0
+      }
+    },
+    {
+      "id": "guyton1972_aldosterone_viz",
+      "position": {
+        "x": 880,
+        "y": 0
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "guyton1972_aldosterone_scenario.angiotensin_drive",
+      "to": [
+        "guyton1972_aldosterone_core.angiotensin_drive"
+      ]
+    },
+    {
+      "from": "guyton1972_aldosterone_scenario.potassium_effect",
+      "to": [
+        "guyton1972_aldosterone_core.potassium_effect"
+      ]
+    },
+    {
+      "from": "guyton1972_aldosterone_scenario.sympathetic_drive",
+      "to": [
+        "guyton1972_aldosterone_core.sympathetic_drive"
+      ]
+    },
+    {
+      "from": "guyton1972_aldosterone_scenario.scenario_metadata",
+      "to": [
+        "guyton1972_aldosterone_viz.scenario_metadata"
+      ]
+    },
+    {
+      "from": "guyton1972_aldosterone_core.state",
+      "to": [
+        "guyton1972_aldosterone_viz.state"
+      ]
+    },
+    {
+      "from": "guyton1972_aldosterone_core.species_labels",
+      "to": [
+        "guyton1972_aldosterone_viz.species_labels"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+schema_version: '2.0'
+title: Iyer2007_Arrhythmia_CardiacDeath
+description: 'This a model from the article: Mechanisms of abnormal calcium homeostasis
+  in mutations responsible forcatecholaminergic polymorphic ventricular tachycardia.
+  It can be used to explore cardiac dynamics and compare response patterns across
+  conditions.'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- Vivek Iyer
+- Roger J Hajjar
+- Antonis A Armoundas
+upstream:
+  id: biomodels_ebi:MODEL1006230030
+  source_db: biomodels_ebi
+  source_id: MODEL1006230030
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL1006230030
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL1006230030?filename=MODEL1006230030_url.xml
+  license: CC0
+biosim:
+  entrypoint: src.iyer2007_arrhythmia_cardiacdeath_model1006230030_model:Iyer2007ArrhythmiaCardiacdeathModel1006230030Model
+  init_kwargs:
+    model_path: data/MODEL1006230030.xml
+    integration_step: 0.001
+  communication_step: 0.001
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.2.11.2
+parameters:
+- name: model_path
+  value: data/MODEL1006230030.xml
+  description: Relative path to the SBML file shipped with this model.
+- name: integration_step
+  value: 0.001
+  min: 0.0
+  units: s
+  description: ODE solver integration step size in seconds.
+io:
+  inputs:
+  - name: temperature
+    accepted_units:
+    - dimensionless
+    description: Sets temperature for the simulation scenario. Default `310.0`.
+  - name: isoproterenol_drive
+    accepted_units:
+    - dimensionless
+    description: Sets isoproterenol drive for the simulation scenario. Default `0.0`.
+  - name: calsequestrin_buffer
+    accepted_units:
+    - dimensionless
+    description: Sets calsequestrin buffer for the simulation scenario. Default `0.0`.
+  - name: ryanodine_receptor_pool
+    accepted_units:
+    - dimensionless
+    description: Sets ryanodine receptor pool for the simulation scenario. Default
+      `0.0`.
+  - name: intracellular_calcium
+    accepted_units:
+    - mM
+    description: Sets intracellular calcium for the simulation scenario. Default `0.00036396867218`.
+  - name: integration_step
+    accepted_units:
+    - s
+    description: Override the ODE solver integration step. Smaller = more precise
+      but slower.
+  - name: parameter_overrides
+    description: Map of SBML global parameter name to override value, applied before
+      each advance_window. Use the parameter list in the lab README for keys not surfaced
+      as named ports above.
+  - name: initial_conditions
+    description: Map of SBML species ID to initial concentration override, applied
+      at setup and on reset. Use the species list in the lab README to discover keys.
+  outputs:
+  - name: state
+    description: Species concentrations and state variables read from the SBML model.
+      Wired into the lab's `viz` sub-model for timeseries rendering.
+  - name: species_labels
+    description: Static record mapping each SBML species id to a human-friendly label
+      (read from `<species name=...>` or prettified id). Emitted on every window but
+      only needed once by downstream presenters.

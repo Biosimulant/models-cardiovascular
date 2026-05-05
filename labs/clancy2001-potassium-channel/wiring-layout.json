@@ -1,0 +1,75 @@
+{
+  "nodes": [
+    {
+      "id": "clancy2001_potassium_channel_scenario",
+      "position": {
+        "x": 120,
+        "y": 0
+      }
+    },
+    {
+      "id": "clancy2001_potassium_channel_core",
+      "position": {
+        "x": 500,
+        "y": 0
+      }
+    },
+    {
+      "id": "clancy2001_potassium_channel_viz",
+      "position": {
+        "x": 880,
+        "y": 0
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "clancy2001_potassium_channel_scenario.temperature",
+      "to": [
+        "clancy2001_potassium_channel_core.temperature"
+      ]
+    },
+    {
+      "from": "clancy2001_potassium_channel_scenario.extracellular_potassium",
+      "to": [
+        "clancy2001_potassium_channel_core.extracellular_potassium"
+      ]
+    },
+    {
+      "from": "clancy2001_potassium_channel_scenario.intracellular_potassium",
+      "to": [
+        "clancy2001_potassium_channel_core.intracellular_potassium"
+      ]
+    },
+    {
+      "from": "clancy2001_potassium_channel_scenario.holding_voltage",
+      "to": [
+        "clancy2001_potassium_channel_core.holding_voltage"
+      ]
+    },
+    {
+      "from": "clancy2001_potassium_channel_scenario.test_voltage",
+      "to": [
+        "clancy2001_potassium_channel_core.test_voltage"
+      ]
+    },
+    {
+      "from": "clancy2001_potassium_channel_scenario.scenario_metadata",
+      "to": [
+        "clancy2001_potassium_channel_viz.scenario_metadata"
+      ]
+    },
+    {
+      "from": "clancy2001_potassium_channel_core.state",
+      "to": [
+        "clancy2001_potassium_channel_viz.state"
+      ]
+    },
+    {
+      "from": "clancy2001_potassium_channel_core.species_labels",
+      "to": [
+        "clancy2001_potassium_channel_viz.species_labels"
+      ]
+    }
+  ]
+}

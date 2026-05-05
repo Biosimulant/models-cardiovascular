@@ -1,0 +1,66 @@
+schema_version: '1.0'
+title: Guyton1972 Non Muscle Blood Flow Scenario
+description: Scenario driver that emits baseline, challenge, and recovery inputs for
+  the cardiovascular core model.
+package: cardiovascular-scenario-guyton1972-non-muscle-blood-flow
+version: 0.1.0
+standard: biosim-module
+tags:
+- cardiovascular
+- scenario
+- stimulus
+authors:
+- name: Biosimulant Team
+biosim:
+  entrypoint: src.guyton1972_non_muscle_blood_flow_scenario.CardiovascularScenarioModel
+runtime:
+  dependencies:
+    packages: []
+parameters:
+- name: scenario_name
+  value: Oxygen availability challenge
+  description: Plain-language name shown in visualizations.
+- name: scenario_description
+  value: Baseline is followed by a tissue oxygen challenge and recovery period.
+  description: Plain-language scenario description shown in visualizations.
+- name: baseline_until
+  value: 150.0
+  units: s
+  min: 0.0
+  description: Simulation time at which the challenge starts.
+- name: challenge_until
+  value: 450.0
+  units: s
+  min: 0.0
+  description: Simulation time at which recovery starts.
+- name: schedule
+  value:
+    tissue_oxygen:
+      baseline: 35.1148
+      challenge: 17.5574
+      recovery: 35.1148
+      unit: dimensionless
+      label: tissue oxygen
+      description: Scenario-controlled tissue oxygen value.
+      active: true
+    autonomic_drive:
+      baseline: 0.9
+      challenge: 0.9
+      recovery: 0.9
+      unit: dimensionless
+      label: autonomic drive
+      description: Scenario-controlled autonomic drive value.
+      active: false
+  description: Per-output baseline, challenge, and recovery values emitted by the
+    scenario driver.
+io:
+  inputs: []
+  outputs:
+  - name: tissue_oxygen
+    emitted_unit: dimensionless
+    description: Scenario-controlled tissue oxygen value.
+  - name: autonomic_drive
+    emitted_unit: dimensionless
+    description: Scenario-controlled autonomic drive value.
+  - name: scenario_metadata
+    description: Scenario name, active input, values, timing, and event markers.

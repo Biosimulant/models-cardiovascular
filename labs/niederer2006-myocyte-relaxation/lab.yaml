@@ -1,0 +1,96 @@
+schema_version: '2.0'
+title: Niederer2006 Myocyte Relaxation Lab
+description: 'Two-model lab for Niederer2006 Myocyte Relaxation: a core SBML simulator
+  wired into a dedicated visualization sub-model that turns the raw state into friendly
+  timeseries and a plain-language summary. This a model from the article: A quantitative
+  analysis of cardiac myocyte relaxation: a simulation study. It can be used to explore
+  cardiac dynamics and compare response patterns across conditions.'
+models:
+- alias: niederer2006_myocyte_relaxation_scenario
+  path: models/scenario
+  parameters:
+    scenario_name: Troponin pool challenge
+    scenario_description: Baseline is followed by a troponin pool challenge and recovery
+      period.
+    baseline_until: 0.25
+    challenge_until: 0.75
+    schedule:
+      troponin_pool:
+        baseline: 0.067593139865
+        challenge: 0.1013897097975
+        recovery: 0.067593139865
+        unit: dimensionless
+        label: troponin pool
+        description: Scenario-controlled troponin pool value.
+        active: true
+      relaxation_rate:
+        baseline: 0.002
+        challenge: 0.002
+        recovery: 0.002
+        unit: dimensionless
+        label: relaxation rate
+        description: Scenario-controlled relaxation rate value.
+        active: false
+      cooperativity:
+        baseline: 0.008
+        challenge: 0.008
+        recovery: 0.008
+        unit: dimensionless
+        label: cooperativity
+        description: Scenario-controlled cooperativity value.
+        active: false
+- alias: niederer2006_myocyte_relaxation_core
+  path: ./models/core
+  parameters:
+    model_path: data/MODEL8687196544.xml
+    integration_step: 0.001
+- alias: niederer2006_myocyte_relaxation_viz
+  path: ./models/viz
+  parameters:
+    integration_step: 0.001
+    lab_title: Niederer2006 Myocyte Relaxation
+    lab_question: How quickly does the myocyte relax after calcium activation?
+runtime:
+  duration: 1.0
+  communication_step: 0.001
+  initial_inputs:
+    niederer2006_myocyte_relaxation_core:
+      integration_step: 0.001
+      parameter_overrides:
+        payload: {}
+      initial_conditions:
+        payload: {}
+io:
+  inputs:
+  - name: integration_step
+    maps_to: niederer2006_myocyte_relaxation_core.integration_step
+  - name: parameter_overrides
+    maps_to: niederer2006_myocyte_relaxation_core.parameter_overrides
+  - name: initial_conditions
+    maps_to: niederer2006_myocyte_relaxation_core.initial_conditions
+  outputs:
+  - name: scenario_metadata
+    maps_to: niederer2006_myocyte_relaxation_scenario.scenario_metadata
+  - name: state
+    maps_to: niederer2006_myocyte_relaxation_core.state
+  - name: run_summary
+    maps_to: niederer2006_myocyte_relaxation_viz.run_summary
+wiring:
+- from: niederer2006_myocyte_relaxation_scenario.troponin_pool
+  to:
+  - niederer2006_myocyte_relaxation_core.troponin_pool
+- from: niederer2006_myocyte_relaxation_scenario.relaxation_rate
+  to:
+  - niederer2006_myocyte_relaxation_core.relaxation_rate
+- from: niederer2006_myocyte_relaxation_scenario.cooperativity
+  to:
+  - niederer2006_myocyte_relaxation_core.cooperativity
+- from: niederer2006_myocyte_relaxation_scenario.scenario_metadata
+  to:
+  - niederer2006_myocyte_relaxation_viz.scenario_metadata
+- from: niederer2006_myocyte_relaxation_core.state
+  to:
+  - niederer2006_myocyte_relaxation_viz.state
+- from: niederer2006_myocyte_relaxation_core.species_labels
+  to:
+  - niederer2006_myocyte_relaxation_viz.species_labels

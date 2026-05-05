@@ -1,0 +1,51 @@
+{
+  "nodes": [
+    {
+      "id": "guyton1972_volume_receptors_scenario",
+      "position": {
+        "x": 120,
+        "y": 0
+      }
+    },
+    {
+      "id": "guyton1972_volume_receptors_core",
+      "position": {
+        "x": 500,
+        "y": 0
+      }
+    },
+    {
+      "id": "guyton1972_volume_receptors_viz",
+      "position": {
+        "x": 880,
+        "y": 0
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "guyton1972_volume_receptors_scenario.right_atrial_pressure",
+      "to": [
+        "guyton1972_volume_receptors_core.right_atrial_pressure"
+      ]
+    },
+    {
+      "from": "guyton1972_volume_receptors_scenario.scenario_metadata",
+      "to": [
+        "guyton1972_volume_receptors_viz.scenario_metadata"
+      ]
+    },
+    {
+      "from": "guyton1972_volume_receptors_core.state",
+      "to": [
+        "guyton1972_volume_receptors_viz.state"
+      ]
+    },
+    {
+      "from": "guyton1972_volume_receptors_core.species_labels",
+      "to": [
+        "guyton1972_volume_receptors_viz.species_labels"
+      ]
+    }
+  ]
+}

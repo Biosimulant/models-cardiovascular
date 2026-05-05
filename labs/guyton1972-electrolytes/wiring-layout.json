@@ -1,0 +1,63 @@
+{
+  "nodes": [
+    {
+      "id": "guyton1972_electrolytes_scenario",
+      "position": {
+        "x": 120,
+        "y": 0
+      }
+    },
+    {
+      "id": "guyton1972_electrolytes_core",
+      "position": {
+        "x": 500,
+        "y": 0
+      }
+    },
+    {
+      "id": "guyton1972_electrolytes_viz",
+      "position": {
+        "x": 880,
+        "y": 0
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "guyton1972_electrolytes_scenario.sodium_intake",
+      "to": [
+        "guyton1972_electrolytes_core.sodium_intake"
+      ]
+    },
+    {
+      "from": "guyton1972_electrolytes_scenario.potassium_intake",
+      "to": [
+        "guyton1972_electrolytes_core.potassium_intake"
+      ]
+    },
+    {
+      "from": "guyton1972_electrolytes_scenario.aldosterone_drive",
+      "to": [
+        "guyton1972_electrolytes_core.aldosterone_drive"
+      ]
+    },
+    {
+      "from": "guyton1972_electrolytes_scenario.scenario_metadata",
+      "to": [
+        "guyton1972_electrolytes_viz.scenario_metadata"
+      ]
+    },
+    {
+      "from": "guyton1972_electrolytes_core.state",
+      "to": [
+        "guyton1972_electrolytes_viz.state"
+      ]
+    },
+    {
+      "from": "guyton1972_electrolytes_core.species_labels",
+      "to": [
+        "guyton1972_electrolytes_viz.species_labels"
+      ]
+    }
+  ]
+}

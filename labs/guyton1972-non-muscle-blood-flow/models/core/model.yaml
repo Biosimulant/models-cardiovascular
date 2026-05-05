@@ -1,0 +1,73 @@
+schema_version: '2.0'
+title: Guyton1972_NonMuscleBloodFlowControl
+description: 'This a model from the article: Circulation: overall regulation. It can
+  be used to explore cardiac dynamics and compare response patterns across conditions.'
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+authors:
+- Biosimulant Team
+- A C Guyton
+- T G Coleman
+- H J Granger
+upstream:
+  id: biomodels_ebi:MODEL0911169699
+  source_db: biomodels_ebi
+  source_id: MODEL0911169699
+  standard: sbml
+  original_url: https://www.ebi.ac.uk/biomodels/MODEL0911169699
+  download_url: https://www.ebi.ac.uk/biomodels/model/download/MODEL0911169699?filename=MODEL0911169699_url.xml
+  license: CC0
+biosim:
+  entrypoint: src.guyton1972_nonmusclebloodflowcontrol_model0911169699_model:Guyton1972NonmusclebloodflowcontrolModel0911169699Model
+  init_kwargs:
+    model_path: data/MODEL0911169699.xml
+    integration_step: 1.0
+  communication_step: 1.0
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages:
+    - tellurium==2.2.11.2
+parameters:
+- name: model_path
+  value: data/MODEL0911169699.xml
+  description: Relative path to the SBML file shipped with this model.
+- name: integration_step
+  value: 1.0
+  min: 0.0
+  units: s
+  description: ODE solver integration step size in seconds.
+io:
+  inputs:
+  - name: tissue_oxygen
+    accepted_units:
+    - dimensionless
+    description: Sets tissue oxygen for the simulation scenario. Default `35.1148`.
+  - name: autonomic_drive
+    accepted_units:
+    - dimensionless
+    description: Sets autonomic drive for the simulation scenario. Default `0.9`.
+  - name: integration_step
+    accepted_units:
+    - s
+    description: Override the ODE solver integration step. Smaller = more precise
+      but slower.
+  - name: parameter_overrides
+    description: Map of SBML global parameter name to override value, applied before
+      each advance_window. Use the parameter list in the lab README for keys not surfaced
+      as named ports above.
+  - name: initial_conditions
+    description: Map of SBML species ID to initial concentration override, applied
+      at setup and on reset. Use the species list in the lab README to discover keys.
+  outputs:
+  - name: state
+    description: Species concentrations and state variables read from the SBML model.
+      Wired into the lab's `viz` sub-model for timeseries rendering.
+  - name: species_labels
+    description: Static record mapping each SBML species id to a human-friendly label
+      (read from `<species name=...>` or prettified id). Emitted on every window but
+      only needed once by downstream presenters.

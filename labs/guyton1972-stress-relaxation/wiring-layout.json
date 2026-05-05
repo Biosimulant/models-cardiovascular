@@ -1,0 +1,63 @@
+{
+  "nodes": [
+    {
+      "id": "guyton1972_stress_relaxation_scenario",
+      "position": {
+        "x": 120,
+        "y": 0
+      }
+    },
+    {
+      "id": "guyton1972_stress_relaxation_core",
+      "position": {
+        "x": 500,
+        "y": 0
+      }
+    },
+    {
+      "id": "guyton1972_stress_relaxation_viz",
+      "position": {
+        "x": 880,
+        "y": 0
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "guyton1972_stress_relaxation_scenario.effective_volume",
+      "to": [
+        "guyton1972_stress_relaxation_core.effective_volume"
+      ]
+    },
+    {
+      "from": "guyton1972_stress_relaxation_scenario.stress_relaxation_gain",
+      "to": [
+        "guyton1972_stress_relaxation_core.stress_relaxation_gain"
+      ]
+    },
+    {
+      "from": "guyton1972_stress_relaxation_scenario.stress_relaxation_gain_2",
+      "to": [
+        "guyton1972_stress_relaxation_core.stress_relaxation_gain_2"
+      ]
+    },
+    {
+      "from": "guyton1972_stress_relaxation_scenario.scenario_metadata",
+      "to": [
+        "guyton1972_stress_relaxation_viz.scenario_metadata"
+      ]
+    },
+    {
+      "from": "guyton1972_stress_relaxation_core.state",
+      "to": [
+        "guyton1972_stress_relaxation_viz.state"
+      ]
+    },
+    {
+      "from": "guyton1972_stress_relaxation_core.species_labels",
+      "to": [
+        "guyton1972_stress_relaxation_viz.species_labels"
+      ]
+    }
+  ]
+}

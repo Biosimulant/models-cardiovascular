@@ -1,0 +1,63 @@
+{
+  "nodes": [
+    {
+      "id": "guyton1972_pulmonary_oxygen_intake_scenario",
+      "position": {
+        "x": 120,
+        "y": 0
+      }
+    },
+    {
+      "id": "guyton1972_pulmonary_oxygen_intake_core",
+      "position": {
+        "x": 500,
+        "y": 0
+      }
+    },
+    {
+      "id": "guyton1972_pulmonary_oxygen_intake_viz",
+      "position": {
+        "x": 880,
+        "y": 0
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "guyton1972_pulmonary_oxygen_intake_scenario.pulmonary_blood_flow",
+      "to": [
+        "guyton1972_pulmonary_oxygen_intake_core.pulmonary_blood_flow"
+      ]
+    },
+    {
+      "from": "guyton1972_pulmonary_oxygen_intake_scenario.oxygen_demand",
+      "to": [
+        "guyton1972_pulmonary_oxygen_intake_core.oxygen_demand"
+      ]
+    },
+    {
+      "from": "guyton1972_pulmonary_oxygen_intake_scenario.ambient_oxygen",
+      "to": [
+        "guyton1972_pulmonary_oxygen_intake_core.ambient_oxygen"
+      ]
+    },
+    {
+      "from": "guyton1972_pulmonary_oxygen_intake_scenario.scenario_metadata",
+      "to": [
+        "guyton1972_pulmonary_oxygen_intake_viz.scenario_metadata"
+      ]
+    },
+    {
+      "from": "guyton1972_pulmonary_oxygen_intake_core.state",
+      "to": [
+        "guyton1972_pulmonary_oxygen_intake_viz.state"
+      ]
+    },
+    {
+      "from": "guyton1972_pulmonary_oxygen_intake_core.species_labels",
+      "to": [
+        "guyton1972_pulmonary_oxygen_intake_viz.species_labels"
+      ]
+    }
+  ]
+}

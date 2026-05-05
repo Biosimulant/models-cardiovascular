@@ -1,0 +1,85 @@
+schema_version: '2.0'
+title: Karlstaedt2019 G6p Accumulation Pgi Lab
+description: 'Two-model lab for Karlstaedt2019 G6p Accumulation Pgi: a core SBML simulator
+  wired into a dedicated visualization sub-model that turns the raw state into friendly
+  timeseries and a plain-language summary. This model is described in the article:
+  Glucose 6-phosphate accumulates via phosphoglucose isomerase inhibition in heart
+  muscle. Karlstaedt, A and Khanna, R and Thangam, M and Taegtmeyer, H Circulatio.'
+models:
+- alias: karlstaedt2019_g6p_accumulation_pgi_scenario
+  path: models/scenario
+  parameters:
+    scenario_name: Metabolic capacity challenge
+    scenario_description: Baseline is followed by a extracellular glucose challenge
+      and recovery period.
+    baseline_until: 150.0
+    challenge_until: 450.0
+    schedule:
+      extracellular_glucose:
+        baseline: 5.5
+        challenge: 8.25
+        recovery: 5.5
+        unit: dimensionless
+        label: extracellular glucose
+        description: Scenario-controlled extracellular glucose value.
+        active: true
+      cellular_energy_pool:
+        baseline: 3.0417
+        challenge: 3.0417
+        recovery: 3.0417
+        unit: dimensionless
+        label: cellular energy pool
+        description: Scenario-controlled cellular energy pool value.
+        active: false
+- alias: karlstaedt2019_g6p_accumulation_pgi_core
+  path: ./models/core
+  parameters:
+    model_path: data/MODEL1910170001.xml
+    integration_step: 1.0
+- alias: karlstaedt2019_g6p_accumulation_pgi_viz
+  path: ./models/viz
+  parameters:
+    integration_step: 1.0
+    lab_title: Karlstaedt2019 G6p Accumulation Pgi
+    lab_question: Does phosphoglucose isomerase inhibition accumulate glucose-6-phosphate?
+runtime:
+  duration: 600.0
+  communication_step: 1.0
+  initial_inputs:
+    karlstaedt2019_g6p_accumulation_pgi_core:
+      integration_step: 1.0
+      parameter_overrides:
+        payload: {}
+      initial_conditions:
+        payload: {}
+io:
+  inputs:
+  - name: integration_step
+    maps_to: karlstaedt2019_g6p_accumulation_pgi_core.integration_step
+  - name: parameter_overrides
+    maps_to: karlstaedt2019_g6p_accumulation_pgi_core.parameter_overrides
+  - name: initial_conditions
+    maps_to: karlstaedt2019_g6p_accumulation_pgi_core.initial_conditions
+  outputs:
+  - name: scenario_metadata
+    maps_to: karlstaedt2019_g6p_accumulation_pgi_scenario.scenario_metadata
+  - name: state
+    maps_to: karlstaedt2019_g6p_accumulation_pgi_core.state
+  - name: run_summary
+    maps_to: karlstaedt2019_g6p_accumulation_pgi_viz.run_summary
+wiring:
+- from: karlstaedt2019_g6p_accumulation_pgi_scenario.extracellular_glucose
+  to:
+  - karlstaedt2019_g6p_accumulation_pgi_core.extracellular_glucose
+- from: karlstaedt2019_g6p_accumulation_pgi_scenario.cellular_energy_pool
+  to:
+  - karlstaedt2019_g6p_accumulation_pgi_core.cellular_energy_pool
+- from: karlstaedt2019_g6p_accumulation_pgi_scenario.scenario_metadata
+  to:
+  - karlstaedt2019_g6p_accumulation_pgi_viz.scenario_metadata
+- from: karlstaedt2019_g6p_accumulation_pgi_core.state
+  to:
+  - karlstaedt2019_g6p_accumulation_pgi_viz.state
+- from: karlstaedt2019_g6p_accumulation_pgi_core.species_labels
+  to:
+  - karlstaedt2019_g6p_accumulation_pgi_viz.species_labels

@@ -1,0 +1,77 @@
+schema_version: '1.0'
+title: Guyton1972 Electrolytes Scenario
+description: Scenario driver that emits baseline, challenge, and recovery inputs for
+  the cardiovascular core model.
+package: cardiovascular-scenario-guyton1972-electrolytes
+version: 0.1.0
+standard: biosim-module
+tags:
+- cardiovascular
+- scenario
+- stimulus
+authors:
+- name: Biosimulant Team
+biosim:
+  entrypoint: src.guyton1972_electrolytes_scenario.CardiovascularScenarioModel
+runtime:
+  dependencies:
+    packages: []
+parameters:
+- name: scenario_name
+  value: Cardiovascular control challenge
+  description: Plain-language name shown in visualizations.
+- name: scenario_description
+  value: Baseline is followed by a aldosterone drive challenge and recovery period.
+  description: Plain-language scenario description shown in visualizations.
+- name: baseline_until
+  value: 150.0
+  units: s
+  min: 0.0
+  description: Simulation time at which the challenge starts.
+- name: challenge_until
+  value: 450.0
+  units: s
+  min: 0.0
+  description: Simulation time at which recovery starts.
+- name: schedule
+  value:
+    sodium_intake:
+      baseline: 0.1
+      challenge: 0.1
+      recovery: 0.1
+      unit: dimensionless
+      label: sodium intake
+      description: Scenario-controlled sodium intake value.
+      active: false
+    potassium_intake:
+      baseline: 0.08
+      challenge: 0.08
+      recovery: 0.08
+      unit: dimensionless
+      label: potassium intake
+      description: Scenario-controlled potassium intake value.
+      active: false
+    aldosterone_drive:
+      baseline: 1.037
+      challenge: 1.5554999999999999
+      recovery: 1.037
+      unit: dimensionless
+      label: aldosterone drive
+      description: Scenario-controlled aldosterone drive value.
+      active: true
+  description: Per-output baseline, challenge, and recovery values emitted by the
+    scenario driver.
+io:
+  inputs: []
+  outputs:
+  - name: sodium_intake
+    emitted_unit: dimensionless
+    description: Scenario-controlled sodium intake value.
+  - name: potassium_intake
+    emitted_unit: dimensionless
+    description: Scenario-controlled potassium intake value.
+  - name: aldosterone_drive
+    emitted_unit: dimensionless
+    description: Scenario-controlled aldosterone drive value.
+  - name: scenario_metadata
+    description: Scenario name, active input, values, timing, and event markers.

@@ -1,0 +1,54 @@
+schema_version: '2.0'
+title: Cooling2007 Ip3 Transients Myocyte Visualization
+description: "Dedicated visualization sub-model for Cooling2007 Ip3 Transients Myocyte.\
+  \ Consumes the core SBML simulator's state stream, accumulates a per-window history,\
+  \ and emits a friendly timeseries plot plus a plain-language Q&A summary. No SBML,\
+  \ no roadrunner, no domain biology \u2014 pure data-to-presentation."
+standard: other
+tags:
+- cardiovascular
+- sbml
+- biomodels_ebi
+- faithful
+- visualization
+authors:
+- Biosimulant Team
+biosim:
+  entrypoint: src.cooling2007_ip3_transients_myocyte_viz:Cooling2007Ip3transientsCardiacmyocyteBiomd0000000400ModelViz
+  init_kwargs:
+    integration_step: 0.001
+    lab_title: Cooling2007 Ip3 Transients Myocyte
+    lab_question: Does inositol trisphosphate stimulation create a calcium transient?
+  communication_step: 0.001
+runtime:
+  python_version: '3.12'
+  dependencies:
+    packages: []
+parameters:
+- name: integration_step
+  value: 0.001
+  min: 0.0
+  units: s
+  description: BioWorld pacing step for the viz sub-model.
+- name: lab_title
+  value: Cooling2007 Ip3 Transients Myocyte
+  description: Human-friendly title used in the Q&A subtitle.
+- name: lab_question
+  value: Does inositol trisphosphate stimulation create a calcium transient?
+  description: Lab-specific framing question used as visualization title and subtitle
+    prefix. Empty -> generic title.
+io:
+  inputs:
+  - name: state
+    description: Per-window species/state-variable record from the core SBML model.
+  - name: species_labels
+    description: 'Static {species_id: human_label} record from the core SBML model.
+      Used once to decorate the timeseries.'
+  - name: scenario_metadata
+    description: Scenario timing, active challenge, and plain-language metadata from
+      the scenario driver.
+  outputs:
+  - name: run_summary
+    description: Structured Q&A record echoing the rows in the 'What Happened' table
+      (question/answer pairs plus duration, point count, peak species). Downstream
+      nodes can consume it; if unwired, the table still renders.

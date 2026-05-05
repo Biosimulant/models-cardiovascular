@@ -1,0 +1,77 @@
+schema_version: '1.0'
+title: Niederer2006 Myocyte Relaxation Scenario
+description: Scenario driver that emits baseline, challenge, and recovery inputs for
+  the cardiovascular core model.
+package: cardiovascular-scenario-niederer2006-myocyte-relaxation
+version: 0.1.0
+standard: biosim-module
+tags:
+- cardiovascular
+- scenario
+- stimulus
+authors:
+- name: Biosimulant Team
+biosim:
+  entrypoint: src.niederer2006_myocyte_relaxation_scenario.CardiovascularScenarioModel
+runtime:
+  dependencies:
+    packages: []
+parameters:
+- name: scenario_name
+  value: Troponin pool challenge
+  description: Plain-language name shown in visualizations.
+- name: scenario_description
+  value: Baseline is followed by a troponin pool challenge and recovery period.
+  description: Plain-language scenario description shown in visualizations.
+- name: baseline_until
+  value: 0.25
+  units: s
+  min: 0.0
+  description: Simulation time at which the challenge starts.
+- name: challenge_until
+  value: 0.75
+  units: s
+  min: 0.0
+  description: Simulation time at which recovery starts.
+- name: schedule
+  value:
+    troponin_pool:
+      baseline: 0.067593139865
+      challenge: 0.1013897097975
+      recovery: 0.067593139865
+      unit: dimensionless
+      label: troponin pool
+      description: Scenario-controlled troponin pool value.
+      active: true
+    relaxation_rate:
+      baseline: 0.002
+      challenge: 0.002
+      recovery: 0.002
+      unit: dimensionless
+      label: relaxation rate
+      description: Scenario-controlled relaxation rate value.
+      active: false
+    cooperativity:
+      baseline: 0.008
+      challenge: 0.008
+      recovery: 0.008
+      unit: dimensionless
+      label: cooperativity
+      description: Scenario-controlled cooperativity value.
+      active: false
+  description: Per-output baseline, challenge, and recovery values emitted by the
+    scenario driver.
+io:
+  inputs: []
+  outputs:
+  - name: troponin_pool
+    emitted_unit: dimensionless
+    description: Scenario-controlled troponin pool value.
+  - name: relaxation_rate
+    emitted_unit: dimensionless
+    description: Scenario-controlled relaxation rate value.
+  - name: cooperativity
+    emitted_unit: dimensionless
+    description: Scenario-controlled cooperativity value.
+  - name: scenario_metadata
+    description: Scenario name, active input, values, timing, and event markers.

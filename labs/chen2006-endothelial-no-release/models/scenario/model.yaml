@@ -13,6 +13,7 @@ authors:
 - name: Biosimulant Team
 biosim:
   entrypoint: src.chen2006_endothelial_no_release_scenario.CardiovascularScenarioModel
+  communication_step: 0.01
 runtime:
   dependencies:
     packages: []

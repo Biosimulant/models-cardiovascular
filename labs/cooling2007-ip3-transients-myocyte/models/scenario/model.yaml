@@ -4,7 +4,7 @@ description: Scenario driver that emits baseline, challenge, and recovery inputs
   the cardiovascular core model.
 package: cardiovascular-scenario-cooling2007-ip3-transients-myocyte
 version: 0.1.0
-standard: biosim-module
+standard: other
 tags:
 - cardiovascular
 - scenario
@@ -13,6 +13,7 @@ authors:
 - name: Biosimulant Team
 biosim:
   entrypoint: src.cooling2007_ip3_transients_myocyte_scenario.CardiovascularScenarioModel
+  communication_step: 0.001
 runtime:
   dependencies:
     packages: []

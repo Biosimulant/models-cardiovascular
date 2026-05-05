@@ -4,7 +4,7 @@ description: Scenario driver that emits baseline, challenge, and recovery inputs
   the cardiovascular core model.
 package: cardiovascular-scenario-guyton1972-antidiuretic-hormone
 version: 0.1.0
-standard: biosim-module
+standard: other
 tags:
 - cardiovascular
 - scenario
@@ -13,6 +13,7 @@ authors:
 - name: Biosimulant Team
 biosim:
   entrypoint: src.guyton1972_antidiuretic_hormone_scenario.CardiovascularScenarioModel
+  communication_step: 1.0
 runtime:
   dependencies:
     packages: []

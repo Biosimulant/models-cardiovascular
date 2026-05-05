@@ -4,7 +4,7 @@ description: Scenario driver that emits baseline, challenge, and recovery inputs
   the cardiovascular core model.
 package: cardiovascular-scenario-irvine1999-cardiac-sodium-channel
 version: 0.1.0
-standard: biosim-module
+standard: other
 tags:
 - cardiovascular
 - scenario
@@ -13,6 +13,7 @@ authors:
 - name: Biosimulant Team
 biosim:
   entrypoint: src.irvine1999_cardiac_sodium_channel_scenario.CardiovascularScenarioModel
+  communication_step: 0.001
 runtime:
   dependencies:
     packages: []

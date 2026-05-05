@@ -4,7 +4,7 @@ description: Scenario driver that emits baseline, challenge, and recovery inputs
   the cardiovascular core model.
 package: cardiovascular-scenario-karlstaedt2019-g6p-accumulation-pgi
 version: 0.1.0
-standard: biosim-module
+standard: other
 tags:
 - cardiovascular
 - scenario
@@ -13,6 +13,7 @@ authors:
 - name: Biosimulant Team
 biosim:
   entrypoint: src.karlstaedt2019_g6p_accumulation_pgi_scenario.CardiovascularScenarioModel
+  communication_step: 1.0
 runtime:
   dependencies:
     packages: []

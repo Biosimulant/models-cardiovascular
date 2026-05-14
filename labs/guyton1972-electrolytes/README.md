@@ -16,7 +16,28 @@ The lab opens as a canvas with three model nodes wired in series: the scenario d
 - Exchangeable sodium
 - Potassium output rate
 
-Screenshots will land in `assets/` once the first published run produces them.
+The captured run applies the configured aldosterone-drive challenge, increasing aldosterone drive from `1.037` to `1.5555` during the challenge window before returning to baseline. Across the 600 s simulation, extracellular sodium is the strongest positive mover in the response ranking, while total body potassium and extracellular potassium move downward; the absolute and baseline-relative views should be read together because these Guyton state variables live on different native scales.
+
+<!-- BIOSIMULANT_VISUALS_START -->
+### Output Visualizations
+
+The first chart shows the absolute SBML state trajectories in their native units with the challenge timing included.
+
+![What did the model simulate?](assets/01-what-did-the-model-simulate.png)
+
+The second chart normalizes each trajectory against its baseline so smaller electrolyte shifts are visible beside larger reservoirs.
+
+![What changed after the challenge?](assets/02-what-changed-after-the-challenge.png)
+
+The response ranking summarizes final-minus-baseline changes, highlighting extracellular sodium as the largest increase in this run.
+
+![Which variables responded most?](assets/03-which-variables-responded-most.png)
+
+The summary table restates the lab question, challenge, simulated duration, strongest response, and interpretation limits in plain language.
+
+![What Happened](assets/04-what-happened.png)
+
+<!-- BIOSIMULANT_VISUALS_END -->
 
 ## How the Models Connect
 

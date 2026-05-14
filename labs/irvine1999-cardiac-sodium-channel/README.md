@@ -20,7 +20,28 @@ The lab opens as a canvas with three model nodes wired in series: the scenario d
 - Inactivated sodium-channel state
 - Open-channel probability
 
-Screenshots will land in `assets/` once the first published run produces them.
+The captured run applies the configured voltage-step channel challenge, changing holding voltage from `-0.12` to `-0.02` during the challenge window before returning to baseline. It evaluates 1 s of simulated dynamics across Open sodium-channel state 1, Oxygen, Closed sodium-channel state 0, Closed sodium-channel state 1, and 5 other tracked variables; read the absolute trajectories, baseline-relative plot, response ranking, and summary table together because the variables use different native scales.
+
+<!-- BIOSIMULANT_VISUALS_START -->
+### Output Visualizations
+
+The first chart shows the absolute model state trajectories in their native units with the challenge timing included.
+
+![What did the model simulate?](assets/01-what-did-the-model-simulate.png)
+
+The second chart normalizes each trajectory against its baseline so smaller relative shifts are visible beside larger state variables.
+
+![What changed after the challenge?](assets/02-what-changed-after-the-challenge.png)
+
+The response ranking summarizes final-minus-baseline changes and highlights which selected variables moved most during the configured run.
+
+![Which variables responded most?](assets/03-which-variables-responded-most.png)
+
+The summary table restates the lab question, challenge, simulated duration, strongest response, and interpretation limits in plain language.
+
+![What Happened](assets/04-what-happened.png)
+
+<!-- BIOSIMULANT_VISUALS_END -->
 
 ## How the Models Connect
 

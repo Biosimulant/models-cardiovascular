@@ -1,97 +1,91 @@
-schema_version: '2.0'
-title: Clancy2001 Potassium Channel Lab
-description: 'Two-model lab for Clancy2001 Potassium Channel: a core SBML simulator
-  wired into a dedicated visualization sub-model that turns the raw state into friendly
-  timeseries and a plain-language summary. This model is according to the paper Cellular
-  consequences of HEGR mutations in the long QT syndrome: precursors to sudden cardiac
-  death. The author used Markovian model of cardiac Ikr in the paper.'
+description: 'Two-model lab for Clancy2001 Potassium Channel: a core SBML simulator wired into a dedicated visualization sub-model that turns the raw state into friendly timeseries and a plain-language summary. This model is according to the paper Cellular consequences of HEGR mutations in the long QT syndrome: precursors to sudden cardiac death. The author used Markovian model of cardiac Ikr in the paper.'
+io:
+  inputs:
+  - maps_to: clancy2001_potassium_channel_core.integration_step
+    name: integration_step
+  - maps_to: clancy2001_potassium_channel_core.parameter_overrides
+    name: parameter_overrides
+  - maps_to: clancy2001_potassium_channel_core.initial_conditions
+    name: initial_conditions
+  outputs:
+  - maps_to: clancy2001_potassium_channel_scenario.scenario_metadata
+    name: scenario_metadata
+  - maps_to: clancy2001_potassium_channel_core.state
+    name: state
+  - maps_to: clancy2001_potassium_channel_viz.run_summary
+    name: run_summary
 models:
 - alias: clancy2001_potassium_channel_scenario
-  path: models/scenario
   parameters:
-    scenario_name: Voltage-step channel challenge
-    scenario_description: Baseline is followed by a holding voltage challenge and
-      recovery period.
     baseline_until: 0.25
     challenge_until: 0.75
+    scenario_description: Baseline is followed by a holding voltage challenge and recovery period.
+    scenario_name: Voltage-step channel challenge
     schedule:
-      temperature:
-        baseline: 310.0
-        challenge: 310.0
-        recovery: 310.0
-        unit: dimensionless
-        label: temperature
-        description: Scenario-controlled temperature value.
-        active: false
       extracellular_potassium:
+        active: false
         baseline: 5.4
         challenge: 5.4
+        description: Scenario-controlled extracellular potassium value.
+        label: extracellular potassium
         recovery: 5.4
         unit: mM
-        label: extracellular potassium
-        description: Scenario-controlled extracellular potassium value.
-        active: false
-      intracellular_potassium:
-        baseline: 140.0
-        challenge: 140.0
-        recovery: 140.0
-        unit: mM
-        label: intracellular potassium
-        description: Scenario-controlled intracellular potassium value.
-        active: false
       holding_voltage:
-        baseline: -40.0
-        challenge: -60.0
-        recovery: -40.0
-        unit: mV
-        label: holding voltage
-        description: Scenario-controlled holding voltage value.
         active: true
-      test_voltage:
-        baseline: 0.0
-        challenge: 0.0
-        recovery: 0.0
+        baseline: -40
+        challenge: -60
+        description: Scenario-controlled holding voltage value.
+        label: holding voltage
+        recovery: -40
         unit: mV
-        label: test voltage
-        description: Scenario-controlled test voltage value.
+      intracellular_potassium:
         active: false
+        baseline: 140
+        challenge: 140
+        description: Scenario-controlled intracellular potassium value.
+        label: intracellular potassium
+        recovery: 140
+        unit: mM
+      temperature:
+        active: false
+        baseline: 310
+        challenge: 310
+        description: Scenario-controlled temperature value.
+        label: temperature
+        recovery: 310
+        unit: dimensionless
+      test_voltage:
+        active: false
+        baseline: 0
+        challenge: 0
+        description: Scenario-controlled test voltage value.
+        label: test voltage
+        recovery: 0
+        unit: mV
+  path: models/scenario
 - alias: clancy2001_potassium_channel_core
-  path: ./models/core
   parameters:
+    integration_step: 0.01
     model_path: data/BIOMD0000000121.xml
-    integration_step: 0.01
+  path: models/core
 - alias: clancy2001_potassium_channel_viz
-  path: ./models/viz
   parameters:
     integration_step: 0.01
+    lab_question: How does the delayed rectifier potassium channel state distribution respond to voltage?
     lab_title: Clancy2001 Potassium Channel
-    lab_question: How does the delayed rectifier potassium channel state distribution
-      respond to voltage?
+  path: models/viz
 runtime:
-  duration: 1.0
   communication_step: 0.01
+  duration: 1
   initial_inputs:
     clancy2001_potassium_channel_core:
+      initial_conditions:
+        payload: {}
       integration_step: 0.01
       parameter_overrides:
         payload: {}
-      initial_conditions:
-        payload: {}
-io:
-  inputs:
-  - name: integration_step
-    maps_to: clancy2001_potassium_channel_core.integration_step
-  - name: parameter_overrides
-    maps_to: clancy2001_potassium_channel_core.parameter_overrides
-  - name: initial_conditions
-    maps_to: clancy2001_potassium_channel_core.initial_conditions
-  outputs:
-  - name: scenario_metadata
-    maps_to: clancy2001_potassium_channel_scenario.scenario_metadata
-  - name: state
-    maps_to: clancy2001_potassium_channel_core.state
-  - name: run_summary
-    maps_to: clancy2001_potassium_channel_viz.run_summary
+schema_version: '2.0'
+title: Clancy2001 Potassium Channel Lab
 wiring:
 - from: clancy2001_potassium_channel_scenario.temperature
   to:

@@ -17,7 +17,11 @@ The lab opens as a canvas with three model nodes wired in series: the scenario d
 - Inactivated potassium-channel state
 - Cardiac delayed rectifier potassium current
 
-Screenshots will land in `assets/` once the first published run produces them.
+The first screenshot shows the canvas and results panel with the absolute channel-state trajectories and baseline-relative voltage-step response. The second scrolls down to the ranked response chart and the `What Happened` Q&A table for the same holding-voltage challenge run.
+
+![Clancy2001 potassium channel lab canvas with absolute and baseline-relative voltage-step trajectories](assets/clancy2001-potassium-timeseries-results.png)
+
+![Clancy2001 potassium channel ranked response chart and What Happened summary table](assets/clancy2001-potassium-response-summary.png)
 
 ## How the Models Connect
 
@@ -28,9 +32,9 @@ The canvas has two steps:
 
 ## How to Read the Visualizations
 
-The absolute timeseries plot has one curve per state variable in the SBML model and marks when the challenge and recovery windows begin. The baseline-relative plot rescales each curve against the pre-challenge baseline so small but real responses are visible. The x-axis is simulation time in seconds and the y-axis is the variable's value in its native SBML unit (concentrations in mM or mol, voltages in mV, currents in pA, volumes in mL — refer to the SBML file for the exact unit per variable). Look for periodic patterns (action-potential-style depolarisations, oscillations), monotonic trends, or steady-state plateaus.
+The absolute timeseries plot has one curve per state variable in the SBML model and marks when the challenge and recovery windows begin. The baseline-relative plot rescales each curve against the pre-challenge baseline so small but real responses are visible. The x-axis is simulation time in seconds and the y-axis is the variable's value in its native SBML unit (concentrations in mM or mol, voltages in mV, currents in pA, volumes in mL — refer to the SBML file for the exact unit per variable). In the default screenshot, the holding-voltage challenge starts at 0.25 s, moves from -40 mV to -60 mV, and recovery starts at 0.75 s.
 
-The response bar chart ranks final-minus-baseline changes in native SBML units. The "What Happened" table explains the lab question, the applied challenge, the simulated duration, the strongest response, and the interpretation limits.
+The response bar chart ranks final-minus-baseline changes in native SBML units. The "What Happened" table explains the lab question, the applied challenge, the simulated duration, the strongest response, and the interpretation limits. In the shown run, the cardiac delayed rectifier potassium current is the strongest final-minus-baseline responder, decreasing by about 0.0304 native SBML units, with the open potassium-channel state also decreasing.
 
 ## What This Lab Contains
 

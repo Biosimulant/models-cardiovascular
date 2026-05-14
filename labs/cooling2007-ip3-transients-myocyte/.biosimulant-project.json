@@ -1,0 +1,11 @@
+{
+  "schema_version": "1",
+  "local_id": "ffd5ea47-53e6-4fdc-865b-4c6c279e49bd",
+  "kind": "lab",
+  "source": "local",
+  "hub_id": "fea7a4a7-fddd-47f3-8799-f1291a25efa3",
+  "created_at": "2026-05-05T05:49:04.755252295+00:00",
+  "last_synced_at": "2026-05-14T20:48:13.371281+00:00",
+  "hub_manifest_hash": "cc705551560f081671ebcea72b5fcea04b16be1f0c1db19f6a7112ee87f2d433",
+  "package_name": "cooling2007-ip3-transients-myocyte-lab"
+}

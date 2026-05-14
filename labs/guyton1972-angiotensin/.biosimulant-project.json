@@ -1,0 +1,11 @@
+{
+  "schema_version": "1",
+  "local_id": "0196f993-b93c-4837-9917-118e8de1ec45",
+  "kind": "lab",
+  "source": "local",
+  "hub_id": "16ee91ac-0620-4f76-853e-a6bd46c73f59",
+  "created_at": "2026-05-05T05:49:04.784510147+00:00",
+  "last_synced_at": "2026-05-14T20:54:45.344721+00:00",
+  "hub_manifest_hash": "7398dae8fde57b0455a7d12d4c030b8f48631758a9bf24d8268797956c117f80",
+  "package_name": "guyton1972-angiotensin-lab"
+}

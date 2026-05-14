@@ -1,10 +1,11 @@
 {
+  "edges": [],
   "nodes": [
     {
       "id": "guyton1972_capillary_dynamics_scenario",
       "position": {
-        "x": 120,
-        "y": 0
+        "x": 122,
+        "y": -272
       }
     },
     {
@@ -17,41 +18,9 @@
     {
       "id": "guyton1972_capillary_dynamics_viz",
       "position": {
-        "x": 880,
-        "y": 0
+        "x": 856,
+        "y": 84
       }
-    }
-  ],
-  "edges": [
-    {
-      "from": "guyton1972_capillary_dynamics_scenario.capillary_pressure",
-      "to": [
-        "guyton1972_capillary_dynamics_core.capillary_pressure"
-      ]
-    },
-    {
-      "from": "guyton1972_capillary_dynamics_scenario.filtration_coefficient",
-      "to": [
-        "guyton1972_capillary_dynamics_core.filtration_coefficient"
-      ]
-    },
-    {
-      "from": "guyton1972_capillary_dynamics_scenario.scenario_metadata",
-      "to": [
-        "guyton1972_capillary_dynamics_viz.scenario_metadata"
-      ]
-    },
-    {
-      "from": "guyton1972_capillary_dynamics_core.state",
-      "to": [
-        "guyton1972_capillary_dynamics_viz.state"
-      ]
-    },
-    {
-      "from": "guyton1972_capillary_dynamics_core.species_labels",
-      "to": [
-        "guyton1972_capillary_dynamics_viz.species_labels"
-      ]
     }
   ]
 }

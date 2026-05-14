@@ -15,7 +15,11 @@ The lab opens as a canvas with three model nodes wired in series: the scenario d
 - Vascular water-retention response
 - Kidney water-retention response
 
-Screenshots will land in `assets/` once the first published run produces them.
+The first screenshot shows the canvas and results panel with the absolute antidiuretic-hormone trajectories and baseline-relative infusion response. The second scrolls down to the ranked response chart and the `What Happened` Q&A table for the same run.
+
+![Guyton1972 antidiuretic hormone lab canvas with absolute and baseline-relative infusion response trajectories](assets/guyton1972-adh-timeseries-results.png)
+
+![Guyton1972 antidiuretic hormone ranked response chart and What Happened summary table](assets/guyton1972-adh-response-summary.png)
 
 ## How the Models Connect
 
@@ -26,9 +30,9 @@ The canvas has two steps:
 
 ## How to Read the Visualizations
 
-The absolute timeseries plot has one curve per state variable in the SBML model and marks when the challenge and recovery windows begin. The baseline-relative plot rescales each curve against the pre-challenge baseline so small but real responses are visible. The x-axis is simulation time in seconds and the y-axis is the variable's value in its native SBML unit (concentrations in mM or mol, voltages in mV, currents in pA, volumes in mL — refer to the SBML file for the exact unit per variable). Look for periodic patterns (action-potential-style depolarisations, oscillations), monotonic trends, or steady-state plateaus.
+The absolute timeseries plot has one curve per state variable in the SBML model and marks when the challenge and recovery windows begin. The baseline-relative plot rescales each curve against the pre-challenge baseline so small but real responses are visible. The x-axis is simulation time in seconds and the y-axis is the variable's value in its native SBML unit (concentrations in mM or mol, voltages in mV, currents in pA, volumes in mL — refer to the SBML file for the exact unit per variable). In the default screenshot, the antidiuretic hormone infusion challenge starts at 150 s, changes infusion from 0 to 1, and recovery starts at 450 s.
 
-The response bar chart ranks final-minus-baseline changes in native SBML units. The "What Happened" table explains the lab question, the applied challenge, the simulated duration, the strongest response, and the interpretation limits.
+The response bar chart ranks final-minus-baseline changes in native SBML units. The "What Happened" table explains the lab question, the applied challenge, the simulated duration, the strongest response, and the interpretation limits. In the shown run, antidiuretic hormone concentration is the largest final-minus-baseline responder, increasing by about 0.00126 native SBML units.
 
 ## What This Lab Contains
 

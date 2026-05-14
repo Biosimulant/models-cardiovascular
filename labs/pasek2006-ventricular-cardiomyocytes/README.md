@@ -15,7 +15,18 @@ The lab opens as a canvas with three model nodes wired in series: the scenario d
 - Surface-membrane capacitance
 - T-tubule membrane capacitance
 
-Screenshots will land in `assets/` once the first published run produces them.
+<!-- BIOSIMULANT_VISUALS_START -->
+### Output Visualizations
+
+![What did the model simulate?](assets/01-what-did-the-model-simulate.png)
+
+![What changed after the challenge?](assets/02-what-changed-after-the-challenge.png)
+
+![Which variables responded most?](assets/03-which-variables-responded-most.png)
+
+![What Happened](assets/04-what-happened.png)
+
+<!-- BIOSIMULANT_VISUALS_END -->
 
 ## How the Models Connect
 

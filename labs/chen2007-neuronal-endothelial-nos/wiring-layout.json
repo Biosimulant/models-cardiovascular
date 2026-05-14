@@ -1,6 +1,13 @@
 {
   "nodes": [
     {
+      "id": "__world_inputs__",
+      "position": {
+        "x": -180,
+        "y": 19
+      }
+    },
+    {
       "id": "chen2007_neuronal_endothelial_nos_scenario",
       "position": {
         "x": 120,
@@ -10,8 +17,8 @@
     {
       "id": "chen2007_neuronal_endothelial_nos_core",
       "position": {
-        "x": 500,
-        "y": 0
+        "x": 519.8255539017624,
+        "y": -247.81942377202995
       }
     },
     {
@@ -20,44 +27,13 @@
         "x": 880,
         "y": 0
       }
-    }
-  ],
-  "edges": [
-    {
-      "from": "chen2007_neuronal_endothelial_nos_scenario.l_arginine",
-      "to": [
-        "chen2007_neuronal_endothelial_nos_core.l_arginine"
-      ]
     },
     {
-      "from": "chen2007_neuronal_endothelial_nos_scenario.oxygen",
-      "to": [
-        "chen2007_neuronal_endothelial_nos_core.oxygen"
-      ]
-    },
-    {
-      "from": "chen2007_neuronal_endothelial_nos_scenario.nitric_oxide_synthase_pool",
-      "to": [
-        "chen2007_neuronal_endothelial_nos_core.nitric_oxide_synthase_pool"
-      ]
-    },
-    {
-      "from": "chen2007_neuronal_endothelial_nos_scenario.scenario_metadata",
-      "to": [
-        "chen2007_neuronal_endothelial_nos_viz.scenario_metadata"
-      ]
-    },
-    {
-      "from": "chen2007_neuronal_endothelial_nos_core.state",
-      "to": [
-        "chen2007_neuronal_endothelial_nos_viz.state"
-      ]
-    },
-    {
-      "from": "chen2007_neuronal_endothelial_nos_core.species_labels",
-      "to": [
-        "chen2007_neuronal_endothelial_nos_viz.species_labels"
-      ]
+      "id": "__world_outputs__",
+      "position": {
+        "x": 1220,
+        "y": 19
+      }
     }
   ]
 }

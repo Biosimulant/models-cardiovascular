@@ -75,6 +75,8 @@ io:
   - name: state
     description: Species concentrations and state variables read from the SBML model.
       Wired into the lab's `viz` sub-model for timeseries rendering.
+  - name: summary
+    description: Final, peak, and largest-change summary computed from the simulated SBML state history.
   - name: species_labels
     description: Static record mapping each SBML species id to a human-friendly label
       (read from `<species name=...>` or prettified id). Emitted on every window but

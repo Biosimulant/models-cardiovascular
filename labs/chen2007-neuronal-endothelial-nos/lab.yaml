@@ -1,81 +1,75 @@
-schema_version: '2.0'
-title: Chen2007 Neuronal Endothelial Nos Lab
-description: 'Two-model lab for Chen2007 Neuronal Endothelial Nos: a core SBML simulator
-  wired into a dedicated visualization sub-model that turns the raw state into friendly
-  timeseries and a plain-language summary. This a model from the article: Vascular
-  and perivascular nitric oxide release and transport: biochemical pathways of neuronal
-  nitric oxide synthase (NOS1) and endothelial nitric oxide synthase (NOS3). It can
-  be used to explore cardiac dynamics and compare response patterns across conditions.'
+description: 'Two-model lab for Chen2007 Neuronal Endothelial Nos: a core SBML simulator wired into a dedicated visualization sub-model that turns the raw state into friendly timeseries and a plain-language summary. This a model from the article: Vascular and perivascular nitric oxide release and transport: biochemical pathways of neuronal nitric oxide synthase (NOS1) and endothelial nitric oxide synthase (NOS3). It can be used to explore cardiac dynamics and compare response patterns across conditions.'
+io:
+  inputs:
+  - maps_to: chen2007_neuronal_endothelial_nos_core.integration_step
+    name: integration_step
+  - maps_to: chen2007_neuronal_endothelial_nos_core.parameter_overrides
+    name: parameter_overrides
+  - maps_to: chen2007_neuronal_endothelial_nos_core.initial_conditions
+    name: initial_conditions
+  outputs:
+  - maps_to: chen2007_neuronal_endothelial_nos_scenario.scenario_metadata
+    name: scenario_metadata
+  - maps_to: chen2007_neuronal_endothelial_nos_core.state
+    name: state
+  - maps_to: chen2007_neuronal_endothelial_nos_viz.run_summary
+    name: run_summary
 models:
 - alias: chen2007_neuronal_endothelial_nos_scenario
-  path: models/scenario
   parameters:
-    scenario_name: L arginine challenge
-    scenario_description: Baseline is followed by a l arginine challenge and recovery
-      period.
     baseline_until: 0.25
     challenge_until: 0.75
+    scenario_description: Baseline is followed by a l arginine challenge and recovery period.
+    scenario_name: L arginine challenge
     schedule:
       l_arginine:
+        active: true
         baseline: 0.0
         challenge: 1.0
-        recovery: 0.0
-        unit: dimensionless
-        label: l arginine
         description: Scenario-controlled l arginine value.
-        active: true
-      oxygen:
-        baseline: 0.0
-        challenge: 0.0
+        label: l arginine
         recovery: 0.0
         unit: dimensionless
-        label: oxygen
-        description: Scenario-controlled oxygen value.
-        active: false
       nitric_oxide_synthase_pool:
+        active: false
         baseline: 0.3
         challenge: 0.3
+        description: Scenario-controlled nitric oxide synthase pool value.
+        label: nitric oxide synthase pool
         recovery: 0.3
         unit: dimensionless
-        label: nitric oxide synthase pool
-        description: Scenario-controlled nitric oxide synthase pool value.
+      oxygen:
         active: false
+        baseline: 0.0
+        challenge: 0.0
+        description: Scenario-controlled oxygen value.
+        label: oxygen
+        recovery: 0.0
+        unit: dimensionless
+  path: models/scenario
 - alias: chen2007_neuronal_endothelial_nos_core
-  path: ./models/core
   parameters:
+    integration_step: 0.001
     model_path: data/MODEL0491251823.xml
-    integration_step: 0.001
+  path: models/core
 - alias: chen2007_neuronal_endothelial_nos_viz
-  path: ./models/viz
   parameters:
     integration_step: 0.001
-    lab_title: Chen2007 Neuronal Endothelial Nos
     lab_question: How do nitric oxide synthase pathways shape nitric oxide availability?
+    lab_title: Chen2007 Neuronal Endothelial Nos
+  path: models/viz
 runtime:
-  duration: 1.0
   communication_step: 0.001
+  duration: 1.0
   initial_inputs:
     chen2007_neuronal_endothelial_nos_core:
+      initial_conditions:
+        payload: {}
       integration_step: 0.001
       parameter_overrides:
         payload: {}
-      initial_conditions:
-        payload: {}
-io:
-  inputs:
-  - name: integration_step
-    maps_to: chen2007_neuronal_endothelial_nos_core.integration_step
-  - name: parameter_overrides
-    maps_to: chen2007_neuronal_endothelial_nos_core.parameter_overrides
-  - name: initial_conditions
-    maps_to: chen2007_neuronal_endothelial_nos_core.initial_conditions
-  outputs:
-  - name: scenario_metadata
-    maps_to: chen2007_neuronal_endothelial_nos_scenario.scenario_metadata
-  - name: state
-    maps_to: chen2007_neuronal_endothelial_nos_core.state
-  - name: run_summary
-    maps_to: chen2007_neuronal_endothelial_nos_viz.run_summary
+schema_version: '2.0'
+title: Chen2007 Neuronal Endothelial Nos Lab
 wiring:
 - from: chen2007_neuronal_endothelial_nos_scenario.l_arginine
   to:

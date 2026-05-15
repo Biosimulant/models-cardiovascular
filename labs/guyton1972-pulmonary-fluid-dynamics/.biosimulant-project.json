@@ -1,0 +1,11 @@
+{
+  "schema_version": "1",
+  "local_id": "ab651dae-4e09-417d-9d85-8b6363e831d0",
+  "kind": "lab",
+  "source": "local",
+  "hub_id": "1127306e-89c4-4938-a181-06aa9396ae1e",
+  "created_at": "2026-05-05T05:49:04.987095382+00:00",
+  "last_synced_at": "2026-05-14T22:08:55.781468+00:00",
+  "hub_manifest_hash": "eec5b628319d9fb82a394a6b1ccb6cb5b68461ca3d53bbe2cb29072b0bfb028b",
+  "package_name": "guyton1972-pulmonary-fluid-dynamics-lab"
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": "1",
+  "local_id": "e7cd32ff-add9-40bc-8dae-d663ce6002c8",
+  "kind": "lab",
+  "source": "local",
+  "hub_id": "7f148ce4-0ac3-42b6-bba3-ab5375f581aa",
+  "created_at": "2026-05-05T05:49:04.957535194+00:00",
+  "last_synced_at": "2026-05-14T22:08:22.495314+00:00",
+  "hub_manifest_hash": "3a533b1859f44ff50bea681616becef25310d0c20c4cee2b492baadcbe57b36d",
+  "package_name": "guyton1972-muscle-blood-flow-lab"
+}

@@ -5,7 +5,7 @@
   "source": "local",
   "hub_id": "e4c7d1f0-bc9f-4b4e-8f98-0ea5074388fe",
   "created_at": "2026-05-04 18:57:13",
-  "last_synced_at": "2026-05-14T19:40:06.390719+00:00",
-  "hub_manifest_hash": "b8cdd394be7cf02013e54950f0120c670619c8eaa77cb131e2ec1cb316eb687f",
-  "package_name": "local/Chen2006_Endothelial_No_Release_Lab"
+  "last_synced_at": "2026-05-14T22:17:32.247503+00:00",
+  "hub_manifest_hash": "9ef1ad3bf7697d04af8098ef0c5ecb3f1e3d35f9d5010e006795ad612f222154",
+  "package_name": "chen2006-endothelial-no-release-lab"
 }

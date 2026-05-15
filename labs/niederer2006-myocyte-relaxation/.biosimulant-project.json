@@ -1,0 +1,11 @@
+{
+  "schema_version": "1",
+  "local_id": "deccb1d9-c35f-4e52-b802-bc3618ec5f57",
+  "kind": "lab",
+  "source": "local",
+  "hub_id": "1b5d057c-28f5-448f-ad86-5bb002fc8a33",
+  "created_at": "2026-05-05T05:49:05.148049253+00:00",
+  "last_synced_at": "2026-05-14T22:12:08.962732+00:00",
+  "hub_manifest_hash": "b84a2d086776625722e3ef3586c6054f03578a8464cc3701e5e6251399601314",
+  "package_name": "niederer2006-myocyte-relaxation-lab"
+}

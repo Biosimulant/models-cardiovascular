@@ -3,5 +3,9 @@
   "local_id": "54696694-f146-44a4-976d-c065414dd2bd",
   "kind": "lab",
   "source": "local",
-  "created_at": "2026-05-05T05:49:04.847495842+00:00"
+  "hub_id": "c89527ec-e2ce-478e-bc29-62fb7eb6ca7c",
+  "created_at": "2026-05-05T05:49:04.847495842+00:00",
+  "last_synced_at": "2026-05-14T22:07:00.524077+00:00",
+  "hub_manifest_hash": "bce82d788216216140af840daa2aefb445ff9c16ce3d5023a78c669a3f1c9b3e",
+  "package_name": "guyton1972-capillary-dynamics-lab"
 }

@@ -3,5 +3,9 @@
   "local_id": "49bea6bf-e98c-4c1b-a7ac-bfc6bf5862df",
   "kind": "lab",
   "source": "local",
-  "created_at": "2026-05-05T05:49:05.167808781+00:00"
+  "hub_id": "ba61220c-2b7a-445c-a9dc-45adf53a006d",
+  "created_at": "2026-05-05T05:49:05.167808781+00:00",
+  "last_synced_at": "2026-05-14T22:12:26.864531+00:00",
+  "hub_manifest_hash": "b597456f5caa3c838df90f1565d5866600310d7c50fe91d9d632998b7b5e0ec7",
+  "package_name": "pasek2006-ventricular-cardiomyocytes-lab"
 }

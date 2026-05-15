@@ -1,0 +1,11 @@
+{
+  "schema_version": "1",
+  "local_id": "e0b70017-ed7d-49cd-bca6-6ed422d7b9c1",
+  "kind": "lab",
+  "source": "local",
+  "hub_id": "a372ad76-ab23-4caa-b836-9ba4e8e8fcd1",
+  "created_at": "2026-05-05T05:49:05.095076509+00:00",
+  "last_synced_at": "2026-05-14T22:11:00.374745+00:00",
+  "hub_manifest_hash": "d3bdcafabfc63d6c3ff4d00d3780dcafa61d5db91fb67c7651f29c9bc1cf0ea8",
+  "package_name": "iyer2004-ventricular-myocyte-lab"
+}

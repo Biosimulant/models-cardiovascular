@@ -1,0 +1,11 @@
+{
+  "schema_version": "1",
+  "local_id": "e8d4a2b7-f6dc-4b4e-841a-e13c9c38e059",
+  "kind": "lab",
+  "source": "local",
+  "hub_id": "186c8759-6bed-4ef1-ad36-4139df658f1a",
+  "created_at": "2026-05-05T05:49:05.115352333+00:00",
+  "last_synced_at": "2026-05-14T22:11:19.660332+00:00",
+  "hub_manifest_hash": "7b8cb0d87b837101ec1c01ceadf776650fad727ad6a4df5d961f62287613e3a7",
+  "package_name": "iyer2007-arrhythmia-cardiac-death-lab"
+}

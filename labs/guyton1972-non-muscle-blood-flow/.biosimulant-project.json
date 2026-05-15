@@ -1,0 +1,11 @@
+{
+  "schema_version": "1",
+  "local_id": "58208382-8102-4c72-8248-cf1be58141c2",
+  "kind": "lab",
+  "source": "local",
+  "hub_id": "f822529f-35ee-4f75-b9ba-e6ee8fd53015",
+  "created_at": "2026-05-05T05:49:04.971979098+00:00",
+  "last_synced_at": "2026-05-14T22:08:39.581898+00:00",
+  "hub_manifest_hash": "31e3ee6e9b0295c9cb38fdbbf3b60fb1d66a3aeb4c93d1943644acb8bd43f9a4",
+  "package_name": "guyton1972-non-muscle-blood-flow-lab"
+}

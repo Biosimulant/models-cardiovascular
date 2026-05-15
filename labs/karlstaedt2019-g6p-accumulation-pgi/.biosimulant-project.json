@@ -1,0 +1,11 @@
+{
+  "schema_version": "1",
+  "local_id": "bd75d76f-d923-4494-9453-494009a45338",
+  "kind": "lab",
+  "source": "local",
+  "hub_id": "3dfcc31a-6e0c-41d1-9b22-39700ffca4f1",
+  "created_at": "2026-05-05T05:49:05.131316456+00:00",
+  "last_synced_at": "2026-05-14T22:13:45.544691+00:00",
+  "hub_manifest_hash": "f087283bede8c859467e627efa5bc36ea7d304e4ae8ebbbab50055b1d7f49094",
+  "package_name": "karlstaedt2019-g6p-accumulation-pgi-lab"
+}

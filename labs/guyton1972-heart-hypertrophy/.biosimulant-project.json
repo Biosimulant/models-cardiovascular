@@ -1,0 +1,11 @@
+{
+  "schema_version": "1",
+  "local_id": "dd35b33b-1706-494e-86e6-65ac06cd0728",
+  "kind": "lab",
+  "source": "local",
+  "hub_id": "8a56f570-88cd-4370-b5cb-abad68cc9bd6",
+  "created_at": "2026-05-05T05:49:04.926463246+00:00",
+  "last_synced_at": "2026-05-14T22:07:47.758218+00:00",
+  "hub_manifest_hash": "7799199d07dc48016bca08f8c14c25439e1f654e613362d2ac373e8cde436072",
+  "package_name": "guyton1972-heart-hypertrophy-lab"
+}

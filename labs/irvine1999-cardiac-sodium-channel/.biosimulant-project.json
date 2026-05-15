@@ -1,0 +1,11 @@
+{
+  "schema_version": "1",
+  "local_id": "5d2c89d7-a2ca-4de5-84f2-49893d80de12",
+  "kind": "lab",
+  "source": "local",
+  "hub_id": "9b300b0e-4edf-47c0-9057-23f91c875e0f",
+  "created_at": "2026-05-05T06:04:19.537625305+00:00",
+  "last_synced_at": "2026-05-14T22:10:40.727696+00:00",
+  "hub_manifest_hash": "ff7578191d7f16779fe7df07a70bd2e424ff5a8e1626b4916138b1595b263d15",
+  "package_name": "irvine1999-cardiac-sodium-channel-lab"
+}

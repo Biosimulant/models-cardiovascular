@@ -1,0 +1,11 @@
+{
+  "schema_version": "1",
+  "local_id": "4f77d813-60b7-43eb-a7eb-4cd6ccb70423",
+  "kind": "lab",
+  "source": "local",
+  "hub_id": "cfc7decb-c167-4490-b84f-da1bb0f99a73",
+  "created_at": "2026-05-05T05:49:05.001854913+00:00",
+  "last_synced_at": "2026-05-14T22:09:13.324109+00:00",
+  "hub_manifest_hash": "83121236d8bdd75e840372447ca3e08e387dc9ba88d4bc80e7a308dd47317d66",
+  "package_name": "guyton1972-pulmonary-oxygen-intake-lab"
+}

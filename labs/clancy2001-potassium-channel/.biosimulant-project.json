@@ -5,7 +5,7 @@
   "source": "local",
   "hub_id": "0f803648-6ec9-407f-a2bd-a935265ea924",
   "created_at": "2026-05-05T05:49:04.739300755+00:00",
-  "last_synced_at": "2026-05-14T20:41:59.061082+00:00",
-  "hub_manifest_hash": "113d153f6dfa1e1e3052ff2509fbe5fe23da748cd7df890c841b812cff84ebde",
+  "last_synced_at": "2026-05-14T22:18:52.442830+00:00",
+  "hub_manifest_hash": "b4fef653e5e819e1428f042b4e79d28ff413bca8c1e861e1b53ed303ce30faaa",
   "package_name": "clancy2001-potassium-channel-lab"
 }

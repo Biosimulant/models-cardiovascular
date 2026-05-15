@@ -3,5 +3,9 @@
   "local_id": "0c0e418b-6817-47cd-9e00-b56adfb67ea9",
   "kind": "lab",
   "source": "local",
-  "created_at": "2026-05-05T05:49:04.832291558+00:00"
+  "hub_id": "e8e0ed24-e64e-4d27-a4e7-6b86604e3567",
+  "created_at": "2026-05-05T05:49:04.832291558+00:00",
+  "last_synced_at": "2026-05-14T22:05:42.209730+00:00",
+  "hub_manifest_hash": "5cf247667abeddbb733a4f762e9e6fee62eabb44b104e64fd0061dd0817356c6",
+  "package_name": "guyton1972-autonomic-control-lab"
 }

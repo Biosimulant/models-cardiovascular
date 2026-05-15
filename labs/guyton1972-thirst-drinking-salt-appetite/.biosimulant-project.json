@@ -1,0 +1,11 @@
+{
+  "schema_version": "1",
+  "local_id": "08239583-1c9d-445b-a457-dbb3ff80657a",
+  "kind": "lab",
+  "source": "local",
+  "hub_id": "a33869e2-c9df-4470-b1cc-01eb681176cf",
+  "created_at": "2026-05-05T05:49:05.047259264+00:00",
+  "last_synced_at": "2026-05-14T22:10:05.397960+00:00",
+  "hub_manifest_hash": "d1d0c04e56fd2f56f4feed4bf898366ab25d33f603dae8ce1d6c6c934228b892",
+  "package_name": "guyton1972-thirst-drinking-salt-appetite-lab"
+}

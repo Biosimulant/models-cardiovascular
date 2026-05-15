@@ -1,0 +1,11 @@
+{
+  "schema_version": "1",
+  "local_id": "df4810fd-22c3-40b4-9ea4-1d225b8bce8e",
+  "kind": "lab",
+  "source": "local",
+  "hub_id": "923234b0-a1fb-4c34-91b1-9c83395b5011",
+  "created_at": "2026-05-05T05:49:05.061646959+00:00",
+  "last_synced_at": "2026-05-14T22:10:22.256901+00:00",
+  "hub_manifest_hash": "4411c4a8eaeef73baccbe2c662cd1625e889d6d7a92c1203ebd5921552fea08d",
+  "package_name": "guyton1972-volume-receptors-lab"
+}

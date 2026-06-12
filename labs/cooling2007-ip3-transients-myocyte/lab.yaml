@@ -1,4 +1,6 @@
 schema_version: '2.0'
+package: cooling2007-ip3-transients-myocyte
+version: 1.0.0
 title: Cooling2007 Ip3 Transients Myocyte Lab
 description: 'Two-model lab for Cooling2007 Ip3 Transients Myocyte: a core SBML simulator
   wired into a dedicated visualization sub-model that turns the raw state into friendly

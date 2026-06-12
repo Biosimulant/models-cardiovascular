@@ -85,6 +85,8 @@ runtime:
       parameter_overrides:
         payload: {}
 schema_version: '2.0'
+package: chen2006-endothelial-no-release
+version: 1.0.0
 title: Chen2006 Endothelial No Release Lab
 wiring:
 - from: chen2006_endothelial_no_release_scenario.l_arginine

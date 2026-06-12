@@ -69,6 +69,8 @@ runtime:
       parameter_overrides:
         payload: {}
 schema_version: '2.0'
+package: guyton1972-antidiuretic-hormone
+version: 1.0.0
 title: Guyton1972 Antidiuretic Hormone Lab
 wiring:
 - from: guyton1972_antidiuretic_hormone_scenario.sodium_concentration

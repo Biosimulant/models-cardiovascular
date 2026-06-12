@@ -1,4 +1,6 @@
 schema_version: '2.0'
+package: pasek2006-ventricular-cardiomyocytes
+version: 1.0.0
 title: Pasek2006 Ventricular Cardiomyocytes Lab
 description: 'Two-model lab for Pasek2006 Ventricular Cardiomyocytes: a core SBML
   simulator wired into a dedicated visualization sub-model that turns the raw state

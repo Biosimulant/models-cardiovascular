@@ -1,0 +1,166 @@
+schema_version: "1"
+namespace: demi
+default_visibility: public
+packages:
+  - id: chen2006-endothelial-no-release-lab
+    package: chen2006-endothelial-no-release
+    version: 1.0.0
+    type: lab
+    path: labs/chen2006-endothelial-no-release
+    visibility: public
+  - id: chen2007-neuronal-endothelial-nos-lab
+    package: chen2007-neuronal-endothelial-nos
+    version: 1.0.0
+    type: lab
+    path: labs/chen2007-neuronal-endothelial-nos
+    visibility: public
+  - id: clancy2001-potassium-channel-lab
+    package: clancy2001-potassium-channel
+    version: 1.0.0
+    type: lab
+    path: labs/clancy2001-potassium-channel
+    visibility: public
+  - id: cooling2007-ip3-transients-myocyte-lab
+    package: cooling2007-ip3-transients-myocyte
+    version: 1.0.0
+    type: lab
+    path: labs/cooling2007-ip3-transients-myocyte
+    visibility: public
+  - id: guyton1972-aldosterone-lab
+    package: guyton1972-aldosterone
+    version: 1.0.0
+    type: lab
+    path: labs/guyton1972-aldosterone
+    visibility: public
+  - id: guyton1972-angiotensin-lab
+    package: guyton1972-angiotensin
+    version: 1.0.0
+    type: lab
+    path: labs/guyton1972-angiotensin
+    visibility: public
+  - id: guyton1972-antidiuretic-hormone-lab
+    package: guyton1972-antidiuretic-hormone
+    version: 1.0.0
+    type: lab
+    path: labs/guyton1972-antidiuretic-hormone
+    visibility: public
+  - id: guyton1972-atrial-natriuretic-peptide-lab
+    package: guyton1972-atrial-natriuretic-peptide
+    version: 1.0.0
+    type: lab
+    path: labs/guyton1972-atrial-natriuretic-peptide
+    visibility: public
+  - id: guyton1972-autonomic-control-lab
+    package: guyton1972-autonomic-control
+    version: 1.0.0
+    type: lab
+    path: labs/guyton1972-autonomic-control
+    visibility: public
+  - id: guyton1972-capillary-dynamics-lab
+    package: guyton1972-capillary-dynamics
+    version: 1.0.0
+    type: lab
+    path: labs/guyton1972-capillary-dynamics
+    visibility: public
+  - id: guyton1972-electrolytes-lab
+    package: guyton1972-electrolytes
+    version: 1.0.0
+    type: lab
+    path: labs/guyton1972-electrolytes
+    visibility: public
+  - id: guyton1972-heart-hypertrophy-lab
+    package: guyton1972-heart-hypertrophy
+    version: 1.0.0
+    type: lab
+    path: labs/guyton1972-heart-hypertrophy
+    visibility: public
+  - id: guyton1972-heart-rate-stroke-volume-lab
+    package: guyton1972-heart-rate-stroke-volume
+    version: 1.0.0
+    type: lab
+    path: labs/guyton1972-heart-rate-stroke-volume
+    visibility: public
+  - id: guyton1972-muscle-blood-flow-lab
+    package: guyton1972-muscle-blood-flow
+    version: 1.0.0
+    type: lab
+    path: labs/guyton1972-muscle-blood-flow
+    visibility: public
+  - id: guyton1972-non-muscle-blood-flow-lab
+    package: guyton1972-non-muscle-blood-flow
+    version: 1.0.0
+    type: lab
+    path: labs/guyton1972-non-muscle-blood-flow
+    visibility: public
+  - id: guyton1972-pulmonary-fluid-dynamics-lab
+    package: guyton1972-pulmonary-fluid-dynamics
+    version: 1.0.0
+    type: lab
+    path: labs/guyton1972-pulmonary-fluid-dynamics
+    visibility: public
+  - id: guyton1972-pulmonary-oxygen-intake-lab
+    package: guyton1972-pulmonary-oxygen-intake
+    version: 1.0.0
+    type: lab
+    path: labs/guyton1972-pulmonary-oxygen-intake
+    visibility: public
+  - id: guyton1972-red-cells-viscosity-lab
+    package: guyton1972-red-cells-viscosity
+    version: 1.0.0
+    type: lab
+    path: labs/guyton1972-red-cells-viscosity
+    visibility: public
+  - id: guyton1972-stress-relaxation-lab
+    package: guyton1972-stress-relaxation
+    version: 1.0.0
+    type: lab
+    path: labs/guyton1972-stress-relaxation
+    visibility: public
+  - id: guyton1972-thirst-drinking-salt-appetite-lab
+    package: guyton1972-thirst-drinking-salt-appetite
+    version: 1.0.0
+    type: lab
+    path: labs/guyton1972-thirst-drinking-salt-appetite
+    visibility: public
+  - id: guyton1972-volume-receptors-lab
+    package: guyton1972-volume-receptors
+    version: 1.0.0
+    type: lab
+    path: labs/guyton1972-volume-receptors
+    visibility: public
+  - id: irvine1999-cardiac-sodium-channel-lab
+    package: irvine1999-cardiac-sodium-channel
+    version: 1.0.0
+    type: lab
+    path: labs/irvine1999-cardiac-sodium-channel
+    visibility: public
+  - id: iyer2004-ventricular-myocyte-lab
+    package: iyer2004-ventricular-myocyte
+    version: 1.0.0
+    type: lab
+    path: labs/iyer2004-ventricular-myocyte
+    visibility: public
+  - id: iyer2007-arrhythmia-cardiac-death-lab
+    package: iyer2007-arrhythmia-cardiac-death
+    version: 1.0.0
+    type: lab
+    path: labs/iyer2007-arrhythmia-cardiac-death
+    visibility: public
+  - id: karlstaedt2019-g6p-accumulation-pgi-lab
+    package: karlstaedt2019-g6p-accumulation-pgi
+    version: 1.0.0
+    type: lab
+    path: labs/karlstaedt2019-g6p-accumulation-pgi
+    visibility: public
+  - id: niederer2006-myocyte-relaxation-lab
+    package: niederer2006-myocyte-relaxation
+    version: 1.0.0
+    type: lab
+    path: labs/niederer2006-myocyte-relaxation
+    visibility: public
+  - id: pasek2006-ventricular-cardiomyocytes-lab
+    package: pasek2006-ventricular-cardiomyocytes
+    version: 1.0.0
+    type: lab
+    path: labs/pasek2006-ventricular-cardiomyocytes
+    visibility: public

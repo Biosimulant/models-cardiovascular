@@ -1,4 +1,6 @@
 schema_version: '2.0'
+package: guyton1972-heart-rate-stroke-volume
+version: 1.0.0
 title: Guyton1972 Heart Rate Stroke Volume Lab
 description: 'Two-model lab for Guyton1972 Heart Rate Stroke Volume: a core SBML simulator
   wired into a dedicated visualization sub-model that turns the raw state into friendly

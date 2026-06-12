@@ -69,6 +69,8 @@ runtime:
       parameter_overrides:
         payload: {}
 schema_version: '2.0'
+package: chen2007-neuronal-endothelial-nos
+version: 1.0.0
 title: Chen2007 Neuronal Endothelial Nos Lab
 wiring:
 - from: chen2007_neuronal_endothelial_nos_scenario.l_arginine

@@ -61,6 +61,8 @@ runtime:
       parameter_overrides:
         payload: {}
 schema_version: '2.0'
+package: guyton1972-capillary-dynamics
+version: 1.0.0
 title: Guyton1972 Capillary Dynamics Lab
 wiring:
 - from: guyton1972_capillary_dynamics_scenario.capillary_pressure

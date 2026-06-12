@@ -1,4 +1,6 @@
 schema_version: '2.0'
+package: niederer2006-myocyte-relaxation
+version: 1.0.0
 title: Niederer2006 Myocyte Relaxation Lab
 description: 'Two-model lab for Niederer2006 Myocyte Relaxation: a core SBML simulator
   wired into a dedicated visualization sub-model that turns the raw state into friendly

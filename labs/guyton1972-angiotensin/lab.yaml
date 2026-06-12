@@ -69,6 +69,8 @@ runtime:
       parameter_overrides:
         payload: {}
 schema_version: '2.0'
+package: guyton1972-angiotensin
+version: 1.0.0
 title: Guyton1972 Angiotensin Lab
 wiring:
 - from: guyton1972_angiotensin_scenario.renal_perfusion

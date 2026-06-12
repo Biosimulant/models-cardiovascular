@@ -1,4 +1,6 @@
 schema_version: '2.0'
+package: iyer2004-ventricular-myocyte
+version: 1.0.0
 title: Iyer2004 Ventricular Myocyte Lab
 description: 'Two-model lab for Iyer2004 Ventricular Myocyte: a core SBML simulator
   wired into a dedicated visualization sub-model that turns the raw state into friendly

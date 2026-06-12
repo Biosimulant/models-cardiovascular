@@ -69,6 +69,8 @@ runtime:
       parameter_overrides:
         payload: {}
 schema_version: '2.0'
+package: guyton1972-atrial-natriuretic-peptide
+version: 1.0.0
 title: Guyton1972 Atrial Natriuretic Peptide Lab
 wiring:
 - from: guyton1972_atrial_natriuretic_peptide_scenario.left_atrial_pressure
